@@ -1,0 +1,6 @@
+query Users($searchQuery: String!) {
+  users(searchQuery: $searchQuery) {
+    id
+    handle
+  }
+}

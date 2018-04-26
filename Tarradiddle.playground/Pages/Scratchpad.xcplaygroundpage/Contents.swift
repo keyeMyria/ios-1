@@ -12,11 +12,29 @@ import Apollo
 import RxApollo
 @testable import Tarradiddle
 
-let apollo = ApolloClient(url: URL(string: "http://localhost:4000/graphql")!)
+let url = URL(string: "http://localhost:4000/graphql")!
+
+//let apollo = ApolloClient(url: url)
+//apollo.rx
+//  .perform(mutation: CreateUserMutation(icloudId: UUID().uuidString))
+//  .subscribe(onSuccess: { data in
+//    print(data.createUser)
+//  })
+
+// for user id 15
+let token = "SFMyNTY.g3QAAAACZAAEZGF0YWEPZAAGc2lnbmVkbgYA7JpdAWMB.sYIvpEcsBLYtyYeUwyRvd5QirX-RxywKQGJwrEv8zZ8"
+
+let config = URLSessionConfiguration.default
+config.httpAdditionalHeaders = [
+  "authorization": "Bearer \(token)"
+]
+
+let apollo = ApolloClient(networkTransport: HTTPNetworkTransport(url: url, configuration: config))
+print("asdf")
 apollo.rx
-  .perform(mutation: CreateUserMutation(icloudId: UUID().uuidString))
+  .fetch(query: UsersQuery(searchQuery: "idiot"))
   .subscribe(onSuccess: { data in
-    print(data.createUser)
+    print(data.users)
   })
 
 PlaygroundPage.current.needsIndefiniteExecution = true

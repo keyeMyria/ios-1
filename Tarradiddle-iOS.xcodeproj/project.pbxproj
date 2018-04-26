@@ -27,6 +27,8 @@
 		4E803D192091CB6D00E3B6F2 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E803D172091CB6D00E3B6F2 /* schema.json */; };
 		4E803D1D2091CBEF00E3B6F2 /* CreateUser.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 4E803D1C2091CBEF00E3B6F2 /* CreateUser.graphql */; };
 		4E803D1F2091CCA800E3B6F2 /* AnonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E803D1E2091CCA800E3B6F2 /* AnonAPI.swift */; };
+		4E803D222091D95D00E3B6F2 /* SearchUsers.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 4E803D212091D95D00E3B6F2 /* SearchUsers.graphql */; };
+		4E803D252091DAE100E3B6F2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E803D242091DAE100E3B6F2 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -392,6 +394,8 @@
 		4E803D172091CB6D00E3B6F2 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		4E803D1C2091CBEF00E3B6F2 /* CreateUser.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CreateUser.graphql; sourceTree = "<group>"; };
 		4E803D1E2091CCA800E3B6F2 /* AnonAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnonAPI.swift; sourceTree = "<group>"; };
+		4E803D212091D95D00E3B6F2 /* SearchUsers.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchUsers.graphql; sourceTree = "<group>"; };
+		4E803D242091DAE100E3B6F2 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -608,7 +612,9 @@
 		4E803D1B2091CBA500E3B6F2 /* Authed */ = {
 			isa = PBXGroup;
 			children = (
+				4E803D242091DAE100E3B6F2 /* API.swift */,
 				4E803D172091CB6D00E3B6F2 /* schema.json */,
+				4E803D212091D95D00E3B6F2 /* SearchUsers.graphql */,
 			);
 			path = Authed;
 			sourceTree = "<group>";
@@ -652,6 +658,7 @@
 			buildPhases = (
 				4E2C1B242091A6A700754E57 /* SwiftLint */,
 				4E803D202091CE5100E3B6F2 /* Generate Anon Apollo GraphQL API */,
+				4E803D232091DA9E00E3B6F2 /* Generate Authed Apollo GraphQL API */,
 				4E2C1B012091A68200754E57 /* Sources */,
 				4E2C1B022091A68200754E57 /* Frameworks */,
 				4E2C1B032091A68200754E57 /* Headers */,
@@ -1071,6 +1078,7 @@
 				4E803D1D2091CBEF00E3B6F2 /* CreateUser.graphql in Resources */,
 				4E803D192091CB6D00E3B6F2 /* schema.json in Resources */,
 				4E2C1B282091A76400754E57 /* LaunchScreen.storyboard in Resources */,
+				4E803D222091D95D00E3B6F2 /* SearchUsers.graphql in Resources */,
 				4E2C1B262091A74300754E57 /* Assets.xcassets in Resources */,
 				4E2C1B272091A75200754E57 /* Main.storyboard in Resources */,
 			);
@@ -1114,6 +1122,20 @@
 			shellPath = /bin/sh;
 			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}/GraphQL/Anon\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema anon_schema.json --output AnonAPI.swift";
 		};
+		4E803D232091DA9E00E3B6F2 /* Generate Authed Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Authed Apollo GraphQL API";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}/GraphQL/Authed\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema schema.json --output API.swift";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1130,6 +1152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E803D1F2091CCA800E3B6F2 /* AnonAPI.swift in Sources */,
+				4E803D252091DAE100E3B6F2 /* API.swift in Sources */,
 				4E2C1B252091A6D900754E57 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

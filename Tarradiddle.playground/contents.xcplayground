@@ -3,5 +3,6 @@
     <pages>
         <page name='Scratchpad'/>
         <page name='User login'/>
+        <page name='Create User'/>
     </pages>
 </playground>
