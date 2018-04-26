@@ -3,8 +3,7 @@
 import Apollo
 
 public final class CreateUserMutation: GraphQLMutation {
-
-  public static let operationString =
+  public let operationDefinition =
     "mutation CreateUser($icloudId: String!) {\n  createUser(icloudId: $icloudId) {\n    __typename\n    token\n    user {\n      __typename\n      id\n    }\n  }\n}"
 
   public var icloudId: String
@@ -24,22 +23,22 @@ public final class CreateUserMutation: GraphQLMutation {
       GraphQLField("createUser", arguments: ["icloudId": GraphQLVariable("icloudId")], type: .object(CreateUser.selections)),
     ]
 
-    public var snapshot: Snapshot
+    public private(set) var resultMap: ResultMap
 
-    public init(snapshot: Snapshot) {
-      self.snapshot = snapshot
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
     }
 
     public init(createUser: CreateUser? = nil) {
-      self.init(snapshot: ["__typename": "RootMutationType", "createUser": createUser.flatMap { (value: CreateUser) -> Snapshot in value.snapshot }])
+      self.init(unsafeResultMap: ["__typename": "RootMutationType", "createUser": createUser.flatMap { (value: CreateUser) -> ResultMap in value.resultMap }])
     }
 
     public var createUser: CreateUser? {
       get {
-        return (snapshot["createUser"] as? Snapshot).flatMap { CreateUser(snapshot: $0) }
+        return (resultMap["createUser"] as? ResultMap).flatMap { CreateUser(unsafeResultMap: $0) }
       }
       set {
-        snapshot.updateValue(newValue?.snapshot, forKey: "createUser")
+        resultMap.updateValue(newValue?.resultMap, forKey: "createUser")
       }
     }
 
@@ -52,40 +51,40 @@ public final class CreateUserMutation: GraphQLMutation {
         GraphQLField("user", type: .object(User.selections)),
       ]
 
-      public var snapshot: Snapshot
+      public private(set) var resultMap: ResultMap
 
-      public init(snapshot: Snapshot) {
-        self.snapshot = snapshot
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
       }
 
       public init(token: String? = nil, user: User? = nil) {
-        self.init(snapshot: ["__typename": "Account", "token": token, "user": user.flatMap { (value: User) -> Snapshot in value.snapshot }])
+        self.init(unsafeResultMap: ["__typename": "Account", "token": token, "user": user.flatMap { (value: User) -> ResultMap in value.resultMap }])
       }
 
       public var __typename: String {
         get {
-          return snapshot["__typename"]! as! String
+          return resultMap["__typename"]! as! String
         }
         set {
-          snapshot.updateValue(newValue, forKey: "__typename")
+          resultMap.updateValue(newValue, forKey: "__typename")
         }
       }
 
       public var token: String? {
         get {
-          return snapshot["token"] as? String
+          return resultMap["token"] as? String
         }
         set {
-          snapshot.updateValue(newValue, forKey: "token")
+          resultMap.updateValue(newValue, forKey: "token")
         }
       }
 
       public var user: User? {
         get {
-          return (snapshot["user"] as? Snapshot).flatMap { User(snapshot: $0) }
+          return (resultMap["user"] as? ResultMap).flatMap { User(unsafeResultMap: $0) }
         }
         set {
-          snapshot.updateValue(newValue?.snapshot, forKey: "user")
+          resultMap.updateValue(newValue?.resultMap, forKey: "user")
         }
       }
 
@@ -97,31 +96,31 @@ public final class CreateUserMutation: GraphQLMutation {
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         ]
 
-        public var snapshot: Snapshot
+        public private(set) var resultMap: ResultMap
 
-        public init(snapshot: Snapshot) {
-          self.snapshot = snapshot
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
         }
 
         public init(id: GraphQLID) {
-          self.init(snapshot: ["__typename": "User", "id": id])
+          self.init(unsafeResultMap: ["__typename": "User", "id": id])
         }
 
         public var __typename: String {
           get {
-            return snapshot["__typename"]! as! String
+            return resultMap["__typename"]! as! String
           }
           set {
-            snapshot.updateValue(newValue, forKey: "__typename")
+            resultMap.updateValue(newValue, forKey: "__typename")
           }
         }
 
         public var id: GraphQLID {
           get {
-            return snapshot["id"]! as! GraphQLID
+            return resultMap["id"]! as! GraphQLID
           }
           set {
-            snapshot.updateValue(newValue, forKey: "id")
+            resultMap.updateValue(newValue, forKey: "id")
           }
         }
       }

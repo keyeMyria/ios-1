@@ -651,6 +651,7 @@
 			buildConfigurationList = 4E2C1B1D2091A68300754E57 /* Build configuration list for PBXNativeTarget "Tarradiddle" */;
 			buildPhases = (
 				4E2C1B242091A6A700754E57 /* SwiftLint */,
+				4E803D202091CE5100E3B6F2 /* Generate Anon Apollo GraphQL API */,
 				4E2C1B012091A68200754E57 /* Sources */,
 				4E2C1B022091A68200754E57 /* Frameworks */,
 				4E2C1B032091A68200754E57 /* Headers */,
@@ -1098,6 +1099,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		4E803D202091CE5100E3B6F2 /* Generate Anon Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Anon Apollo GraphQL API";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}/GraphQL/Anon\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema anon_schema.json --output AnonAPI.swift";
 		};
 /* End PBXShellScriptBuildPhase section */
 
