@@ -7,3 +7,6 @@
 [submodule "Frameworks/External/RxGRDB"]
 	path = Frameworks/External/RxGRDB
 	url = git@github.com:RxSwiftCommunity/RxGRDB.git
+[submodule "Frameworks/External/apollo-ios"]
+	path = Frameworks/External/apollo-ios
+	url = git@github.com:apollographql/apollo-ios.git
