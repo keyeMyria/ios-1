@@ -1,0 +1,9 @@
+[submodule "Frameworks/External/RxSwift"]
+	path = Frameworks/External/RxSwift
+	url = git@github.com:ReactiveX/RxSwift.git
+[submodule "Frameworks/External/GRDB.swift"]
+	path = Frameworks/External/GRDB.swift
+	url = git@github.com:groue/GRDB.swift.git
+[submodule "Frameworks/External/RxGRDB"]
+	path = Frameworks/External/RxGRDB
+	url = git@github.com:RxSwiftCommunity/RxGRDB.git
