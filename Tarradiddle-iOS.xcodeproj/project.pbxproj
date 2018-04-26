@@ -309,6 +309,7 @@
 		4E803C7E2091AE8F00E3B6F2 /* GRDB.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GRDB.xcodeproj; path = Frameworks/External/GRDB.swift/GRDB.xcodeproj; sourceTree = "<group>"; };
 		4E803C9A2091AE9700E3B6F2 /* RxGRDB.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxGRDB.xcodeproj; path = Frameworks/External/RxGRDB/RxGRDB.xcodeproj; sourceTree = "<group>"; };
 		4E803CA92091AE9E00E3B6F2 /* Rx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Rx.xcodeproj; path = Frameworks/External/RxSwift/Rx.xcodeproj; sourceTree = "<group>"; };
+		4E803CEE2091B06B00E3B6F2 /* Tarradiddle.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Tarradiddle.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,6 +345,7 @@
 		4E2C1AE32091A62800754E57 = {
 			isa = PBXGroup;
 			children = (
+				4E803CEE2091B06B00E3B6F2 /* Tarradiddle.playground */,
 				4E2C1B2B2091AE6C00754E57 /* Frameworks */,
 				4E2C1AEE2091A62800754E57 /* Tarradiddle-iOS */,
 				4E2C1B072091A68200754E57 /* Tarradiddle */,
