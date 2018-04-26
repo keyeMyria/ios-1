@@ -10,3 +10,6 @@
 [submodule "Frameworks/External/apollo-ios"]
 	path = Frameworks/External/apollo-ios
 	url = git@github.com:apollographql/apollo-ios.git
+[submodule "Frameworks/External/RxApollo"]
+	path = Frameworks/External/RxApollo
+	url = git@github.com:scottrhoyt/RxApollo.git
