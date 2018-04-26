@@ -25,6 +25,8 @@
 		4E803D142091B70700E3B6F2 /* RxApollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E803D112091B6E000E3B6F2 /* RxApollo.framework */; };
 		4E803D182091CB6D00E3B6F2 /* anon_schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E803D162091CB6D00E3B6F2 /* anon_schema.json */; };
 		4E803D192091CB6D00E3B6F2 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E803D172091CB6D00E3B6F2 /* schema.json */; };
+		4E803D1D2091CBEF00E3B6F2 /* CreateUser.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 4E803D1C2091CBEF00E3B6F2 /* CreateUser.graphql */; };
+		4E803D1F2091CCA800E3B6F2 /* AnonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E803D1E2091CCA800E3B6F2 /* AnonAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -388,6 +390,8 @@
 		4E803D0B2091B6E000E3B6F2 /* RxApollo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxApollo.xcodeproj; path = Frameworks/External/RxApollo/RxApollo.xcodeproj; sourceTree = "<group>"; };
 		4E803D162091CB6D00E3B6F2 /* anon_schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = anon_schema.json; sourceTree = "<group>"; };
 		4E803D172091CB6D00E3B6F2 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		4E803D1C2091CBEF00E3B6F2 /* CreateUser.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CreateUser.graphql; sourceTree = "<group>"; };
+		4E803D1E2091CCA800E3B6F2 /* AnonAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnonAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -594,7 +598,9 @@
 		4E803D1A2091CB9900E3B6F2 /* Anon */ = {
 			isa = PBXGroup;
 			children = (
+				4E803D1E2091CCA800E3B6F2 /* AnonAPI.swift */,
 				4E803D162091CB6D00E3B6F2 /* anon_schema.json */,
+				4E803D1C2091CBEF00E3B6F2 /* CreateUser.graphql */,
 			);
 			path = Anon;
 			sourceTree = "<group>";
@@ -1061,6 +1067,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E803D182091CB6D00E3B6F2 /* anon_schema.json in Resources */,
+				4E803D1D2091CBEF00E3B6F2 /* CreateUser.graphql in Resources */,
 				4E803D192091CB6D00E3B6F2 /* schema.json in Resources */,
 				4E2C1B282091A76400754E57 /* LaunchScreen.storyboard in Resources */,
 				4E2C1B262091A74300754E57 /* Assets.xcassets in Resources */,
@@ -1107,6 +1114,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E803D1F2091CCA800E3B6F2 /* AnonAPI.swift in Sources */,
 				4E2C1B252091A6D900754E57 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

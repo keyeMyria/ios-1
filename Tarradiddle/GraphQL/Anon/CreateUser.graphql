@@ -1,0 +1,8 @@
+mutation CreateUser($icloudId: String!) {
+  createUser(icloudId: $icloudId) {
+    token
+    user {
+      id
+    }
+  }
+}
