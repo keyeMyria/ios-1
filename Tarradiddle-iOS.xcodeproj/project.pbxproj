@@ -453,6 +453,7 @@
 		4E2C1B072091A68200754E57 /* Tarradiddle */ = {
 			isa = PBXGroup;
 			children = (
+				4E803D152091B90700E3B6F2 /* GraphQL */,
 				4E2C1B2A2091A79900754E57 /* ViewControllers */,
 				4E2C1B292091A78D00754E57 /* Views */,
 				4E2C1B082091A68200754E57 /* Tarradiddle.h */,
@@ -575,6 +576,13 @@
 				4E803D132091B6E000E3B6F2 /* RxApolloTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		4E803D152091B90700E3B6F2 /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GraphQL;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
