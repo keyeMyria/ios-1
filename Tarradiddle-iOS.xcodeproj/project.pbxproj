@@ -585,10 +585,26 @@
 		4E803D152091B90700E3B6F2 /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
-				4E803D162091CB6D00E3B6F2 /* anon_schema.json */,
-				4E803D172091CB6D00E3B6F2 /* schema.json */,
+				4E803D1B2091CBA500E3B6F2 /* Authed */,
+				4E803D1A2091CB9900E3B6F2 /* Anon */,
 			);
 			path = GraphQL;
+			sourceTree = "<group>";
+		};
+		4E803D1A2091CB9900E3B6F2 /* Anon */ = {
+			isa = PBXGroup;
+			children = (
+				4E803D162091CB6D00E3B6F2 /* anon_schema.json */,
+			);
+			path = Anon;
+			sourceTree = "<group>";
+		};
+		4E803D1B2091CBA500E3B6F2 /* Authed */ = {
+			isa = PBXGroup;
+			children = (
+				4E803D172091CB6D00E3B6F2 /* schema.json */,
+			);
+			path = Authed;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
