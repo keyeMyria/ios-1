@@ -22,7 +22,7 @@ protocol UserServiceType {
 
   func savedUsers() -> Observable<[User]>
 
-  func getUser(by id: Int64) -> Observable<User?>
+  func getUser(id: Int64) -> Observable<User?>
 }
 
 class UserService: UserServiceType {
@@ -36,7 +36,7 @@ class UserService: UserServiceType {
     self.dbQueue = dbQueue
   }
 
-  // TODO refactor
+  // TODO refactor (shouldn't return anything unless subscribed to)
   func createUser(remoteID: Int64, handle: String) -> Observable<User> {
     do {
       let user = try dbQueue.inDatabase { db -> User in
@@ -56,7 +56,7 @@ class UserService: UserServiceType {
     return User.all().rx.fetchAll(in: dbQueue)
   }
 
-  func getUser(by id: Int64) -> Observable<User?> {
+  func getUser(id: Int64) -> Observable<User?> {
     return User.filter(key: id).rx.fetchOne(in: dbQueue)
   }
 }
