@@ -4,5 +4,6 @@
         <page name='Scratchpad'/>
         <page name='User login'/>
         <page name='Create User'/>
+        <page name='User Service'/>
     </pages>
 </playground>
