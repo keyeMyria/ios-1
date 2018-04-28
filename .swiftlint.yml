@@ -1,7 +1,8 @@
 excluded:
   - Frameworks
-  - Tarradiddle/GraphQL
+  - TRApp/GraphQL
 identifier_name:
   excluded:
     - id
+    - db
     - t
