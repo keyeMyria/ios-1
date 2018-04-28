@@ -1,4 +1,4 @@
-import Foundation
+//import Foundation
 import GRDB
 
 /// A type responsible for initializing the application database.
@@ -33,10 +33,10 @@ class AppDatabase {
     var migrator = DatabaseMigrator()
 
     migrator.registerMigration("create saved_users table") { db in
-      try db.create(table: "saved_users") { table in
-        table.column("id", .integer).primaryKey() // maybe use rowid instead
-        table.column("remote_id", .integer).unique() // make not null?
-        table.column("handle", .text).notNull().collate(.localizedCaseInsensitiveCompare)
+      try db.create(table: "saved_users") { t in
+        t.column("id", .integer).primaryKey() // maybe use rowid instead
+        t.column("remote_id", .integer).unique() // make not null?
+        t.column("handle", .text).notNull().collate(.localizedCaseInsensitiveCompare)
       }
     }
 

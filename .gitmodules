@@ -13,3 +13,21 @@
 [submodule "Frameworks/External/RxApollo"]
 	path = Frameworks/External/RxApollo
 	url = git@github.com:scottrhoyt/RxApollo.git
+[submodule "Frameworks/External/Action"]
+	path = Frameworks/External/Action
+	url = git@github.com:RxSwiftCommunity/Action.git
+[submodule "Frameworks/External/SoundWave"]
+	path = Frameworks/External/SoundWave
+	url = git@github.com:bastienFalcou/SoundWave.git
+[submodule "Frameworks/External/Anchorage"]
+	path = Frameworks/External/Anchorage
+	url = git@github.com:Raizlabs/Anchorage.git
+[submodule "Frameworks/External/Nimble"]
+	path = Frameworks/External/Nimble
+	url = git@github.com:Quick/Nimble.git
+[submodule "Frameworks/External/Quick"]
+	path = Frameworks/External/Quick
+	url = git@github.com:Quick/Quick.git
+[submodule "Frameworks/External/RxNimble"]
+	path = Frameworks/External/RxNimble
+	url = git@github.com:RxSwiftCommunity/RxNimble.git

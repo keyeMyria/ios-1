@@ -1,21 +1,34 @@
-//
-//  AppDelegate.swift
-//  Tarradiddle-iOS
-//
-//  Created by asd on 4/26/18.
-//  Copyright © 2018 noose&needle. All rights reserved.
-//
-
 import UIKit
+@testable import Tarradiddle // TODO
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
+//  private var appCoordinator: AppCoordinator!
+//  private let disposeBag = DisposeBag()
+  private let router = Router()
 
-  func application(_ application: UIApplication,
-                   didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+  func application(
+    _ application: UIApplication,
+    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?
+  ) -> Bool {
+
+    window = UIWindow()
+
+//    appCoordinator = AppCoordinator(window: window!)
+//    appCoordinator.start().subscribe().disposed(by: disposeBag)
+
+//    let root = UINavigationController(rootViewController: <#T##UIViewController#>)
+//    router.route(to: , sender: )
+
+//    let sceneCoordinator = SceneCoordinator(window: window!)
+//
+//    let messagingViewModel = MessagingViewModel(messagingService: MessagingService(), coordinator: sceneCoordinator)
+//    let firstScene = Scene.messaging(messagingViewModel)
+//
+//    sceneCoordinator.transition(to: firstScene, type: .root)
+
     return true
   }
 
