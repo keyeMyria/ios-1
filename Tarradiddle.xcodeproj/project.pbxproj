@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E2C1AF02091A62800754E57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2C1AEF2091A62800754E57 /* AppDelegate.swift */; };
 		4E2C1AF72091A62A00754E57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E2C1AF62091A62A00754E57 /* Assets.xcassets */; };
 		4E2C1B0F2091A68200754E57 /* TRAppProxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E2C1B062091A68200754E57 /* TRAppProxy.framework */; };
 		4E2C1B182091A68300754E57 /* Tarradiddle.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E2C1B082091A68200754E57 /* Tarradiddle.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -100,6 +99,8 @@
 		4EF715BD210F4F8F00149EAE /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715BB210F4F8F00149EAE /* Then.swift */; };
 		4EF715BF210F4FA400149EAE /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715BE210F4FA400149EAE /* Presentable.swift */; };
 		4EF715C0210F4FA400149EAE /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715BE210F4FA400149EAE /* Presentable.swift */; };
+		4EF715C2210F658D00149EAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715C1210F658C00149EAE /* AppDelegate.swift */; };
+		4EF715C3210F658D00149EAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715C1210F658C00149EAE /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -275,7 +276,6 @@
 
 /* Begin PBXFileReference section */
 		4E2C1AEC2091A62800754E57 /* TRiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TRiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E2C1AEF2091A62800754E57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "../New Group/AppDelegate.swift"; sourceTree = "<group>"; };
 		4E2C1AF62091A62A00754E57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E2C1AF92091A62A00754E57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E2C1AFB2091A62A00754E57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -334,6 +334,7 @@
 		4EF715B8210F4F6C00149EAE /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4EF715BB210F4F8F00149EAE /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		4EF715BE210F4FA400149EAE /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
+		4EF715C1210F658C00149EAE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -544,7 +545,7 @@
 			isa = PBXGroup;
 			children = (
 				4EDD661520A9DACF0010418F /* Preferences */,
-				4E2C1AEF2091A62800754E57 /* AppDelegate.swift */,
+				4EF715C1210F658C00149EAE /* AppDelegate.swift */,
 				4E62B6762091EBC600EC4EBD /* AppAccount.swift */,
 				4E62B6792091EBEB00EC4EBD /* AppDatabase.swift */,
 				4E62B6702091EB7900EC4EBD /* AppCoordinator.swift */,
@@ -1035,6 +1036,7 @@
 				4EF71534210F1B0F00149EAE /* ConversationsViewModel.swift in Sources */,
 				4EF71530210F1AD100149EAE /* Bundle.swift in Sources */,
 				4EF71511210F1A2A00149EAE /* LocalUserService.swift in Sources */,
+				4EF715C2210F658D00149EAE /* AppDelegate.swift in Sources */,
 				4EF7152F210F1ACF00149EAE /* CGPoint.swift in Sources */,
 				4EF71510210F1A2800149EAE /* AccountService.swift in Sources */,
 				4EF715B9210F4F6C00149EAE /* Router.swift in Sources */,
@@ -1043,7 +1045,6 @@
 				4EF71508210F14DB00149EAE /* SupportDatabase.swift in Sources */,
 				4EF71536210F1B1800149EAE /* ViewModelType.swift in Sources */,
 				4EF71523210F1A8600149EAE /* AnonAPI.swift in Sources */,
-				4E2C1AF02091A62800754E57 /* AppDelegate.swift in Sources */,
 				4EF71535210F1B1100149EAE /* VoiceMessagesViewModel.swift in Sources */,
 				4EF715BF210F4FA400149EAE /* Presentable.swift in Sources */,
 			);
@@ -1071,6 +1072,7 @@
 				4E62B66F2091EB3C00EC4EBD /* Coordinating.swift in Sources */,
 				4EF7150D210F19D300149EAE /* SupportDatabase.swift in Sources */,
 				4EDD664920A9DAE20010418F /* UserDefaults.swift in Sources */,
+				4EF715C3210F658D00149EAE /* AppDelegate.swift in Sources */,
 				4E62B6A420931ED900EC4EBD /* User.swift in Sources */,
 				4E62B67C2091EC4E00EC4EBD /* AuthCoordinator.swift in Sources */,
 				4EF2090A20947362006B0F0D /* LocalConversationService.swift in Sources */,
