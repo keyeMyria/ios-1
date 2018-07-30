@@ -101,6 +101,14 @@
 		4EF715C0210F4FA400149EAE /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715BE210F4FA400149EAE /* Presentable.swift */; };
 		4EF715C2210F658D00149EAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715C1210F658C00149EAE /* AppDelegate.swift */; };
 		4EF715C3210F658D00149EAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715C1210F658C00149EAE /* AppDelegate.swift */; };
+		4EF715CA210F67B600149EAE /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715C9210F67B600149EAE /* SettingsCell.swift */; };
+		4EF715CB210F67B600149EAE /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715C9210F67B600149EAE /* SettingsCell.swift */; };
+		4EF715CD210F680600149EAE /* TextInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715CC210F680600149EAE /* TextInputCell.swift */; };
+		4EF715CE210F680600149EAE /* TextInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715CC210F680600149EAE /* TextInputCell.swift */; };
+		4EF715D0210F6BE300149EAE /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715CF210F6BE300149EAE /* AudioPlayer.swift */; };
+		4EF715D1210F6BE300149EAE /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715CF210F6BE300149EAE /* AudioPlayer.swift */; };
+		4EF715D3210F6CA700149EAE /* AppUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715D2210F6CA700149EAE /* AppUserDefaults.swift */; };
+		4EF715D4210F6CA700149EAE /* AppUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715D2210F6CA700149EAE /* AppUserDefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -335,6 +343,10 @@
 		4EF715BB210F4F8F00149EAE /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		4EF715BE210F4FA400149EAE /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
 		4EF715C1210F658C00149EAE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4EF715C9210F67B600149EAE /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		4EF715CC210F680600149EAE /* TextInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputCell.swift; sourceTree = "<group>"; };
+		4EF715CF210F6BE300149EAE /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		4EF715D2210F6CA700149EAE /* AppUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -429,8 +441,6 @@
 			isa = PBXGroup;
 			children = (
 				4E674D1C2094C70600906608 /* AudioVisualizationView.swift */,
-				4EB70C79209E56B700182833 /* ConversationCell.swift */,
-				4EB70CB7209EF4A400182833 /* VoiceMessageCell.swift */,
 				4E407A3E20A4AB2D0084BB0A /* SoundWaveView.swift */,
 			);
 			path = Views;
@@ -439,10 +449,6 @@
 		4E2C1B2A2091A79900754E57 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				4E62B66B2091E65B00EC4EBD /* UsersViewController.swift */,
-				4EF208FD209466ED006B0F0D /* SoundWavesViewController.swift */,
-				4EF208FF20946705006B0F0D /* ConversationsViewController.swift */,
-				4EF2090120946780006B0F0D /* MessagingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -472,9 +478,13 @@
 		4E62B66D2091EB2B00EC4EBD /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				4EF715C8210F669D00149EAE /* Settings */,
+				4EF715C7210F669700149EAE /* User Search */,
+				4EF715C6210F668F00149EAE /* Home */,
+				4EF715C5210F668700149EAE /* Authentication */,
+				4EF715C4210F667D00149EAE /* Onboarding */,
 				4E2C1B2A2091A79900754E57 /* ViewControllers */,
 				4E62B63B2091E54F00EC4EBD /* ViewModels */,
-				4E62B67B2091EC4E00EC4EBD /* AuthCoordinator.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -550,6 +560,7 @@
 				4E62B6792091EBEB00EC4EBD /* AppDatabase.swift */,
 				4E62B6702091EB7900EC4EBD /* AppCoordinator.swift */,
 				4E3FD77620AB34E3005E34A1 /* SupportDatabase.swift */,
+				4EF715D2210F6CA700149EAE /* AppUserDefaults.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -642,6 +653,7 @@
 			isa = PBXGroup;
 			children = (
 				4EF208FB2094568D006B0F0D /* AudioRecorder.swift */,
+				4EF715CF210F6BE300149EAE /* AudioPlayer.swift */,
 				4ECCAF5420AC1E1E001250F7 /* Logger.swift */,
 				4EF71593210F28C700149EAE /* Result.swift */,
 				4EF71596210F28E900149EAE /* Box.swift */,
@@ -666,6 +678,50 @@
 				4EF2090920947362006B0F0D /* LocalConversationService.swift */,
 			);
 			path = Conversation;
+			sourceTree = "<group>";
+		};
+		4EF715C4210F667D00149EAE /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		4EF715C5210F668700149EAE /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				4E62B67B2091EC4E00EC4EBD /* AuthCoordinator.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		4EF715C6210F668F00149EAE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4EF208FF20946705006B0F0D /* ConversationsViewController.swift */,
+				4EF2090120946780006B0F0D /* MessagingViewController.swift */,
+				4EF208FD209466ED006B0F0D /* SoundWavesViewController.swift */,
+				4EB70C79209E56B700182833 /* ConversationCell.swift */,
+				4EB70CB7209EF4A400182833 /* VoiceMessageCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4EF715C7210F669700149EAE /* User Search */ = {
+			isa = PBXGroup;
+			children = (
+				4E62B66B2091E65B00EC4EBD /* UsersViewController.swift */,
+			);
+			path = "User Search";
+			sourceTree = "<group>";
+		};
+		4EF715C8210F669D00149EAE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				4EF715C9210F67B600149EAE /* SettingsCell.swift */,
+				4EF715CC210F680600149EAE /* TextInputCell.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1007,10 +1063,12 @@
 			files = (
 				4EF71516210F1A3800149EAE /* User.swift in Sources */,
 				4EF7151C210F1A7B00149EAE /* API.swift in Sources */,
+				4EF715D0210F6BE300149EAE /* AudioPlayer.swift in Sources */,
 				4EF71594210F28C800149EAE /* Result.swift in Sources */,
 				4EF71529210F1A9F00149EAE /* AudioVisualizationView.swift in Sources */,
 				4EF71539210F1B2F00149EAE /* SoundWavesViewController.swift in Sources */,
 				4EF71512210F1A2D00149EAE /* AudioRecorder.swift in Sources */,
+				4EF715CA210F67B600149EAE /* SettingsCell.swift in Sources */,
 				4EF71597210F28E900149EAE /* Box.swift in Sources */,
 				4EF71514210F1A3100149EAE /* Logger.swift in Sources */,
 				4EF71538210F1B2D00149EAE /* UsersViewController.swift in Sources */,
@@ -1021,6 +1079,7 @@
 				4EF7153B210F1B3500149EAE /* MessagingViewController.swift in Sources */,
 				4EF71517210F1A3B00149EAE /* Friendship.swift in Sources */,
 				4EF7150E210F19D800149EAE /* Cloud.swift in Sources */,
+				4EF715D3210F6CA700149EAE /* AppUserDefaults.swift in Sources */,
 				4EF7152B210F1AC300149EAE /* SoundWaveView.swift in Sources */,
 				4EF7151A210F1A6F00149EAE /* Bindable.swift in Sources */,
 				4EF7153A210F1B3100149EAE /* ConversationsViewController.swift in Sources */,
@@ -1035,6 +1094,7 @@
 				4EF715BC210F4F8F00149EAE /* Then.swift in Sources */,
 				4EF71534210F1B0F00149EAE /* ConversationsViewModel.swift in Sources */,
 				4EF71530210F1AD100149EAE /* Bundle.swift in Sources */,
+				4EF715CD210F680600149EAE /* TextInputCell.swift in Sources */,
 				4EF71511210F1A2A00149EAE /* LocalUserService.swift in Sources */,
 				4EF715C2210F658D00149EAE /* AppDelegate.swift in Sources */,
 				4EF7152F210F1ACF00149EAE /* CGPoint.swift in Sources */,
@@ -1056,10 +1116,12 @@
 			files = (
 				4EF209062094709B006B0F0D /* Conversation.swift in Sources */,
 				4E674D1D2094C70600906608 /* AudioVisualizationView.swift in Sources */,
+				4EF715D1210F6BE300149EAE /* AudioPlayer.swift in Sources */,
 				4EF7150C210F19D100149EAE /* AppCoordinator.swift in Sources */,
 				4EF20908209470A5006B0F0D /* VoiceMessage.swift in Sources */,
 				4ECCAF8C20AC2951001250F7 /* Bundle.swift in Sources */,
 				4EB70C7A209E56B700182833 /* ConversationCell.swift in Sources */,
+				4EF715CB210F67B600149EAE /* SettingsCell.swift in Sources */,
 				4E62B6682091E56600EC4EBD /* UserSearchViewModel.swift in Sources */,
 				4E407A3F20A4AB2D0084BB0A /* SoundWaveView.swift in Sources */,
 				4E407A3A20A2D1F30084BB0A /* SettingsViewModel.swift in Sources */,
@@ -1070,6 +1132,7 @@
 				4EF2090020946705006B0F0D /* ConversationsViewController.swift in Sources */,
 				4E62B6A0209317F100EC4EBD /* Bindable.swift in Sources */,
 				4E62B66F2091EB3C00EC4EBD /* Coordinating.swift in Sources */,
+				4EF715D4210F6CA700149EAE /* AppUserDefaults.swift in Sources */,
 				4EF7150D210F19D300149EAE /* SupportDatabase.swift in Sources */,
 				4EDD664920A9DAE20010418F /* UserDefaults.swift in Sources */,
 				4EF715C3210F658D00149EAE /* AppDelegate.swift in Sources */,
@@ -1084,6 +1147,7 @@
 				4EF715BA210F4F6C00149EAE /* Router.swift in Sources */,
 				4EB70CB6209E577300182833 /* ConversationsViewModel.swift in Sources */,
 				4EF208FE209466ED006B0F0D /* SoundWavesViewController.swift in Sources */,
+				4EF715CE210F680600149EAE /* TextInputCell.swift in Sources */,
 				4EF715BD210F4F8F00149EAE /* Then.swift in Sources */,
 				4EF2090220946780006B0F0D /* MessagingViewController.swift in Sources */,
 				4E62B66C2091E65B00EC4EBD /* UsersViewController.swift in Sources */,
