@@ -12,7 +12,6 @@
 		4E2C1B0F2091A68200754E57 /* TRAppProxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E2C1B062091A68200754E57 /* TRAppProxy.framework */; };
 		4E2C1B182091A68300754E57 /* Tarradiddle.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E2C1B082091A68200754E57 /* Tarradiddle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E2C1B262091A74300754E57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E2C1AF62091A62A00754E57 /* Assets.xcassets */; };
-		4E2C1B282091A76400754E57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E2C1AF82091A62A00754E57 /* LaunchScreen.storyboard */; };
 		4E407A3A20A2D1F30084BB0A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E407A3920A2D1F30084BB0A /* SettingsViewModel.swift */; };
 		4E407A3D20A4A0B90084BB0A /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E407A3C20A4A0B90084BB0A /* CGPoint.swift */; };
 		4E407A3F20A4AB2D0084BB0A /* SoundWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E407A3E20A4AB2D0084BB0A /* SoundWaveView.swift */; };
@@ -67,16 +66,8 @@
 		4EF7151B210F1A7400149EAE /* Coordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E62B66E2091EB3C00EC4EBD /* Coordinating.swift */; };
 		4EF7151C210F1A7B00149EAE /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E803D242091DAE100E3B6F2 /* API.swift */; };
 		4EF7151D210F1A7B00149EAE /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E803D242091DAE100E3B6F2 /* API.swift */; };
-		4EF7151E210F1A7E00149EAE /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E803D172091CB6D00E3B6F2 /* schema.json */; };
-		4EF71520210F1A8000149EAE /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E803D172091CB6D00E3B6F2 /* schema.json */; };
-		4EF71521210F1A8200149EAE /* SearchUsers.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 4E803D212091D95D00E3B6F2 /* SearchUsers.graphql */; };
-		4EF71522210F1A8300149EAE /* SearchUsers.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 4E803D212091D95D00E3B6F2 /* SearchUsers.graphql */; };
 		4EF71523210F1A8600149EAE /* AnonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E803D1E2091CCA800E3B6F2 /* AnonAPI.swift */; };
 		4EF71524210F1A8600149EAE /* AnonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E803D1E2091CCA800E3B6F2 /* AnonAPI.swift */; };
-		4EF71525210F1A8900149EAE /* anon_schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E803D162091CB6D00E3B6F2 /* anon_schema.json */; };
-		4EF71526210F1A8900149EAE /* anon_schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E803D162091CB6D00E3B6F2 /* anon_schema.json */; };
-		4EF71527210F1A8C00149EAE /* CreateUser.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 4E803D1C2091CBEF00E3B6F2 /* CreateUser.graphql */; };
-		4EF71528210F1A8C00149EAE /* CreateUser.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 4E803D1C2091CBEF00E3B6F2 /* CreateUser.graphql */; };
 		4EF71529210F1A9F00149EAE /* AudioVisualizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E674D1C2094C70600906608 /* AudioVisualizationView.swift */; };
 		4EF7152B210F1AC300149EAE /* SoundWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E407A3E20A4AB2D0084BB0A /* SoundWaveView.swift */; };
 		4EF7152C210F1AC600149EAE /* VoiceMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB70CB7209EF4A400182833 /* VoiceMessageCell.swift */; };
@@ -94,6 +85,9 @@
 		4EF71539210F1B2F00149EAE /* SoundWaveCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF208FD209466ED006B0F0D /* SoundWaveCollectionViewController.swift */; };
 		4EF7153A210F1B3100149EAE /* ConversationCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF208FF20946705006B0F0D /* ConversationCollectionViewController.swift */; };
 		4EF7153B210F1B3500149EAE /* MessagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF2090120946780006B0F0D /* MessagingViewController.swift */; };
+		4EF7158F210F1CE600149EAE /* Anchorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF7154C210F1C7600149EAE /* Anchorage.framework */; };
+		4EF71590210F1CEA00149EAE /* GRDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF71589210F1C9E00149EAE /* GRDB.framework */; };
+		4EF71591210F1CF000149EAE /* Apollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF71563210F1C8100149EAE /* Apollo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,13 +97,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 4E2C1B052091A68200754E57;
 			remoteInfo = Tarradiddle;
-		};
-		4E2C1B122091A68200754E57 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4E2C1AE42091A62800754E57 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4E2C1AEB2091A62800754E57;
-			remoteInfo = "Tarradiddle-iOS";
 		};
 		4EF71549210F1C7600149EAE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -342,6 +329,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EF71591210F1CF000149EAE /* Apollo.framework in Frameworks */,
+				4EF71590210F1CEA00149EAE /* GRDB.framework in Frameworks */,
+				4EF7158F210F1CE600149EAE /* Anchorage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +353,7 @@
 				4E2C1B072091A68200754E57 /* TRAppProxy */,
 				4E2C1B142091A68300754E57 /* TRTests */,
 				4E2C1AED2091A62800754E57 /* Products */,
+				4EF7158E210F1CE600149EAE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -619,6 +610,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		4EF7158E210F1CE600149EAE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -681,7 +679,6 @@
 			);
 			dependencies = (
 				4E2C1B112091A68200754E57 /* PBXTargetDependency */,
-				4E2C1B132091A68200754E57 /* PBXTargetDependency */,
 			);
 			name = TRTests;
 			productName = TarradiddleTests;
@@ -912,11 +909,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EF71527210F1A8C00149EAE /* CreateUser.graphql in Resources */,
-				4EF71521210F1A8200149EAE /* SearchUsers.graphql in Resources */,
 				4E2C1AF72091A62A00754E57 /* Assets.xcassets in Resources */,
-				4EF71525210F1A8900149EAE /* anon_schema.json in Resources */,
-				4EF7151E210F1A7E00149EAE /* schema.json in Resources */,
 				4E976878209F10BF004122B3 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -925,11 +918,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EF71528210F1A8C00149EAE /* CreateUser.graphql in Resources */,
-				4EF71522210F1A8300149EAE /* SearchUsers.graphql in Resources */,
-				4E2C1B282091A76400754E57 /* LaunchScreen.storyboard in Resources */,
-				4EF71526210F1A8900149EAE /* anon_schema.json in Resources */,
-				4EF71520210F1A8000149EAE /* schema.json in Resources */,
 				4E2C1B262091A74300754E57 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1062,11 +1050,6 @@
 			isa = PBXTargetDependency;
 			target = 4E2C1B052091A68200754E57 /* TRAppProxy */;
 			targetProxy = 4E2C1B102091A68200754E57 /* PBXContainerItemProxy */;
-		};
-		4E2C1B132091A68200754E57 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4E2C1AEB2091A62800754E57 /* TRiOS */;
-			targetProxy = 4E2C1B122091A68200754E57 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
