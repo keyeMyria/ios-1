@@ -1,5 +1,4 @@
 //import UIKit
-//import RxSwift
 //
 //final class AuthCoordinator: BaseCoordinator<Account> {
 //  // tries to log in or fetch user id from user defaults and token from keychain
@@ -40,3 +39,37 @@
 //} else {
 //  print(currentUser?.iCloudID, currentUser?.id, currentUser?.token)
 //}
+
+import Foundation
+
+protocol AuthenticationCoordinatorResult: class {
+  var finishFlow: ((Result<AccountType, AnyError>) -> Void)? { get set }
+}
+
+final class AuthenticationCoordinator: Coordinating, AuthenticationCoordinatorResult {
+  var finishFlow: ((Result<AccountType, AnyError>) -> Void)?
+  var childCoordinators: [Coordinating] = []
+
+  private let accountService: AccountServiceType
+
+  init(accountService: AccountServiceType) {
+    self.accountService = accountService
+  }
+
+  func start() {
+    if let account = Account(from: UserDefaults.standard) {
+      finishFlow?(.success(account))
+    } else {
+      accountService.getCloudID { [weak self] result in
+        guard let `self` = self else { return }
+        switch result {
+        case let .success(cloudID):
+          // TODO
+          self.finishFlow?(.success(Account(userID: 123, cloudID: cloudID)))
+        case let .failure(error):
+          self.finishFlow?(.failure(error))
+        }
+      }
+    }
+  }
+}

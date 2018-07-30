@@ -26,12 +26,4 @@ final class AppAccount {
     self.iCloudID = iCloudID
     authStatus = .authenticated
   }
-
-  struct Settings {
-    struct Notifications {
-      
-    }
-
-    var notifications = Notifications()
-  }
 }

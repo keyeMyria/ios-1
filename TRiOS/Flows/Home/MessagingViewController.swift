@@ -4,6 +4,7 @@ import Anchorage
 final class MessagingViewController: UIViewController {
 //  let viewModel: MessagingViewModelType!
   private let onSettingsTapped: () -> Void
+  private let onUserSearchTapped: () -> Void
   private let soundWavesViewController = SoundWavesViewController(voiceMessages: [], onVoiceMessageSelected: { _ in })
   private let conversationsViewController = ConversationsViewController(conversations: [], onConversationSelect: { _ in })
 
@@ -15,8 +16,9 @@ final class MessagingViewController: UIViewController {
   }
 
   // TODO also pass voice messages datasource and conversations data source
-  init(onSettingsTapped: @escaping () -> Void) {
+  init(onSettingsTapped: @escaping () -> Void, onUserSearchTapped: @escaping () -> Void) {
     self.onSettingsTapped = onSettingsTapped
+    self.onUserSearchTapped = onUserSearchTapped
     super.init(nibName: nil, bundle: nil)
   }
 
