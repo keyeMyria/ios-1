@@ -1,0 +1,3 @@
+github "Raizlabs/Anchorage" ~> 4.0
+github "groue/GRDB.swift" ~> 3.0
+github "apollostack/apollo-ios" ~> 0.9

@@ -1,7 +1,9 @@
-//: [Previous](@previous)
+import PlaygroundSupport
+import UIKit
+@testable import Tarradiddle
 
-import Foundation
+// setup
 
-var str = "Hello, playground"
 
-//: [Next](@next)
+
+// try it out

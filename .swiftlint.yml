@@ -1,8 +1,10 @@
 excluded:
   - Frameworks
-  - TRApp/GraphQL
+  - TRAPI/GraphQL
+  - Tarradiddle.playground
 identifier_name:
   excluded:
     - id
     - db
+    - vc
     - t

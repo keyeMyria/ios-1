@@ -5,5 +5,16 @@
         <page name='User login'/>
         <page name='Create User'/>
         <page name='User Service'/>
+        <page name='User Search Screen'/>
+        <page name='Account Service'/>
+        <page name='Settings Screen'/>
+        <page name='Coversation Collection View'/>
+        <page name='Sound Wave View'/>
+        <page name='Sound Waves Collection View'/>
+        <page name='Try Anchorage'/>
+        <page name='Messaging Screen'/>
+        <page name='Fake Audio Recorder'/>
+        <page name='User Defaults'/>
+        <page name='Database'/>
     </pages>
 </playground>

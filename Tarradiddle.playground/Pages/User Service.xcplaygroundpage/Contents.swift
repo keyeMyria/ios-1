@@ -1,9 +1,12 @@
-@testable import Tarradiddle
+@testable import TRApp
+
+import Apollo
 
 // setup
 
 let dbQueue = try AppDatabase.openDatabase(.inMemory)
-let service = UserService(dbQueue: dbQueue)
+let apollo = ApolloClient(url: "")
+let service = UserService(apollo: apollo, dbQueue: dbQueue)
 
 // try it out
 
