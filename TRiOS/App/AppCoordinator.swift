@@ -49,7 +49,7 @@ final class AppCoordinator: Coordinating {
     let coordinator = OnboardingCoordinator(router: router)
     coordinator.finishFlow = { [weak self, weak coordinator] in
       guard let `self` = self, let coordinator = coordinator else { return }
-      Account.hasSeenOnboarding = true
+      AppAccount.hasSeenOnboarding = true
       self.start()
       self.remove(childCoordinator: coordinator)
     }

@@ -107,8 +107,6 @@
 		4EF715CE210F680600149EAE /* TextInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715CC210F680600149EAE /* TextInputCell.swift */; };
 		4EF715D0210F6BE300149EAE /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715CF210F6BE300149EAE /* AudioPlayer.swift */; };
 		4EF715D1210F6BE300149EAE /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715CF210F6BE300149EAE /* AudioPlayer.swift */; };
-		4EF715D3210F6CA700149EAE /* AppUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715D2210F6CA700149EAE /* AppUserDefaults.swift */; };
-		4EF715D4210F6CA700149EAE /* AppUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715D2210F6CA700149EAE /* AppUserDefaults.swift */; };
 		4EF715D6210F8D7E00149EAE /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715D5210F8D7E00149EAE /* AppSettings.swift */; };
 		4EF715D7210F8D7E00149EAE /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715D5210F8D7E00149EAE /* AppSettings.swift */; };
 		4EF715D9210F8DDE00149EAE /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715D8210F8DDE00149EAE /* OnboardingCoordinator.swift */; };
@@ -362,7 +360,6 @@
 		4EF715C9210F67B600149EAE /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		4EF715CC210F680600149EAE /* TextInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputCell.swift; sourceTree = "<group>"; };
 		4EF715CF210F6BE300149EAE /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
-		4EF715D2210F6CA700149EAE /* AppUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserDefaults.swift; sourceTree = "<group>"; };
 		4EF715D5210F8D7E00149EAE /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		4EF715D8210F8DDE00149EAE /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		4EF715DB210F8E0000149EAE /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -576,7 +573,6 @@
 				4E62B6792091EBEB00EC4EBD /* AppDatabase.swift */,
 				4E62B6702091EB7900EC4EBD /* AppCoordinator.swift */,
 				4E3FD77620AB34E3005E34A1 /* SupportDatabase.swift */,
-				4EF715D2210F6CA700149EAE /* AppUserDefaults.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -1106,7 +1102,6 @@
 				4EF7153B210F1B3500149EAE /* MessagingViewController.swift in Sources */,
 				4EF71517210F1A3B00149EAE /* Friendship.swift in Sources */,
 				4EF7150E210F19D800149EAE /* Cloud.swift in Sources */,
-				4EF715D3210F6CA700149EAE /* AppUserDefaults.swift in Sources */,
 				4EF7152B210F1AC300149EAE /* SoundWaveView.swift in Sources */,
 				4EF715E5210F8EA600149EAE /* HomeCoordinator.swift in Sources */,
 				4EF7151A210F1A6F00149EAE /* Bindable.swift in Sources */,
@@ -1167,7 +1162,6 @@
 				4EF2090020946705006B0F0D /* ConversationsViewController.swift in Sources */,
 				4E62B6A0209317F100EC4EBD /* Bindable.swift in Sources */,
 				4E62B66F2091EB3C00EC4EBD /* Coordinating.swift in Sources */,
-				4EF715D4210F6CA700149EAE /* AppUserDefaults.swift in Sources */,
 				4EF7150D210F19D300149EAE /* SupportDatabase.swift in Sources */,
 				4EF715E6210F8EA600149EAE /* HomeCoordinator.swift in Sources */,
 				4EDD664920A9DAE20010418F /* UserDefaults.swift in Sources */,

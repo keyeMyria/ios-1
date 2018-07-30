@@ -43,11 +43,11 @@
 import Foundation
 
 protocol AuthenticationCoordinatorResult: class {
-  var finishFlow: ((Result<AccountType, AnyError>) -> Void)? { get set }
+  var finishFlow: ((Result<AppAccountType, AnyError>) -> Void)? { get set }
 }
 
 final class AuthenticationCoordinator: Coordinating, AuthenticationCoordinatorResult {
-  var finishFlow: ((Result<AccountType, AnyError>) -> Void)?
+  var finishFlow: ((Result<AppAccountType, AnyError>) -> Void)?
   var childCoordinators: [Coordinating] = []
 
   private let accountService: AccountServiceType
@@ -57,7 +57,7 @@ final class AuthenticationCoordinator: Coordinating, AuthenticationCoordinatorRe
   }
 
   func start() {
-    if let account = Account(from: UserDefaults.standard) {
+    if let account = AppAccount(from: UserDefaults.standard) {
       finishFlow?(.success(account))
     } else {
       accountService.getCloudID { [weak self] result in
@@ -65,7 +65,7 @@ final class AuthenticationCoordinator: Coordinating, AuthenticationCoordinatorRe
         switch result {
         case let .success(cloudID):
           // TODO
-          self.finishFlow?(.success(Account(userID: 123, cloudID: cloudID)))
+          self.finishFlow?(.success(AppAccount(userID: 123, cloudID: cloudID)))
         case let .failure(error):
           self.finishFlow?(.failure(error))
         }
