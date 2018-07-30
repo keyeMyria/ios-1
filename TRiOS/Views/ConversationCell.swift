@@ -1,13 +1,7 @@
 import UIKit
 import Anchorage
-import RxSwift
-import RxCocoa
-//import Action
 
-// TODO test for memory leaks
 final class ConversationCell: UICollectionViewCell {
-  private let bag = DisposeBag()
-
   var viewModel: VoiceMessagesViewModelType! // TODO actually, maybe just pass actions to it
   var conversation: Conversation!
   let imageView = UIImageView()

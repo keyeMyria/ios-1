@@ -1,15 +1,8 @@
 import Foundation
-//import GRDB /// to get uder from userID
 
-/// Models the account of the current user of the app
-struct Account {
-
-  /// Authentication status of the current account
-  enum Status {
-    /// Has an API token, iCloudID, and a user ID
+final class AppAccount {
+  enum AuthStatus {
     case authenticated
-
-    /// Doesn't have an API token, iCloudID, and a user ID
     case unauthenticated
   }
 
@@ -34,7 +27,6 @@ struct Account {
     status = .authenticated
   }
 
-  /// Models current account's settings
   struct Settings {
     struct Notifications {
       
@@ -43,5 +35,3 @@ struct Account {
     var notifications = Notifications()
   }
 }
-
-// move out networking to TarradiddleAPI?
