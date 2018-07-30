@@ -1,11 +1,7 @@
-import Foundation
-import RxSwift
-import RxCocoa
-
 protocol VoiceMessagesViewModelType {
 
-  var voiceMessages: Observable<[VoiceMessage]> { get }
-  var currentVoiceMessage: Variable<VoiceMessage?> { get } // TODO
+//  var voiceMessages: Observable<[VoiceMessage]> { get }
+//  var currentVoiceMessage: Variable<VoiceMessage?> { get } // TODO
 //  var currentVoiceMessageProgress: BehaviorRelay<Int> { get } // TODO
 
 //  var conversations: Observable<[Conversation]> { get }
@@ -30,22 +26,22 @@ protocol VoiceMessagesViewModelType {
 // currentConversation drives voiceMessages
 //
 
-final class VoiceMessagesViewModel: VoiceMessagesViewModelType {
-//  var currentVoiceMessage: Variable<VoiceMessage>
-
-  let voiceMessages = Observable.just((1...10).map {
-    return VoiceMessage(
-      id: $0,
-      authorID: $0,
-      conversationID: $0,
-      meterLevelsUnscaled: (1...20).map { $0 * 10 }
-    )
-  })
-
-  let currentVoiceMessage = Variable<VoiceMessage?>(nil)
-
-  // audioService, db
-  init() {
-
-  }
-}
+//final class VoiceMessagesViewModel: VoiceMessagesViewModelType {
+////  var currentVoiceMessage: Variable<VoiceMessage>
+//
+//  let voiceMessages = Observable.just((1...10).map {
+//    return VoiceMessage(
+//      id: $0,
+//      authorID: $0,
+//      conversationID: $0,
+//      meterLevelsUnscaled: (1...20).map { $0 * 10 }
+//    )
+//  })
+//
+//  let currentVoiceMessage = Variable<VoiceMessage?>(nil)
+//
+//  // audioService, db
+//  init() {
+//
+//  }
+//}

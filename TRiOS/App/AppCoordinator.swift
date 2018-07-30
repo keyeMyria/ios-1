@@ -32,7 +32,7 @@ final class AppCoordinator: Coordinating {
   }
 
   func start() {
-    if Account.hasSeenOnboarding {
+    if AppAccount.hasSeenOnboarding {
       if isAuthenticated {
         runMainFlow()
       } else {

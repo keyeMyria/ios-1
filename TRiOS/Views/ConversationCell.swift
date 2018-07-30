@@ -2,8 +2,8 @@ import UIKit
 import Anchorage
 
 final class ConversationCell: UICollectionViewCell {
-  var viewModel: VoiceMessagesViewModelType! // TODO actually, maybe just pass actions to it
-  var conversation: Conversation!
+//  var viewModel: VoiceMessagesViewModelType! // TODO actually, maybe just pass actions to it
+  var conversation: Conversation?
   let imageView = UIImageView()
   let nameLabel = UILabel()
 
@@ -25,34 +25,34 @@ final class ConversationCell: UICollectionViewCell {
     let longPress = UILongPressGestureRecognizer()
     addGestureRecognizer(longPress)
 
-    longPress.rx.event
-      .filter { _ in
-        // TODO what if longpress is not on the currently selected cell
-        // move or move and start recording?
-//        return conversation.id == viewModel.currentConversation.value.id
-        return true
-      }
-      .map { $0.state }
-      .subscribe(onNext: { state in
-        switch state {
-        case .began:
-          // TODO longpress on a cell -> start recording
-          // start recording
-          return
-        case .ended:
-          // TODO longpress ended -> finish recording, start sending (service detail)
-          // finish recording
-          return
-        case .cancelled:
-          // TODO longpress cancel -> cancel recording
-          // cancel recording
-          return
-        default:
-          return
-        }
-      })
-//      .bind(to: viewModel.)
-      .disposed(by: bag) // TODO use some dispose tricks from the book
+//    longPress.rx.event
+//      .filter { _ in
+//        // TODO what if longpress is not on the currently selected cell
+//        // move or move and start recording?
+////        return conversation.id == viewModel.currentConversation.value.id
+//        return true
+//      }
+//      .map { $0.state }
+//      .subscribe(onNext: { state in
+//        switch state {
+//        case .began:
+//          // TODO longpress on a cell -> start recording
+//          // start recording
+//          return
+//        case .ended:
+//          // TODO longpress ended -> finish recording, start sending (service detail)
+//          // finish recording
+//          return
+//        case .cancelled:
+//          // TODO longpress cancel -> cancel recording
+//          // cancel recording
+//          return
+//        default:
+//          return
+//        }
+//      })
+////      .bind(to: viewModel.)
+//      .disposed(by: bag) // TODO use some dispose tricks from the book
   }
 
   func configure(with conversation: Conversation) {

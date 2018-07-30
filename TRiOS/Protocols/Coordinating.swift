@@ -53,3 +53,22 @@
 //    })
 //  }
 //}
+
+protocol Coordinating: class {
+  var childCoordinators: [Coordinating] { get set }
+
+  func start()
+}
+
+extension Coordinating {
+  func add(childCoordinator: Coordinating) {
+    for element in childCoordinators { if element === childCoordinator { return } }
+    childCoordinators.append(childCoordinator)
+  }
+
+  func remove(childCoordinator: Coordinating?) {
+    guard let childCoordinator = childCoordinator, !childCoordinators.isEmpty else { return }
+    childCoordinators = childCoordinators.filter { $0 !== childCoordinator }
+  }
+}
+

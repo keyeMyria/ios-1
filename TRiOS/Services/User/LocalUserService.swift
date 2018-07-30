@@ -24,17 +24,17 @@ protocol LocalUserServiceType {
 //  func remoteUserSearch(query: String, callback: @escaping (UsersQuery.Data) -> Void)
 }
 
-final class LocalUserService: UserServiceType {
+final class LocalUserService: LocalUserServiceType {
   private let dbQueue: DatabaseQueue
 
-  init(dbPool: DatabasePool) {
-    self.dbPool = dbPool
+  init(dbQueue: DatabaseQueue) {
+    self.dbQueue = dbQueue
   }
 
   func createUser(id: Int64, handle: String, callback: @escaping (Result<User, AnyError>) -> Void) {
     DispatchQueue.global(qos: .userInteractive).async {
       do {
-        let user = try self.dbQueue.write { try User(id: id, handle: handle).insert(db) }
+        let user = try self.dbQueue.write { try User(id: id, handle: handle).insert($0) }
         DispatchQueue.main.async { callback(.success(user)) }
       } catch {
         // TODO log error

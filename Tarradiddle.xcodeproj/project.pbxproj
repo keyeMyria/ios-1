@@ -17,7 +17,7 @@
 		4E407A3F20A4AB2D0084BB0A /* SoundWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E407A3E20A4AB2D0084BB0A /* SoundWaveView.swift */; };
 		4E62B6682091E56600EC4EBD /* UserSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E62B6672091E56600EC4EBD /* UserSearchViewModel.swift */; };
 		4E62B66A2091E5A000EC4EBD /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E62B6692091E5A000EC4EBD /* ViewModelType.swift */; };
-		4E62B66C2091E65B00EC4EBD /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E62B66B2091E65B00EC4EBD /* UserListViewController.swift */; };
+		4E62B66C2091E65B00EC4EBD /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E62B66B2091E65B00EC4EBD /* UsersViewController.swift */; };
 		4E62B66F2091EB3C00EC4EBD /* Coordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E62B66E2091EB3C00EC4EBD /* Coordinating.swift */; };
 		4E62B6742091EBB300EC4EBD /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E62B6732091EBB300EC4EBD /* AuthService.swift */; };
 		4E62B6772091EBC600EC4EBD /* AppAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E62B6762091EBC600EC4EBD /* AppAccount.swift */; };
@@ -36,8 +36,8 @@
 		4EDD664920A9DAE20010418F /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD664820A9DAE20010418F /* UserDefaults.swift */; };
 		4EDD664B20A9E0A00010418F /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD664A20A9E0A00010418F /* Cloud.swift */; };
 		4EF208FC2094568D006B0F0D /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF208FB2094568D006B0F0D /* AudioRecorder.swift */; };
-		4EF208FE209466ED006B0F0D /* SoundWaveCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF208FD209466ED006B0F0D /* SoundWaveCollectionViewController.swift */; };
-		4EF2090020946705006B0F0D /* ConversationCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF208FF20946705006B0F0D /* ConversationCollectionViewController.swift */; };
+		4EF208FE209466ED006B0F0D /* SoundWavesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF208FD209466ED006B0F0D /* SoundWavesViewController.swift */; };
+		4EF2090020946705006B0F0D /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF208FF20946705006B0F0D /* ConversationsViewController.swift */; };
 		4EF2090220946780006B0F0D /* MessagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF2090120946780006B0F0D /* MessagingViewController.swift */; };
 		4EF2090420947090006B0F0D /* Friendship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF2090320947090006B0F0D /* Friendship.swift */; };
 		4EF209062094709B006B0F0D /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF209052094709B006B0F0D /* Conversation.swift */; };
@@ -81,9 +81,9 @@
 		4EF71535210F1B1100149EAE /* VoiceMessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF2090B20948077006B0F0D /* VoiceMessagesViewModel.swift */; };
 		4EF71536210F1B1800149EAE /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E62B6692091E5A000EC4EBD /* ViewModelType.swift */; };
 		4EF71537210F1B1C00149EAE /* UserSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E62B6672091E56600EC4EBD /* UserSearchViewModel.swift */; };
-		4EF71538210F1B2D00149EAE /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E62B66B2091E65B00EC4EBD /* UserListViewController.swift */; };
-		4EF71539210F1B2F00149EAE /* SoundWaveCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF208FD209466ED006B0F0D /* SoundWaveCollectionViewController.swift */; };
-		4EF7153A210F1B3100149EAE /* ConversationCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF208FF20946705006B0F0D /* ConversationCollectionViewController.swift */; };
+		4EF71538210F1B2D00149EAE /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E62B66B2091E65B00EC4EBD /* UsersViewController.swift */; };
+		4EF71539210F1B2F00149EAE /* SoundWavesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF208FD209466ED006B0F0D /* SoundWavesViewController.swift */; };
+		4EF7153A210F1B3100149EAE /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF208FF20946705006B0F0D /* ConversationsViewController.swift */; };
 		4EF7153B210F1B3500149EAE /* MessagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF2090120946780006B0F0D /* MessagingViewController.swift */; };
 		4EF7158F210F1CE600149EAE /* Anchorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF7154C210F1C7600149EAE /* Anchorage.framework */; };
 		4EF71590210F1CEA00149EAE /* GRDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF71589210F1C9E00149EAE /* GRDB.framework */; };
@@ -94,6 +94,12 @@
 		4EF71598210F28E900149EAE /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF71596210F28E900149EAE /* Box.swift */; };
 		4EF7159C210F29E300149EAE /* LocalUserServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF7159B210F29E300149EAE /* LocalUserServiceSpec.swift */; };
 		4EF7159E210F2B9300149EAE /* LocalUserServicePerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF7159D210F2B9300149EAE /* LocalUserServicePerformanceTest.swift */; };
+		4EF715B9210F4F6C00149EAE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715B8210F4F6C00149EAE /* Router.swift */; };
+		4EF715BA210F4F6C00149EAE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715B8210F4F6C00149EAE /* Router.swift */; };
+		4EF715BC210F4F8F00149EAE /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715BB210F4F8F00149EAE /* Then.swift */; };
+		4EF715BD210F4F8F00149EAE /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715BB210F4F8F00149EAE /* Then.swift */; };
+		4EF715BF210F4FA400149EAE /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715BE210F4FA400149EAE /* Presentable.swift */; };
+		4EF715C0210F4FA400149EAE /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715BE210F4FA400149EAE /* Presentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -284,7 +290,7 @@
 		4E407A3E20A4AB2D0084BB0A /* SoundWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWaveView.swift; sourceTree = "<group>"; };
 		4E62B6672091E56600EC4EBD /* UserSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchViewModel.swift; sourceTree = "<group>"; };
 		4E62B6692091E5A000EC4EBD /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
-		4E62B66B2091E65B00EC4EBD /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
+		4E62B66B2091E65B00EC4EBD /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		4E62B66E2091EB3C00EC4EBD /* Coordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinating.swift; sourceTree = "<group>"; };
 		4E62B6702091EB7900EC4EBD /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		4E62B6732091EBB300EC4EBD /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -310,8 +316,8 @@
 		4EDD664820A9DAE20010418F /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		4EDD664A20A9E0A00010418F /* Cloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
 		4EF208FB2094568D006B0F0D /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
-		4EF208FD209466ED006B0F0D /* SoundWaveCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWaveCollectionViewController.swift; sourceTree = "<group>"; };
-		4EF208FF20946705006B0F0D /* ConversationCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCollectionViewController.swift; sourceTree = "<group>"; };
+		4EF208FD209466ED006B0F0D /* SoundWavesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWavesViewController.swift; sourceTree = "<group>"; };
+		4EF208FF20946705006B0F0D /* ConversationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
 		4EF2090120946780006B0F0D /* MessagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingViewController.swift; sourceTree = "<group>"; };
 		4EF2090320947090006B0F0D /* Friendship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friendship.swift; sourceTree = "<group>"; };
 		4EF209052094709B006B0F0D /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
@@ -325,6 +331,9 @@
 		4EF71596210F28E900149EAE /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		4EF7159B210F29E300149EAE /* LocalUserServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUserServiceSpec.swift; sourceTree = "<group>"; };
 		4EF7159D210F2B9300149EAE /* LocalUserServicePerformanceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUserServicePerformanceTest.swift; sourceTree = "<group>"; };
+		4EF715B8210F4F6C00149EAE /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		4EF715BB210F4F8F00149EAE /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
+		4EF715BE210F4FA400149EAE /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -429,9 +438,9 @@
 		4E2C1B2A2091A79900754E57 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				4E62B66B2091E65B00EC4EBD /* UserListViewController.swift */,
-				4EF208FD209466ED006B0F0D /* SoundWaveCollectionViewController.swift */,
-				4EF208FF20946705006B0F0D /* ConversationCollectionViewController.swift */,
+				4E62B66B2091E65B00EC4EBD /* UsersViewController.swift */,
+				4EF208FD209466ED006B0F0D /* SoundWavesViewController.swift */,
+				4EF208FF20946705006B0F0D /* ConversationsViewController.swift */,
 				4EF2090120946780006B0F0D /* MessagingViewController.swift */,
 			);
 			path = ViewControllers;
@@ -496,6 +505,8 @@
 			children = (
 				4E62B66E2091EB3C00EC4EBD /* Coordinating.swift */,
 				4E62B69F209317F100EC4EBD /* Bindable.swift */,
+				4EF715BB210F4F8F00149EAE /* Then.swift */,
+				4EF715BE210F4FA400149EAE /* Presentable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -633,6 +644,7 @@
 				4ECCAF5420AC1E1E001250F7 /* Logger.swift */,
 				4EF71593210F28C700149EAE /* Result.swift */,
 				4EF71596210F28E900149EAE /* Box.swift */,
+				4EF715B8210F4F6C00149EAE /* Router.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -996,11 +1008,11 @@
 				4EF7151C210F1A7B00149EAE /* API.swift in Sources */,
 				4EF71594210F28C800149EAE /* Result.swift in Sources */,
 				4EF71529210F1A9F00149EAE /* AudioVisualizationView.swift in Sources */,
-				4EF71539210F1B2F00149EAE /* SoundWaveCollectionViewController.swift in Sources */,
+				4EF71539210F1B2F00149EAE /* SoundWavesViewController.swift in Sources */,
 				4EF71512210F1A2D00149EAE /* AudioRecorder.swift in Sources */,
 				4EF71597210F28E900149EAE /* Box.swift in Sources */,
 				4EF71514210F1A3100149EAE /* Logger.swift in Sources */,
-				4EF71538210F1B2D00149EAE /* UserListViewController.swift in Sources */,
+				4EF71538210F1B2D00149EAE /* UsersViewController.swift in Sources */,
 				4EF71518210F1A3C00149EAE /* Conversation.swift in Sources */,
 				4EF7152E210F1ACD00149EAE /* UserDefaults.swift in Sources */,
 				4EF7151B210F1A7400149EAE /* Coordinating.swift in Sources */,
@@ -1010,7 +1022,7 @@
 				4EF7150E210F19D800149EAE /* Cloud.swift in Sources */,
 				4EF7152B210F1AC300149EAE /* SoundWaveView.swift in Sources */,
 				4EF7151A210F1A6F00149EAE /* Bindable.swift in Sources */,
-				4EF7153A210F1B3100149EAE /* ConversationCollectionViewController.swift in Sources */,
+				4EF7153A210F1B3100149EAE /* ConversationsViewController.swift in Sources */,
 				4EF71509210F151700149EAE /* AppCoordinator.swift in Sources */,
 				4EF71507210F14CD00149EAE /* AppDatabase.swift in Sources */,
 				4EF71519210F1A3E00149EAE /* VoiceMessage.swift in Sources */,
@@ -1019,11 +1031,13 @@
 				4EF71513210F1A2F00149EAE /* LocalConversationService.swift in Sources */,
 				4EF71532210F1B0800149EAE /* AuthCoordinator.swift in Sources */,
 				4EF7150F210F1A1B00149EAE /* AuthService.swift in Sources */,
+				4EF715BC210F4F8F00149EAE /* Then.swift in Sources */,
 				4EF71534210F1B0F00149EAE /* ConversationsViewModel.swift in Sources */,
 				4EF71530210F1AD100149EAE /* Bundle.swift in Sources */,
 				4EF71511210F1A2A00149EAE /* LocalUserService.swift in Sources */,
 				4EF7152F210F1ACF00149EAE /* CGPoint.swift in Sources */,
 				4EF71510210F1A2800149EAE /* AccountService.swift in Sources */,
+				4EF715B9210F4F6C00149EAE /* Router.swift in Sources */,
 				4EF71537210F1B1C00149EAE /* UserSearchViewModel.swift in Sources */,
 				4EF7152D210F1AC800149EAE /* ConversationCell.swift in Sources */,
 				4EF71508210F14DB00149EAE /* SupportDatabase.swift in Sources */,
@@ -1031,6 +1045,7 @@
 				4EF71523210F1A8600149EAE /* AnonAPI.swift in Sources */,
 				4E2C1AF02091A62800754E57 /* AppDelegate.swift in Sources */,
 				4EF71535210F1B1100149EAE /* VoiceMessagesViewModel.swift in Sources */,
+				4EF715BF210F4FA400149EAE /* Presentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1051,7 +1066,7 @@
 				4EF208FC2094568D006B0F0D /* AudioRecorder.swift in Sources */,
 				4E62B66A2091E5A000EC4EBD /* ViewModelType.swift in Sources */,
 				4EF2090C20948077006B0F0D /* VoiceMessagesViewModel.swift in Sources */,
-				4EF2090020946705006B0F0D /* ConversationCollectionViewController.swift in Sources */,
+				4EF2090020946705006B0F0D /* ConversationsViewController.swift in Sources */,
 				4E62B6A0209317F100EC4EBD /* Bindable.swift in Sources */,
 				4E62B66F2091EB3C00EC4EBD /* Coordinating.swift in Sources */,
 				4EF7150D210F19D300149EAE /* SupportDatabase.swift in Sources */,
@@ -1061,12 +1076,15 @@
 				4EF2090A20947362006B0F0D /* LocalConversationService.swift in Sources */,
 				4EF71598210F28E900149EAE /* Box.swift in Sources */,
 				4EF71524210F1A8600149EAE /* AnonAPI.swift in Sources */,
+				4EF715C0210F4FA400149EAE /* Presentable.swift in Sources */,
 				4EF2090420947090006B0F0D /* Friendship.swift in Sources */,
 				4E62B6772091EBC600EC4EBD /* AppAccount.swift in Sources */,
+				4EF715BA210F4F6C00149EAE /* Router.swift in Sources */,
 				4EB70CB6209E577300182833 /* ConversationsViewModel.swift in Sources */,
-				4EF208FE209466ED006B0F0D /* SoundWaveCollectionViewController.swift in Sources */,
+				4EF208FE209466ED006B0F0D /* SoundWavesViewController.swift in Sources */,
+				4EF715BD210F4F8F00149EAE /* Then.swift in Sources */,
 				4EF2090220946780006B0F0D /* MessagingViewController.swift in Sources */,
-				4E62B66C2091E65B00EC4EBD /* UserListViewController.swift in Sources */,
+				4E62B66C2091E65B00EC4EBD /* UsersViewController.swift in Sources */,
 				4EDD664B20A9E0A00010418F /* Cloud.swift in Sources */,
 				4E62B6A220931E3000EC4EBD /* LocalUserService.swift in Sources */,
 				4EF7150B210F19CB00149EAE /* AppDatabase.swift in Sources */,

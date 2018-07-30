@@ -1,3 +1,5 @@
+//swiftlint:disable force_try
+
 import XCTest
 @testable import TRAppProxy
 import GRDB

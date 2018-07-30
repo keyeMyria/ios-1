@@ -7,7 +7,7 @@ final class AppAccount {
   }
 
   // Make into computed variable and use .authenticated(userID, apiToken, iCloudID)?
-  var status: Status = .unauthenticated
+  var authStatus: AuthStatus = .unauthenticated
 
   /// has one user id (user data can be looked up from the saved_users table)
   let userID: Int64

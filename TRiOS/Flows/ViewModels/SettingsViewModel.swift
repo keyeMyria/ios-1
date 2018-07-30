@@ -1,5 +1,3 @@
-import RxSwift
-
 protocol SettingsViewModelType {
 
 }
