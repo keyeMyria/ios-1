@@ -12,7 +12,7 @@ struct User {
 extension User {
   // TODO need it?
   init(id: Int64, handle: String) {
-    self.id
+    self.id = id
     self.handle = handle
     self.insertedAt = nil
   }

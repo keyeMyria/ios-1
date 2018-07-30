@@ -24,7 +24,7 @@ final class AppAccount {
     self.userID = userID
     self.apiToken = apiToken
     self.iCloudID = iCloudID
-    status = .authenticated
+    authStatus = .authenticated
   }
 
   struct Settings {

@@ -44,8 +44,9 @@ extension SoundWavesViewController {
 
   override func collectionView(_ collectionView: UICollectionView,
                                cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    //// print("[currentWidths] setting \(row) to \(SoundWaveView.requiredWidth(meteringLevelsCount: voiceMessage.meterLevelsUnscaled.count))")
-    ////        self.currentWidths[row] = SoundWaveView.requiredWidth(meteringLevelsCount: voiceMessage.meterLevelsUnscaled.count)
+// let requiredWidth = SoundWaveView.requiredWidth(meteringLevelsCount: voiceMessage.meterLevelsUnscaled.count)
+// print("[currentWidths] setting \(row) to \(requiredWidth)")
+// currentWidths[row] = requiredWidth
     // swiftlint:disable force_cast
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                                   for: indexPath) as! VoiceMessageCell

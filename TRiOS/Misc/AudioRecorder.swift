@@ -41,9 +41,8 @@ import AVFoundation
 import Foundation
 import AVFoundation
 
-// from https://www.youtube.com/watch?v=TZtf40cBltg
 final class AudioRecorder: NSObject {
-  static let shared = AudioRecorderManager()
+  static let shared = AudioRecorder()
 
   var recordingSession: AVAudioSession!
   var recorder: AVAudioRecorder!
@@ -54,6 +53,7 @@ final class AudioRecorder: NSObject {
   var averagePower: Float = 0
   var peakPower: Float = 0
 
+  // TODO throw
   func setup() {
     recordingSession = AVAudioSession.sharedInstance()
     do {
@@ -72,9 +72,9 @@ final class AudioRecorder: NSObject {
   }
 
   func startRecording() {
-    filename = String.random(length: 20)
+    filename = UUID().uuidString
     // aac_ls?
-    let url = AudioRecorderManager.getUserPath()!.appendingPathComponent(filename + ".m4a")
+    let url = getUserPath()!.appendingPathComponent(filename + ".m4a")
     let audioURL = URL.init(fileURLWithPath: url.path)
     let recordedSettings: [String: Any] = [
       AVFormatIDKey: NSNumber(value: kAudioFormatAppleLossless),
@@ -90,19 +90,22 @@ final class AudioRecorder: NSObject {
       recorder?.isMeteringEnabled = true
       recorder?.prepareToRecord()
       recorder?.record()
-
-      self.meterTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] timer in
-        if let recorder = self?.recorder {
-          recorder.updateMeters()
-          self?.averagePower = recorder.averagePower(forChannel: 0)
-          self?.peakPower = recorder.peakPower(forChannel: 0)
-        }
-      }
+      meterTimer = Timer.scheduledTimer(timeInterval: 0.1,
+                                        target: self,
+                                        selector: #selector(eachTick),
+                                        userInfo: nil,
+                                        repeats: true)
 
       print("recording \(filename).m4a")
     } catch {
       print("error recording")
     }
+  }
+
+  @objc private func eachTick() {
+    recorder.updateMeters()
+    averagePower = recorder.averagePower(forChannel: 0)
+    peakPower = recorder.peakPower(forChannel: 0)
   }
 
   func finishRecording() -> String {
@@ -116,7 +119,7 @@ final class AudioRecorder: NSObject {
   //    let audioURL = URL.init(fileURLWithPath: url.path)
   //    FileManager.default.trashItem(at: audioURL, resultingItemURL: <#T##AutoreleasingUnsafeMutablePointer<NSURL?>?#>)
   //  }
-  static private func getUserPath() -> URL? {
+  private func getUserPath() -> URL? {
     return try? FileManager.default.url(
       for: .applicationSupportDirectory,
       in: .userDomainMask,

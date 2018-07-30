@@ -61,6 +61,7 @@ extension ConversationsViewController {
   // adapted from https://gist.github.com/benjaminsnorris/a19cb14082b28027d183
   // TODO redo
   private func snapToCenter() {
+    guard let collectionView = collectionView else { return }
     var centerPoint = view.convert(view.center, to: collectionView)
     centerPoint.y = 50 // TODO
     var indexPath: IndexPath
@@ -68,7 +69,8 @@ extension ConversationsViewController {
     if let centerIndexPath = collectionView.indexPathForItem(at: centerPoint) {
       indexPath = centerIndexPath
     } else {
-      let shiftPoint = CGPoint(x: collectionViewLayout.minimumLineSpacing / 2 + 1, y: 0)
+      guard let layout = collectionViewLayout as? UICollectionViewFlowLayout else { return }
+      let shiftPoint = CGPoint(x: layout.minimumLineSpacing / 2 + 1, y: 0)
       if let leftIndexPath = collectionView.indexPathForItem(at: centerPoint - shiftPoint) {
         indexPath = leftIndexPath
       } else if let rightIndexPath = collectionView.indexPathForItem(at: centerPoint + shiftPoint) {
@@ -78,7 +80,7 @@ extension ConversationsViewController {
       }
     }
 
-    collectionView?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     onConversationSelect(conversations[indexPath.row])
   }
 }
@@ -100,12 +102,13 @@ extension ConversationsViewController: UICollectionViewDelegateFlowLayout {
 }
 
 // from https://gist.github.com/benjaminsnorris/a19cb14082b28027d183
-extension ConversationsViewController: UIScrollViewDelegate {
-  func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+extension ConversationsViewController {
+  override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
     snapToCenter()
   }
 
-  func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+  override func scrollViewDidEndDragging(_ scrollView: UIScrollView,
+                                         willDecelerate decelerate: Bool) {
     if !decelerate {
       snapToCenter()
     }

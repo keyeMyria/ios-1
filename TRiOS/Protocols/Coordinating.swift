@@ -71,4 +71,3 @@ extension Coordinating {
     childCoordinators = childCoordinators.filter { $0 !== childCoordinator }
   }
 }
-

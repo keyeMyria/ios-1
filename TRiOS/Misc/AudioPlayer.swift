@@ -8,7 +8,7 @@ extension Notification.Name {
 
 final class AudioPlayer: NSObject {
 
-  static let shared = AudioRecorderManager()
+//  static let shared = AudioRecorderManager()
 
   private var currentPlayer: AVAudioPlayer?
 

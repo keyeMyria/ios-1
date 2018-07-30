@@ -1,4 +1,4 @@
-// swiftlint:disable force_try
+// swiftlint:disable force_try identifier_name
 import Quick
 import Nimble
 import GRDB

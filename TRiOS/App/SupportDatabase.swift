@@ -1,7 +1,5 @@
 import GRDB
 
-// TODO maybe move to its own framework
-
 /// Unlike `AppDatabase`, this one is not required for the core functionality
 /// of the app.
 final class SupportDatabase {
@@ -64,7 +62,7 @@ final class SupportDatabase {
 
 //      try db.create(table: Tables.complaints) { t in
 //        t.column("id", .integer).primaryKey()
-//        t.column("friend_id", .integer).notNull().unique().references(Tables.users, onDelete: .cascade) // TODO read up on .cascade
+//        t.column("friend_id", .integer).notNull().unique().references(Tables.users, onDelete: .cascade)
 //      }
     }
 

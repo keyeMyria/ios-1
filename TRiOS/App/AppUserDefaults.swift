@@ -4,7 +4,7 @@ final class AppUserDefaults {
 
   private static let userIDKey = "userID"
 
-  // move to keychain?
+  // TODO move to keychain?
   private static let userTokenKey = "userToken"
   private static let userICloudIDKey = "userICloudID"
 

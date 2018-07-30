@@ -34,7 +34,11 @@ final class LocalUserService: LocalUserServiceType {
   func createUser(id: Int64, handle: String, callback: @escaping (Result<User, AnyError>) -> Void) {
     DispatchQueue.global(qos: .userInteractive).async {
       do {
-        let user = try self.dbQueue.write { try User(id: id, handle: handle).insert($0) }
+        let user = try self.dbQueue.write { db -> User in
+          let user = User(id: id, handle: handle)
+          try user.insert(db)
+          return user
+        }
         DispatchQueue.main.async { callback(.success(user)) }
       } catch {
         // TODO log error
@@ -54,7 +58,7 @@ final class LocalUserService: LocalUserServiceType {
 
   // TODO can be a box?
   // service.savedUsers: Box<[User]> computed property
-  func savedUsers(callback: @escaping (Result<[User], AnyError>) -> Void) {
+  func listUsers(callback: @escaping (Result<[User], AnyError>) -> Void) {
     DispatchQueue.global(qos: .userInteractive).async {
       do {
         let savedUsers = try self.dbQueue.read { try User.fetchAll($0) }
@@ -65,7 +69,7 @@ final class LocalUserService: LocalUserServiceType {
     }
   }
 
-  func localGetUser(id: Int64, callback: @escaping (Result<User?, AnyError>) -> Void) {
+  func getUser(id: Int64, callback: @escaping (Result<User?, AnyError>) -> Void) {
     // TODO correct qos?
     DispatchQueue.global(qos: .userInteractive).async {
       do {

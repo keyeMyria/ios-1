@@ -1,1 +1,1 @@
-
+protocol AuthServiceType {}

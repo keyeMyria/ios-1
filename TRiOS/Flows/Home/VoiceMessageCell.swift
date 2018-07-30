@@ -22,9 +22,9 @@ final class VoiceMessageCell: UICollectionViewCell {
   }
 
   func configure(with voiceMessage: VoiceMessage) {
-    meteringLevelsCount = voiceMessage.meterLevelsUnscaled.count
+//    meteringLevelsCount = voiceMessage.meterLevelsUnscaled.count
 //    print("[VoiceMessageCell.configure] meteringLevelsCount: \(meteringLevelsCount)")
-    soundWaveView.meteringLevels = voiceMessage.meterLevelsScaled
+//    soundWaveView.meteringLevels = voiceMessage.meterLevelsScaled
 //    sizeThatFits(.init(width: 0, height: 75))
   }
 
