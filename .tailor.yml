@@ -1,4 +1,5 @@
 exclude:
   - Carthage
+  - Tarradiddle.playground
 except:
   - function-whitespace
