@@ -1,0 +1,6 @@
+# TODO git@ is unnecessary, but fastlane fails to create some dirs if I remove it
+git_url("git@bitbucket.kluuf:kluufger/ios_match.git")
+git_branch("tarradiddle")
+type("development")
+app_identifier("lol.aah.Tarradiddle")
+username("intern@yolocast.wtf")

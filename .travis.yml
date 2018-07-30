@@ -1,0 +1,26 @@
+language: objective-c
+osx_image: xcode9.4
+xcode_project: Tarradiddle.xcodeproj
+
+cache:
+  directories:
+    - Carthage
+
+env:
+  global:
+    - LANG=en_US.UTF-8
+    - LC_ALL=en_US.UTF-8
+
+before_install:
+  - bundle install
+  - brew install carthage || true
+  - brew outdated carthage || brew upgrade carthage
+
+before_script:
+  - bundle exec danger
+  - make deps
+
+jobs:
+  include:
+    - stage: tests
+      script: fastlane tests

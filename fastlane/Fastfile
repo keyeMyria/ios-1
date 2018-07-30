@@ -1,0 +1,28 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Run tests (with simulator)"
+  lane :tests do
+    ENV["IS_FASTLANE"] = "true"
+    run_tests(scheme: "TRAppProxy", project: "Tarradiddle.xcodeproj")
+  end
+
+  desc "Run tests via xctool (without simulator)"
+  lane :fast_tests do
+    xctool(:"run-tests", [
+      "-test-sdk", "iphonesimulator11.4",
+      "--project", "'Tarradiddle.xcodeproj'",
+      "--scheme", "'TRAppProxy'"
+    ].join(" "))
+  end
+
+  desc "Push a new beta build to TestFlight"
+  lane :beta do
+    increment_build_number(xcodeproj: "Tarradiddle.xcodeproj")
+    build_app(scheme: "TRiOS", project: "Tarradiddle.xcodeproj")
+    upload_to_testflight
+  end
+end
