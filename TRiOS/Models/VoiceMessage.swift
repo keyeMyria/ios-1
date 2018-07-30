@@ -1,59 +1,18 @@
 import Foundation
 import GRDB
 
-struct VoiceMessage: Codable {
+struct VoiceMessage {
   let id: Int64
 //  var audioFileRemoteURL: String?
 //  let audioFileLocalPath: String
   let authorID: Int64
   let conversationID: Int64
   var insertedAt: Date?
-  let meterLevelsUnscaled: [UInt8]
+//  let meterLevelsUnscaled: [UInt8]
 
-  var meterLevelsScaled: [Float] {
-    return meterLevelsUnscaled.map { Float($0) / Float(UInt8.max) }
-  }
-
-  enum CodingKeys: String, CodingKey {
-//    case audioFileRemoteURL = "audio_file_remote_url"
-//    case audioFileLocalPath = "audio_file_local_path"
-    case authorID = "author_id"
-    case conversationID = "conversation_id"
-    case meterLevelsUnscaled = "meter_levels"
-    case insertedAt = "inserted_at"
-
-    case id
-  }
-}
-
-extension VoiceMessage {
-  enum Columns {
-    static let id = Column("id")
-    static let authorID = Column("author_id")
-    static let conversationID = Column("conversation_id")
-    static let insertedAt = Column("inserted_at")
-  }
-}
-
-extension VoiceMessage {
-  init(id: Int64, author: User, conversation: Conversation, meterLevelsUnscaled: [UInt8] = []) {
-    self.id = id
-    authorID = author.id
-    conversationID = conversation.id
-    self.meterLevelsUnscaled = meterLevelsUnscaled
-  }
-
-  init(id: Int64, authorID: Int64, conversationID: Int64, meterLevelsUnscaled: [UInt8] = []) {
-    self.id = id
-    self.authorID = authorID
-    self.conversationID = conversationID
-    self.meterLevelsUnscaled = meterLevelsUnscaled
-  }
-}
-
-extension VoiceMessage: RowConvertible {}
-extension VoiceMessage: Persistable {
-  static var databaseTableName = AppDatabase.Tables.voiceMessages
+//  var meterLevelsScaled: [Float] {
+//    return meterLevelsUnscaled.map { Float($0) / Float(UInt8.max) }
+//  }
 }
 
 extension VoiceMessage: Equatable {
@@ -64,13 +23,66 @@ extension VoiceMessage: Equatable {
   }
 }
 
-// - MARK: Queries
 extension VoiceMessage {
-  var authorQuery: QueryInterfaceRequest<User> {
-    return User.filter(User.Columns.id == authorID)
+  enum Columns: String, ColumnExpression {
+    case insertedAt = "inserted_at"
+    case conversationID = "conversation_id"
+    case authorID = "author_id"
+    case id
+  }
+}
+
+//extension VoiceMessage {
+//  init(id: Int64, author: User, conversation: Conversation, meterLevelsUnscaled: [UInt8] = []) {
+//    self.id = id
+//    authorID = author.id
+//    conversationID = conversation.id
+//    self.meterLevelsUnscaled = meterLevelsUnscaled
+//  }
+//
+//  init(id: Int64, authorID: Int64, conversationID: Int64, meterLevelsUnscaled: [UInt8] = []) {
+//    self.id = id
+//    self.authorID = authorID
+//    self.conversationID = conversationID
+//    self.meterLevelsUnscaled = meterLevelsUnscaled
+//  }
+//}
+
+extension VoiceMessage: FetchableRecord {
+  init(row: Row) {
+    id = row[Columns.id]
+    insertedAt = row[Columns.insertedAt]
+    conversationID = row[Columns.conversationID]
+    authorID = row[Columns.authorID]
+  }
+}
+
+extension VoiceMessage: TableRecord {
+  static let databaseTableName = "voice_messages"
+}
+
+extension VoiceMessage: PersistableRecord {
+  static let persistenceConflictPolicy = PersistenceConflictPolicy(
+    insert: .replace,
+    update: .abort // TODO
+  )
+
+  func encode(to container: inout PersistenceContainer) {
+    container[Columns.id] = id
+    container[Columns.insertedAt] = insertedAt
+    container[Columns.conversationID] = conversationID
+    container[Columns.authorID] = authorID
+  }
+}
+
+extension VoiceMessage {
+  static let authorRelationship = belongsTo(User.self)
+  var authorRequest: QueryInterfaceRequest<User> {
+    return request(for: VoiceMessage.authorRelationship)
   }
 
-  var conversationQuery: QueryInterfaceRequest<Conversation> {
-    return Conversation.filter(Conversation.Columns.id == conversationID)
+  static let conversationRelationship = belongsTo(Conversation.self)
+  var conversationRequest: QueryInterfaceRequest<Conversation> {
+    return request(for: VoiceMessage.conversationRelationship)
   }
 }
