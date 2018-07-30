@@ -111,6 +111,167 @@
 			remoteGlobalIDString = 4E2C1AEB2091A62800754E57;
 			remoteInfo = "Tarradiddle-iOS";
 		};
+		4EF71549210F1C7600149EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF7153E210F1C7600149EAE /* Anchorage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2DD242681D95C2CE001D6725;
+			remoteInfo = AnchorageDemo;
+		};
+		4EF7154B210F1C7600149EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF7153E210F1C7600149EAE /* Anchorage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3C2050AB1D3B20FD00995DF3;
+			remoteInfo = "Anchorage-iOS";
+		};
+		4EF7154D210F1C7600149EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF7153E210F1C7600149EAE /* Anchorage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A39D62E1EB53E1100BDE9C0;
+			remoteInfo = "AnchorageTests-iOS";
+		};
+		4EF7154F210F1C7600149EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF7153E210F1C7600149EAE /* Anchorage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F15462921E56842400C3948D;
+			remoteInfo = "Anchorage-macOS";
+		};
+		4EF71551210F1C7600149EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF7153E210F1C7600149EAE /* Anchorage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CD6A0E671EB7CDEF00FFF5DB;
+			remoteInfo = "AnchorageTests-macOS";
+		};
+		4EF71553210F1C7600149EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF7153E210F1C7600149EAE /* Anchorage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CD6A0E771EB7CE3A00FFF5DB;
+			remoteInfo = "Anchorage-tvOS";
+		};
+		4EF71555210F1C7600149EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF7153E210F1C7600149EAE /* Anchorage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CD6A0E7F1EB7CE3A00FFF5DB;
+			remoteInfo = "Anchorage-tvOSTests";
+		};
+		4EF71562210F1C8100149EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF71557210F1C8100149EAE /* Apollo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9FC750441D2A532C00458D91;
+			remoteInfo = Apollo;
+		};
+		4EF71564210F1C8100149EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF71557210F1C8100149EAE /* Apollo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9FC7504E1D2A532D00458D91;
+			remoteInfo = ApolloTests;
+		};
+		4EF71566210F1C8100149EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF71557210F1C8100149EAE /* Apollo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9FA6ABBC1EC0A988000017BE;
+			remoteInfo = ApolloCacheDependentTests;
+		};
+		4EF71568210F1C8100149EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF71557210F1C8100149EAE /* Apollo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9FC631331E6AE2080062707E;
+			remoteInfo = ApolloPerformanceTests;
+		};
+		4EF7156A210F1C8100149EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF71557210F1C8100149EAE /* Apollo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9FCE2CFA1E6C213D00E34457;
+			remoteInfo = StarWarsAPI;
+		};
+		4EF7156C210F1C8100149EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF71557210F1C8100149EAE /* Apollo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9FACA9C61F42E67200AE2DBD;
+			remoteInfo = GitHubAPI;
+		};
+		4EF7156E210F1C8100149EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF71557210F1C8100149EAE /* Apollo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9FD637E11E6ACF88001EDBC8;
+			remoteInfo = "TestHost iOS";
+		};
+		4EF71570210F1C8100149EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF71557210F1C8100149EAE /* Apollo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9F8A95781EC0FC1200304A2D;
+			remoteInfo = ApolloTestSupport;
+		};
+		4EF7157E210F1C9E00149EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF71572210F1C9D00149EAE /* GRDB.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC3773F319C8CBB3004FCF85;
+			remoteInfo = GRDBOSX;
+		};
+		4EF71580210F1C9E00149EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF71572210F1C9D00149EAE /* GRDB.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 56E5D7F91B4D422D00430942;
+			remoteInfo = GRDBOSXTests;
+		};
+		4EF71582210F1C9E00149EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF71572210F1C9D00149EAE /* GRDB.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 560C981A1C0E22D300BF8471;
+			remoteInfo = GRDBOSXPerformanceTests;
+		};
+		4EF71584210F1C9E00149EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF71572210F1C9D00149EAE /* GRDB.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 56439B501F4CA1DC0066043F;
+			remoteInfo = GRDBOSXPerformanceComparisonTests;
+		};
+		4EF71586210F1C9E00149EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF71572210F1C9D00149EAE /* GRDB.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 56553C181C3E906C00522B5C;
+			remoteInfo = GRDBOSXCrashTests;
+		};
+		4EF71588210F1C9E00149EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF71572210F1C9D00149EAE /* GRDB.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 56E5D7CA1B4D3FED00430942;
+			remoteInfo = GRDBiOS;
+		};
+		4EF7158A210F1C9E00149EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF71572210F1C9D00149EAE /* GRDB.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 56E5D7D31B4D3FEE00430942;
+			remoteInfo = GRDBiOSTests;
+		};
+		4EF7158C210F1C9E00149EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF71572210F1C9D00149EAE /* GRDB.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 565490A01D5A4798005622CB;
+			remoteInfo = GRDBWatchOS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -164,6 +325,9 @@
 		4EF20907209470A5006B0F0D /* VoiceMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMessage.swift; sourceTree = "<group>"; };
 		4EF2090920947362006B0F0D /* ConversationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationService.swift; sourceTree = "<group>"; };
 		4EF2090B20948077006B0F0D /* VoiceMessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMessagesViewModel.swift; sourceTree = "<group>"; };
+		4EF7153E210F1C7600149EAE /* Anchorage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Anchorage.xcodeproj; path = Carthage/Checkouts/Anchorage/Anchorage.xcodeproj; sourceTree = SOURCE_ROOT; };
+		4EF71557210F1C8100149EAE /* Apollo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Apollo.xcodeproj; path = "Carthage/Checkouts/apollo-ios/Apollo.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		4EF71572210F1C9D00149EAE /* GRDB.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GRDB.xcodeproj; path = Carthage/Checkouts/GRDB.swift/GRDB.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +397,7 @@
 		4E2C1B072091A68200754E57 /* TRAppProxy */ = {
 			isa = PBXGroup;
 			children = (
+				4EF7153D210F1C6A00149EAE /* Deps */,
 				4E2C1B082091A68200754E57 /* Tarradiddle.h */,
 				4E2C1B092091A68200754E57 /* Info.plist */,
 			);
@@ -400,6 +565,60 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4EF7153D210F1C6A00149EAE /* Deps */ = {
+			isa = PBXGroup;
+			children = (
+				4EF71572210F1C9D00149EAE /* GRDB.xcodeproj */,
+				4EF71557210F1C8100149EAE /* Apollo.xcodeproj */,
+				4EF7153E210F1C7600149EAE /* Anchorage.xcodeproj */,
+			);
+			name = Deps;
+			sourceTree = "<group>";
+		};
+		4EF7153F210F1C7600149EAE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4EF7154A210F1C7600149EAE /* AnchorageDemo.app */,
+				4EF7154C210F1C7600149EAE /* Anchorage.framework */,
+				4EF7154E210F1C7600149EAE /* AnchorageTests-iOS.xctest */,
+				4EF71550210F1C7600149EAE /* Anchorage.framework */,
+				4EF71552210F1C7600149EAE /* AnchorageTests-macOS.xctest */,
+				4EF71554210F1C7600149EAE /* Anchorage.framework */,
+				4EF71556210F1C7600149EAE /* Anchorage-tvOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4EF71558210F1C8100149EAE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4EF71563210F1C8100149EAE /* Apollo.framework */,
+				4EF71565210F1C8100149EAE /* ApolloTests.xctest */,
+				4EF71567210F1C8100149EAE /* ApolloCacheDependentTests.xctest */,
+				4EF71569210F1C8100149EAE /* ApolloPerformanceTests.xctest */,
+				4EF7156B210F1C8100149EAE /* StarWarsAPI.framework */,
+				4EF7156D210F1C8100149EAE /* GitHubAPI.framework */,
+				4EF7156F210F1C8100149EAE /* TestHost iOS.app */,
+				4EF71571210F1C8100149EAE /* ApolloTestSupport.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4EF71573210F1C9D00149EAE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4EF7157F210F1C9E00149EAE /* GRDB.framework */,
+				4EF71581210F1C9E00149EAE /* GRDBOSXTests.xctest */,
+				4EF71583210F1C9E00149EAE /* GRDBOSXPerformanceTests.xctest */,
+				4EF71585210F1C9E00149EAE /* GRDBOSXPerformanceComparisonTests.xctest */,
+				4EF71587210F1C9E00149EAE /* GRDBOSXCrashTests.xctest */,
+				4EF71589210F1C9E00149EAE /* GRDB.framework */,
+				4EF7158B210F1C9E00149EAE /* GRDBiOSTests.xctest */,
+				4EF7158D210F1C9E00149EAE /* GRDB.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -501,6 +720,20 @@
 			mainGroup = 4E2C1AE32091A62800754E57;
 			productRefGroup = 4E2C1AED2091A62800754E57 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4EF7153F210F1C7600149EAE /* Products */;
+					ProjectRef = 4EF7153E210F1C7600149EAE /* Anchorage.xcodeproj */;
+				},
+				{
+					ProductGroup = 4EF71558210F1C8100149EAE /* Products */;
+					ProjectRef = 4EF71557210F1C8100149EAE /* Apollo.xcodeproj */;
+				},
+				{
+					ProductGroup = 4EF71573210F1C9D00149EAE /* Products */;
+					ProjectRef = 4EF71572210F1C9D00149EAE /* GRDB.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				4E2C1AEB2091A62800754E57 /* TRiOS */,
@@ -509,6 +742,170 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		4EF7154A210F1C7600149EAE /* AnchorageDemo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = AnchorageDemo.app;
+			remoteRef = 4EF71549210F1C7600149EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4EF7154C210F1C7600149EAE /* Anchorage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Anchorage.framework;
+			remoteRef = 4EF7154B210F1C7600149EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4EF7154E210F1C7600149EAE /* AnchorageTests-iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AnchorageTests-iOS.xctest";
+			remoteRef = 4EF7154D210F1C7600149EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4EF71550210F1C7600149EAE /* Anchorage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Anchorage.framework;
+			remoteRef = 4EF7154F210F1C7600149EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4EF71552210F1C7600149EAE /* AnchorageTests-macOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AnchorageTests-macOS.xctest";
+			remoteRef = 4EF71551210F1C7600149EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4EF71554210F1C7600149EAE /* Anchorage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Anchorage.framework;
+			remoteRef = 4EF71553210F1C7600149EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4EF71556210F1C7600149EAE /* Anchorage-tvOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Anchorage-tvOSTests.xctest";
+			remoteRef = 4EF71555210F1C7600149EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4EF71563210F1C8100149EAE /* Apollo.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Apollo.framework;
+			remoteRef = 4EF71562210F1C8100149EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4EF71565210F1C8100149EAE /* ApolloTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ApolloTests.xctest;
+			remoteRef = 4EF71564210F1C8100149EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4EF71567210F1C8100149EAE /* ApolloCacheDependentTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ApolloCacheDependentTests.xctest;
+			remoteRef = 4EF71566210F1C8100149EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4EF71569210F1C8100149EAE /* ApolloPerformanceTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ApolloPerformanceTests.xctest;
+			remoteRef = 4EF71568210F1C8100149EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4EF7156B210F1C8100149EAE /* StarWarsAPI.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = StarWarsAPI.framework;
+			remoteRef = 4EF7156A210F1C8100149EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4EF7156D210F1C8100149EAE /* GitHubAPI.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GitHubAPI.framework;
+			remoteRef = 4EF7156C210F1C8100149EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4EF7156F210F1C8100149EAE /* TestHost iOS.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "TestHost iOS.app";
+			remoteRef = 4EF7156E210F1C8100149EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4EF71571210F1C8100149EAE /* ApolloTestSupport.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ApolloTestSupport.framework;
+			remoteRef = 4EF71570210F1C8100149EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4EF7157F210F1C9E00149EAE /* GRDB.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GRDB.framework;
+			remoteRef = 4EF7157E210F1C9E00149EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4EF71581210F1C9E00149EAE /* GRDBOSXTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GRDBOSXTests.xctest;
+			remoteRef = 4EF71580210F1C9E00149EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4EF71583210F1C9E00149EAE /* GRDBOSXPerformanceTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GRDBOSXPerformanceTests.xctest;
+			remoteRef = 4EF71582210F1C9E00149EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4EF71585210F1C9E00149EAE /* GRDBOSXPerformanceComparisonTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GRDBOSXPerformanceComparisonTests.xctest;
+			remoteRef = 4EF71584210F1C9E00149EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4EF71587210F1C9E00149EAE /* GRDBOSXCrashTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GRDBOSXCrashTests.xctest;
+			remoteRef = 4EF71586210F1C9E00149EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4EF71589210F1C9E00149EAE /* GRDB.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GRDB.framework;
+			remoteRef = 4EF71588210F1C9E00149EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4EF7158B210F1C9E00149EAE /* GRDBiOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GRDBiOSTests.xctest;
+			remoteRef = 4EF7158A210F1C9E00149EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4EF7158D210F1C9E00149EAE /* GRDB.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GRDB.framework;
+			remoteRef = 4EF7158C210F1C9E00149EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		4E2C1AEA2091A62800754E57 /* Resources */ = {
