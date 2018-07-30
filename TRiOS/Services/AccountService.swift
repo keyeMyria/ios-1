@@ -1,9 +1,9 @@
-import Foundation
-import GRDB
+//import Foundation
+//import GRDB
 
-protocol AccountServiceType {
-  var user: User { get }
-}
+//protocol AccountServiceType {
+//  var user: User { get }
+//}
 
 //final class AccountService: AccountServiceType {
 //  private let dbQueue: DatabaseQueue
@@ -26,3 +26,36 @@ protocol AccountServiceType {
 //    }
 //  }
 //}
+
+import CloudKit
+
+protocol AccountServiceType {
+  // TODO move to auth service?
+  func getCloudID(callback: @escaping (Result<String, AnyError>) -> Void)
+}
+
+enum AccountServiceError: Error {
+  case invalidCKCallback
+}
+
+final class AccountService: AccountServiceType {
+  private lazy var ckContainer = CKContainer(identifier: "iCloud.idiot.trade")
+
+  // TODO cleanup and test
+  func getCloudID(callback: @escaping (Result<String, AnyError>) -> Void) {
+    ckContainer.fetchUserRecordID { recordID, error in
+      guard let recordID = recordID else {
+        if let error = error {
+          DispatchQueue.main.async { callback(.failure(AnyError(error))) }
+
+        } else {
+          DispatchQueue.main.async { callback(.failure(AnyError(AccountServiceError.invalidCKCallback))) }
+        }
+        return
+      }
+      // TODO remove
+      print("iCloudID:\(recordID.recordName)")
+      DispatchQueue.main.async { callback(.success(recordID.recordName)) }
+    }
+  }
+}
