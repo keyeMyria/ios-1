@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E08692B211027CE00C755E1 /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF715F4210FC0CC00149EAE /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4E08692C211027D300C755E1 /* Quick.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF715F0210FC0CC00149EAE /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4E08692D211027E000C755E1 /* LocalUserServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF7159B210F29E300149EAE /* LocalUserServiceSpec.swift */; };
+		4E08692E211027E300C755E1 /* LocalUserServicePerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF7159D210F2B9300149EAE /* LocalUserServicePerformanceTest.swift */; };
+		4E08693321102F5000C755E1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF715F4210FC0CC00149EAE /* Nimble.framework */; };
+		4E08693421102F5000C755E1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF715F0210FC0CC00149EAE /* Quick.framework */; };
+		4E08693621102F8600C755E1 /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E08693521102F8600C755E1 /* Fixtures.swift */; };
+		4E086937211030AE00C755E1 /* TRAppProxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E2C1B062091A68200754E57 /* TRAppProxy.framework */; };
 		4E2C1AF72091A62A00754E57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E2C1AF62091A62A00754E57 /* Assets.xcassets */; };
-		4E2C1B0F2091A68200754E57 /* TRAppProxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E2C1B062091A68200754E57 /* TRAppProxy.framework */; };
-		4E2C1B182091A68300754E57 /* Tarradiddle.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E2C1B082091A68200754E57 /* Tarradiddle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E2C1B182091A68300754E57 /* Tarradiddle.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E2C1B082091A68200754E57 /* Tarradiddle.h */; };
 		4E2C1B262091A74300754E57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E2C1AF62091A62A00754E57 /* Assets.xcassets */; };
 		4E407A3A20A2D1F30084BB0A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E407A3920A2D1F30084BB0A /* SettingsViewModel.swift */; };
 		4E407A3D20A4A0B90084BB0A /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E407A3C20A4A0B90084BB0A /* CGPoint.swift */; };
@@ -88,8 +95,6 @@
 		4EF71595210F28C800149EAE /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF71593210F28C700149EAE /* Result.swift */; };
 		4EF71597210F28E900149EAE /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF71596210F28E900149EAE /* Box.swift */; };
 		4EF71598210F28E900149EAE /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF71596210F28E900149EAE /* Box.swift */; };
-		4EF7159C210F29E300149EAE /* LocalUserServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF7159B210F29E300149EAE /* LocalUserServiceSpec.swift */; };
-		4EF7159E210F2B9300149EAE /* LocalUserServicePerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF7159D210F2B9300149EAE /* LocalUserServicePerformanceTest.swift */; };
 		4EF715B9210F4F6C00149EAE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715B8210F4F6C00149EAE /* Router.swift */; };
 		4EF715BA210F4F6C00149EAE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715B8210F4F6C00149EAE /* Router.swift */; };
 		4EF715BC210F4F8F00149EAE /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715BB210F4F8F00149EAE /* Then.swift */; };
@@ -123,20 +128,18 @@
 		4EF715F7210FC0CD00149EAE /* Anchorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF715F1210FC0CC00149EAE /* Anchorage.framework */; };
 		4EF715F9210FC0CD00149EAE /* Apollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF715F2210FC0CC00149EAE /* Apollo.framework */; };
 		4EF715FB210FC0CD00149EAE /* GRDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF715F3210FC0CC00149EAE /* GRDB.framework */; };
-		4EF715FF210FC0D300149EAE /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF715F4210FC0CC00149EAE /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4EF71600210FC0D800149EAE /* Quick.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF715F0210FC0CC00149EAE /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4EF71603210FC1F300149EAE /* Anchorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF7154C210F1C7600149EAE /* Anchorage.framework */; };
 		4EF71604210FC1F300149EAE /* Apollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF71563210F1C8100149EAE /* Apollo.framework */; };
 		4EF71605210FC1F300149EAE /* GRDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF71589210F1C9E00149EAE /* GRDB.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4E2C1B102091A68200754E57 /* PBXContainerItemProxy */ = {
+		4E08693121102F3C00C755E1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4E2C1AE42091A62800754E57 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 4E2C1B052091A68200754E57;
-			remoteInfo = Tarradiddle;
+			remoteInfo = TRAppProxy;
 		};
 		4EF71549210F1C7600149EAE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -302,14 +305,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		4EF715EF210FC09400149EAE /* Copy Frameworks */ = {
+		4E08692A211027BF00C755E1 /* Copy Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4EF71600210FC0D800149EAE /* Quick.framework in Copy Frameworks */,
-				4EF715FF210FC0D300149EAE /* Nimble.framework in Copy Frameworks */,
+				4E08692C211027D300C755E1 /* Quick.framework in Copy Frameworks */,
+				4E08692B211027CE00C755E1 /* Nimble.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,6 +320,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4E0869222110272D00C755E1 /* TRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TRTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E0869262110272D00C755E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E08693521102F8600C755E1 /* Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixtures.swift; sourceTree = "<group>"; };
 		4E2C1AEC2091A62800754E57 /* TRiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TRiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E2C1AF62091A62A00754E57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E2C1AF92091A62A00754E57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -324,8 +330,6 @@
 		4E2C1B062091A68200754E57 /* TRAppProxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TRAppProxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E2C1B082091A68200754E57 /* Tarradiddle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tarradiddle.h; sourceTree = "<group>"; };
 		4E2C1B092091A68200754E57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4E2C1B0E2091A68200754E57 /* TRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TRTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E2C1B172091A68300754E57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E3FD77620AB34E3005E34A1 /* SupportDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportDatabase.swift; sourceTree = "<group>"; };
 		4E407A3920A2D1F30084BB0A /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		4E407A3C20A4A0B90084BB0A /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
@@ -396,6 +400,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4E08691F2110272D00C755E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E086937211030AE00C755E1 /* TRAppProxy.framework in Frameworks */,
+				4E08693321102F5000C755E1 /* Nimble.framework in Frameworks */,
+				4E08693421102F5000C755E1 /* Quick.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4E2C1AE92091A62800754E57 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -416,23 +430,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4E2C1B0B2091A68200754E57 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4E2C1B0F2091A68200754E57 /* TRAppProxy.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E0869232110272D00C755E1 /* TRTests */ = {
+			isa = PBXGroup;
+			children = (
+				4E08692F2110280E00C755E1 /* Support */,
+				4E0869262110272D00C755E1 /* Info.plist */,
+			);
+			path = TRTests;
+			sourceTree = "<group>";
+		};
+		4E08692F2110280E00C755E1 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				4E08693521102F8600C755E1 /* Fixtures.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		4E2C1AE32091A62800754E57 = {
 			isa = PBXGroup;
 			children = (
 				4E2C1AEE2091A62800754E57 /* TRiOS */,
 				4E2C1B072091A68200754E57 /* TRAppProxy */,
-				4E2C1B142091A68300754E57 /* TRTests */,
+				4E0869232110272D00C755E1 /* TRTests */,
 				4E2C1AED2091A62800754E57 /* Products */,
 				4EF7158E210F1CE600149EAE /* Frameworks */,
 			);
@@ -443,7 +466,7 @@
 			children = (
 				4E2C1AEC2091A62800754E57 /* TRiOS.app */,
 				4E2C1B062091A68200754E57 /* TRAppProxy.framework */,
-				4E2C1B0E2091A68200754E57 /* TRTests.xctest */,
+				4E0869222110272D00C755E1 /* TRTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -475,15 +498,6 @@
 				4E2C1B092091A68200754E57 /* Info.plist */,
 			);
 			path = TRAppProxy;
-			sourceTree = "<group>";
-		};
-		4E2C1B142091A68300754E57 /* TRTests */ = {
-			isa = PBXGroup;
-			children = (
-				4EF7150A210F15A800149EAE /* Support */,
-				4E2C1B172091A68300754E57 /* Info.plist */,
-			);
-			path = TRTests;
 			sourceTree = "<group>";
 		};
 		4E2C1B292091A78D00754E57 /* Views */ = {
@@ -612,13 +626,6 @@
 				4EF715D5210F8D7E00149EAE /* AppSettings.swift */,
 			);
 			path = Settings;
-			sourceTree = "<group>";
-		};
-		4EF7150A210F15A800149EAE /* Support */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Support;
 			sourceTree = "<group>";
 		};
 		4EF7152A210F1AA800149EAE /* Supporting Files */ = {
@@ -791,6 +798,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		4E0869212110272D00C755E1 /* TRTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E0869272110272D00C755E1 /* Build configuration list for PBXNativeTarget "TRTests" */;
+			buildPhases = (
+				4E08691E2110272D00C755E1 /* Sources */,
+				4E08691F2110272D00C755E1 /* Frameworks */,
+				4E0869202110272D00C755E1 /* Resources */,
+				4E08692A211027BF00C755E1 /* Copy Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4E08693221102F3C00C755E1 /* PBXTargetDependency */,
+			);
+			name = TRTests;
+			productName = TRTests;
+			productReference = 4E0869222110272D00C755E1 /* TRTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		4E2C1AEB2091A62800754E57 /* TRiOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E2C1AFE2091A62A00754E57 /* Build configuration list for PBXNativeTarget "TRiOS" */;
@@ -829,44 +855,24 @@
 			productReference = 4E2C1B062091A68200754E57 /* TRAppProxy.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4E2C1B0D2091A68200754E57 /* TRTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4E2C1B212091A68300754E57 /* Build configuration list for PBXNativeTarget "TRTests" */;
-			buildPhases = (
-				4E2C1B0A2091A68200754E57 /* Sources */,
-				4E2C1B0B2091A68200754E57 /* Frameworks */,
-				4E2C1B0C2091A68200754E57 /* Resources */,
-				4EF715EF210FC09400149EAE /* Copy Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4E2C1B112091A68200754E57 /* PBXTargetDependency */,
-			);
-			name = TRTests;
-			productName = TarradiddleTests;
-			productReference = 4E2C1B0E2091A68200754E57 /* TRTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		4E2C1AE42091A62800754E57 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "noose&needle";
 				TargetAttributes = {
+					4E0869212110272D00C755E1 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 					4E2C1AEB2091A62800754E57 = {
 						CreatedOnToolsVersion = 9.3;
 					};
 					4E2C1B052091A68200754E57 = {
 						CreatedOnToolsVersion = 9.3;
-					};
-					4E2C1B0D2091A68200754E57 = {
-						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -899,7 +905,7 @@
 			targets = (
 				4E2C1AEB2091A62800754E57 /* TRiOS */,
 				4E2C1B052091A68200754E57 /* TRAppProxy */,
-				4E2C1B0D2091A68200754E57 /* TRTests */,
+				4E0869212110272D00C755E1 /* TRTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1069,6 +1075,13 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4E0869202110272D00C755E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4E2C1AEA2091A62800754E57 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1083,13 +1096,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E2C1B262091A74300754E57 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4E2C1B0C2091A68200754E57 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1147,6 +1153,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4E08691E2110272D00C755E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E08692D211027E000C755E1 /* LocalUserServiceSpec.swift in Sources */,
+				4E08692E211027E300C755E1 /* LocalUserServicePerformanceTest.swift in Sources */,
+				4E08693621102F8600C755E1 /* Fixtures.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4E2C1AE82091A62800754E57 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1267,22 +1283,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4E2C1B0A2091A68200754E57 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4EF7159C210F29E300149EAE /* LocalUserServiceSpec.swift in Sources */,
-				4EF7159E210F2B9300149EAE /* LocalUserServicePerformanceTest.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4E2C1B112091A68200754E57 /* PBXTargetDependency */ = {
+		4E08693221102F3C00C755E1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4E2C1B052091A68200754E57 /* TRAppProxy */;
-			targetProxy = 4E2C1B102091A68200754E57 /* PBXContainerItemProxy */;
+			targetProxy = 4E08693121102F3C00C755E1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1298,6 +1305,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4E0869282110272D00C755E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = KV25S3NG65;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = TRTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = yass.TRTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4E0869292110272D00C755E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = KV25S3NG65;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = TRTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = yass.TRTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		4E2C1AFC2091A62A00754E57 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1532,54 +1587,18 @@
 			};
 			name = Release;
 		};
-		4E2C1B222091A68300754E57 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = KV25S3NG65;
-				INFOPLIST_FILE = TRTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = lol.aah.TarradiddleTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "TRiOS/Services/User/TRTests-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		4E2C1B232091A68300754E57 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = MZ3WJ9YSJ3;
-				INFOPLIST_FILE = TRTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = lol.aah.TarradiddleTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "TRiOS/Services/User/TRTests-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4E0869272110272D00C755E1 /* Build configuration list for PBXNativeTarget "TRTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E0869282110272D00C755E1 /* Debug */,
+				4E0869292110272D00C755E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4E2C1AE72091A62800754E57 /* Build configuration list for PBXProject "Tarradiddle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1603,15 +1622,6 @@
 			buildConfigurations = (
 				4E2C1B1E2091A68300754E57 /* Debug */,
 				4E2C1B1F2091A68300754E57 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4E2C1B212091A68300754E57 /* Build configuration list for PBXNativeTarget "TRTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4E2C1B222091A68300754E57 /* Debug */,
-				4E2C1B232091A68300754E57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
