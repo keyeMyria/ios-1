@@ -1,5 +1,6 @@
 import UIKit
 
+// TODO remember position for each conversation
 final class SoundWavesViewController: UICollectionViewController {
 //  var viewModel: SoundWavesViewModelType!
 //  var viewModel: VoiceMessagesViewModelType!
@@ -10,9 +11,10 @@ final class SoundWavesViewController: UICollectionViewController {
 
   var voiceMessages: [VoiceMessage] = [] {
     didSet {
-      collectionView?.reloadData()
-      let lastIndexPath = IndexPath(item: 0, section: 0)
-      collectionView?.scrollToItem(at: lastIndexPath, at: .right, animated: true)
+      guard let collectionView = collectionView else { return }
+      collectionView.reloadData()
+      let indexPath = IndexPath(item: 0, section: 0)
+      collectionView.scrollToItem(at: indexPath, at: .right, animated: true)
     }
   }
 
@@ -22,7 +24,7 @@ final class SoundWavesViewController: UICollectionViewController {
     layout.scrollDirection = .horizontal
     layout.minimumLineSpacing = 2 // TODO
     layout.minimumInteritemSpacing = 2
-    layout.estimatedItemSize = CGSize(width: 10, height: 75)
+    layout.estimatedItemSize = CGSize(width: 10, height: 175)
     //    layout.itemSize = UICollectionViewFlowLayoutAutomaticSize
     super.init(collectionViewLayout: layout)
   }
@@ -36,6 +38,7 @@ final class SoundWavesViewController: UICollectionViewController {
 extension SoundWavesViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
+    collectionView?.transform = CGAffineTransform(scaleX: -1, y: 1)
     collectionView?.showsHorizontalScrollIndicator = false // TODO or show it?
     collectionView?.register(VoiceMessageCell.self,
                              forCellWithReuseIdentifier: reuseIdentifier)

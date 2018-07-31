@@ -18,7 +18,7 @@ let voiceMessages: [[VoiceMessage]] = conversations.map { conversation in
     VoiceMessage(id: $0,
                  authorID: $0,
                  conversationID: conversation.id,
-                 meterLevelsUnscaled: UInt8.randomArray())
+                 meterLevels: UInt8.randomArray())
   }
 }
 

@@ -95,7 +95,7 @@ extension MessagingViewController {
     soundWavesViewController.view.leadingAnchor == view.leadingAnchor
     soundWavesViewController.view.trailingAnchor == view.trailingAnchor
     soundWavesViewController.view.centerYAnchor == view.centerYAnchor
-    soundWavesViewController.view.heightAnchor == 75
+    soundWavesViewController.view.heightAnchor == 175
     soundWavesViewController.didMove(toParentViewController: self)
   }
 }

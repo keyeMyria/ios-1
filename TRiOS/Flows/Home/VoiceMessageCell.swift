@@ -9,13 +9,13 @@ final class VoiceMessageCell: UICollectionViewCell {
     super.init(frame: frame)
     clipsToBounds = true
     addSubview(soundWaveView)
-    let separatorLine = UIView()
-    separatorLine.backgroundColor = .yellow
-    addSubview(separatorLine)
-    separatorLine.topAnchor == contentView.topAnchor
-    separatorLine.bottomAnchor == contentView.bottomAnchor
-    separatorLine.widthAnchor == 2
-    separatorLine.trailingAnchor == contentView.trailingAnchor
+//    let separatorLine = UIView()
+//    separatorLine.backgroundColor = .yellow
+//    addSubview(separatorLine)
+//    separatorLine.topAnchor == contentView.topAnchor
+//    separatorLine.bottomAnchor == contentView.bottomAnchor
+//    separatorLine.widthAnchor == 2
+//    separatorLine.trailingAnchor == contentView.trailingAnchor
 //    backgroundColor = .blue // TODO
     soundWaveView.edgeAnchors == contentView.edgeAnchors
 //    soundWaveView.backgroundColor = .red
