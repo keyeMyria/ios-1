@@ -1,6 +1,6 @@
 import Foundation
 
-@testable import TRApp
+@testable import TRAppProxy
 
 UserDefaults.standard.userID = nil
 UserDefaults.standard.userID

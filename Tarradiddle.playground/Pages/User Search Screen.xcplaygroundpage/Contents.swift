@@ -1,6 +1,6 @@
 import PlaygroundSupport
 import UIKit
-@testable import Tarradiddle
+@testable import TRAppProxy
 
 // setup
 

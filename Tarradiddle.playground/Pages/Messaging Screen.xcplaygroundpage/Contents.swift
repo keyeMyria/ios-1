@@ -1,10 +1,12 @@
 import PlaygroundSupport
 import UIKit
 
-@testable import TRApp
+@testable import TRAppProxy
 
-
-let messagingViewController = MessagingViewController()
+let messagingViewController = MessagingViewController(
+  onSettingsTapped: { print("settings tapped") },
+  onUserSearchTapped: { print("user search tapped") }
+)
 
 let parent = playgroundWrapper(
   child: messagingViewController,

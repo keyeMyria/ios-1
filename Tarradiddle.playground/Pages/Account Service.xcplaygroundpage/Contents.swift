@@ -1,7 +1,7 @@
 import Foundation
 import GRDB
 
-@testable import TRApp
+@testable import TRAppProxy
 
 final class FakeAccountService: AccountServiceType {
   private let dbQueue: DatabaseQueue
@@ -23,7 +23,7 @@ let dbQueue = try! AppDatabase.openDatabase(.inMemory)
 // so we should create a fake one now to be then used with the account service
 
 let fakeUser = try! dbQueue.inDatabase { db -> User in
-  var fakeUser = User(id: 66, handle: "fake")
+  let fakeUser = User(id: 66, handle: "fake")
 //  var fakeUser2 = User(id: 66, handle: "faker")
   try fakeUser.insert(db)
 //  try fakeUser2.insert(db)

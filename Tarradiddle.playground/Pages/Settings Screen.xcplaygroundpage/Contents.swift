@@ -1,7 +1,11 @@
-//: [Previous](@previous)
+import UIKit
+import PlaygroundSupport
+@testable import TRAppProxy
+import Anchorage
 
-import Foundation
+final class FakeSettingsViewController: UITableViewController {
+  
+}
 
-var str = "Hello, playground"
-
-//: [Next](@next)
+let vc = FakeSettingsViewController()
+PlaygroundPage.current.liveView = vc

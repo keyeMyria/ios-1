@@ -1,27 +1,35 @@
-@testable import TRApp
+@testable import TRAppProxy
 
+import GRDB
 import Apollo
 
 // setup
 
 let dbQueue = try AppDatabase.openDatabase(.inMemory)
-let apollo = ApolloClient(url: "")
-let service = UserService(apollo: apollo, dbQueue: dbQueue)
+//let apollo = ApolloClient(url: "")
+let service = LocalUserService(dbQueue: dbQueue)
 
 // try it out
+service.createUser(id: 15, handle: "test") { result in
+  if case let .success(user) = result {
+    print("created user", user)
+  }
+}
 
-service.createUser(remoteID: 15, handle: "test").subscribe(onNext: { user in
-  print("created user:", user)
-})
+service.getUser(id: 15) { result in
+  if case let .success(user) = result {
+    print("fetched user:", user)
+  }
+}
 
-service.getUser(id: 1).subscribe(onNext: { user in
-  print("fetched user:", user)
-})
+service.getUser(id: 100) { result in
+  if case let .success(user) = result {
+    print("fetched user:", user)
+  }
+}
 
-service.getUser(id: 100).subscribe(onNext: { user in
-  print("couldn't find a user:", user)
-})
-
-service.savedUsers().subscribe(onNext: { users in
-  print("all users:", users)
-})
+service.listUsers { result in
+  if case let .success(users) = result {
+    print("list users", users)
+  }
+}

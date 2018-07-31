@@ -1,7 +1,7 @@
 import Foundation
-import GRDB; import RxGRDB
+import GRDB
 
-@testable import TRApp
+@testable import TRAppProxy
 
 // https://github.com/yapstudios/YapDatabase/wiki/SQLite-version-(bundled-with-OS)
 

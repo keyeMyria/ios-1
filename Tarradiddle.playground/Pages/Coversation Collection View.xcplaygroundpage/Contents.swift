@@ -1,38 +1,35 @@
 import PlaygroundSupport
 import UIKit
+
+@testable import TRAppProxy
 import Anchorage
-import RxSwift
-//import RxCocoa
 
-@testable import TRApp
+//class FakeConversationsViewModel: ConversationsViewModelType {
+//  let bag = DisposeBag()
+//
+//  let conversations = Observable.just((1...4).map {
+//    return Conversation(id: $0, remoteID: $0, userID: $0)
+//  })
+//
+//  let currentConversation = Variable<Conversation>(
+//    Conversation(id: 1, remoteID: 1, userID: 1)
+//  )
+//
+//  init() {
+//    currentConversation.asObservable()
+//      .distinctUntilChanged { $0.id == $1.id }
+//      .subscribe(onNext: { conversation in
+//        print("conversation:", conversation.id!)
+//      })
+//      .disposed(by: bag)
+//  }
+//}
 
-class FakeConversationsViewModel: ConversationsViewModelType {
-  let bag = DisposeBag()
-
-  let conversations = Observable.just((1...4).map {
-    return Conversation(id: $0, remoteID: $0, userID: $0)
-  })
-
-  let currentConversation = Variable<Conversation>(
-    Conversation(id: 1, remoteID: 1, userID: 1)
-  )
-
-  init() {
-    currentConversation.asObservable()
-      .distinctUntilChanged { $0.id == $1.id }
-      .subscribe(onNext: { conversation in
-        print("conversation:", conversation.id!)
-      })
-      .disposed(by: bag)
-  }
+let conversations = (1...4).map { Conversation(id: $0, converseeID: $0) }
+let vc = ConversationsViewController(conversations: conversations) { conversation in
+  print("conversation:", conversation.id)
 }
 
-let viewModel = FakeConversationsViewModel()
-let vc = ConversationCollectionViewController()
-vc.viewModel = viewModel
-
-// makes view small
-// about the same size as in the container vc
 let containerSize = CGSize(width: 375, height: 100)
 vc.view.frame.size = containerSize
 vc.preferredContentSize = containerSize

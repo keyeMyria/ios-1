@@ -1,10 +1,8 @@
 import PlaygroundSupport
 import UIKit
-import RxSwift
-import RxCocoa
-import Anchorage
 
-@testable import TRApp
+@testable import TRAppProxy
+import Anchorage
 
 // setup
 
@@ -18,45 +16,52 @@ extension UInt8 {
 
 //UInt8.randomArray()
 
-class FakeVoiceMessagesViewModel: VoiceMessagesViewModelType {
-  let bag = DisposeBag()
+//class FakeVoiceMessagesViewModel: VoiceMessagesViewModelType {
+//  let bag = DisposeBag()
+//
+//  var voiceMessages: Observable<[VoiceMessage]> {
+//    return Observable.just((1...50).map {
+//      VoiceMessage(
+//        id: $0,
+//        remoteID: $0,
+//        audioFileRemoteURL: nil,
+//        audioFileLocalPath: "",
+//        authorID: $0,
+//        conversationID: $0,
+//        meterLevelsUnscaled: UInt8.randomArray()
+//      )
+//    })
+//  }
+//
+//  let currentVoiceMessage = Variable<VoiceMessage?>(nil)
+//
+//  init() {
+//    currentVoiceMessage.asObservable()
+//      .subscribe(onNext: { voiceMessage in
+//        if let voiceMessage = voiceMessage {
+//          print("selected voiceMessage \(voiceMessage.id!)")
+//        }
+//      })
+//      .disposed(by: bag)
+//  }
+//}
 
-  var voiceMessages: Observable<[VoiceMessage]> {
-    return Observable.just((1...50).map {
-      VoiceMessage(
-        id: $0,
-        remoteID: $0,
-        audioFileRemoteURL: nil,
-        audioFileLocalPath: "",
-        authorID: $0,
-        conversationID: $0,
-        meterLevelsUnscaled: UInt8.randomArray()
-      )
-    })
-  }
-
-  let currentVoiceMessage = Variable<VoiceMessage?>(nil)
-
-  init() {
-    currentVoiceMessage.asObservable()
-      .subscribe(onNext: { voiceMessage in
-        if let voiceMessage = voiceMessage {
-          print("selected voiceMessage \(voiceMessage.id!)")
-        }
-      })
-      .disposed(by: bag)
-  }
+let voiceMessages = (1...50).map {
+  VoiceMessage(id: $0, authorID: $0, conversationID: $0, insertedAt: nil)
+//  VoiceMessage(
+//    id: $0,
+//    remoteID: $0,
+//    audioFileRemoteURL: nil,
+//    audioFileLocalPath: "",
+//    authorID: $0,
+//    conversationID: $0,
+//    meterLevelsUnscaled: UInt8.randomArray()
+//  )
+}
+let vc = SoundWavesViewController(voiceMessages: voiceMessages) { voiceMessage in
+  print("selected voiceMessage \(voiceMessage.id)")
 }
 
-let fakeViewModel = FakeVoiceMessagesViewModel()
-
-// try it out
-
-let vc = SoundWaveCollectionViewController()
-vc.viewModel = fakeViewModel
-
-// makes view small
-// about the same size as in the container vc
 let containerSize = CGSize(width: 375, height: 100)
 vc.view.frame.size = containerSize
 vc.preferredContentSize = containerSize

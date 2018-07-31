@@ -1,8 +1,7 @@
 import PlaygroundSupport
-import Foundation
 import UIKit
 
-@testable import TRApp
+@testable import TRAppProxy
 
 //class FakeSoundWaveView: UIView {
 //  let meteringLevelBarWidth: CGFloat = 3.0
