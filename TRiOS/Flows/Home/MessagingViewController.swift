@@ -34,9 +34,14 @@ final class MessagingViewController: UIViewController {
 
   @objc private func settingsButtonTapped() { onSettingsTapped() }
   private let settingsButton = UIButton(type: .system).then {
-    $0.setTitle("settings", for: .normal)
-    $0.backgroundColor = .red
+    $0.setTitle("⚙️", for: .normal)
     $0.addTarget(self, action: #selector(settingsButtonTapped), for: .touchUpInside)
+  }
+
+  @objc private func userSearchButtonTapped() { onUserSearchTapped() }
+  private let userSearchButton = UIButton(type: .system).then {
+    $0.setTitle("🔍", for: .normal)
+    $0.addTarget(self, action: #selector(userSearchButtonTapped), for: .touchUpInside)
   }
 
   // TODO also pass voice messages datasource and conversations data source
@@ -63,13 +68,16 @@ extension MessagingViewController {
     super.viewDidLoad()
 
     view.addSubview(settingsButton)
-    settingsButton.leadingAnchor == view.leadingAnchor + 20
+    settingsButton.trailingAnchor == view.trailingAnchor - 20
     settingsButton.topAnchor == view.topAnchor + 30
-    settingsButton.widthAnchor == 90
     settingsButton.heightAnchor == 30
 
+    view.addSubview(userSearchButton)
+    userSearchButton.leadingAnchor == view.leadingAnchor + 20
+    userSearchButton.topAnchor == settingsButton.topAnchor
+    userSearchButton.heightAnchor == settingsButton.heightAnchor
+
     // TODO
-    // add a button to open user search SearchButton()
     // add a button to manage friendships FriendshipsButton() (last "conversation")
     // add a button to start recording (tap on one of the conversations)
 

@@ -25,7 +25,6 @@ let voiceMessages: [[VoiceMessage]] = conversations.map { conversation in
 final class FakeConversationService: LocalConversationServiceType {
   func loadVoiceMessages(for conversation: Conversation,
                          callback: @escaping (Result<[VoiceMessage], AnyError>) -> Void) {
-//    print("called for conversation", conversation)
     callback(.success(voiceMessages[Int(conversation.id)]))
   }
 

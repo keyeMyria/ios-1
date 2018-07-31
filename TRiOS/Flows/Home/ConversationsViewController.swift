@@ -27,7 +27,7 @@ final class ConversationsViewController: UICollectionViewController {
 extension ConversationsViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
-    collectionView?.backgroundColor = .gray // TODO remove
+    collectionView?.backgroundColor = .clear // TODO remove
     collectionView?.showsHorizontalScrollIndicator = false // TODO or show it?
     collectionView?.decelerationRate = UIScrollViewDecelerationRateFast
     collectionView?.register(ConversationCell.self,

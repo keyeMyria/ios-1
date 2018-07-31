@@ -9,7 +9,11 @@ final class SoundWavesViewController: UICollectionViewController {
   private var currentWidths: [Int: CGFloat] = [:]
 
   var voiceMessages: [VoiceMessage] = [] {
-    didSet { collectionView?.reloadData() }
+    didSet {
+      collectionView?.reloadData()
+      let lastIndexPath = IndexPath(item: 0, section: 0)
+      collectionView?.scrollToItem(at: lastIndexPath, at: .right, animated: true)
+    }
   }
 
   init(onVoiceMessageSelected: @escaping (VoiceMessage) -> Void) {
@@ -64,6 +68,14 @@ extension SoundWavesViewController {
 }
 
 extension SoundWavesViewController: UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView,
+                      layout collectionViewLayout: UICollectionViewLayout,
+                      insetForSectionAt section: Int) -> UIEdgeInsets {
+    return UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+  }
+}
+
+//extension SoundWavesViewController: UICollectionViewDelegateFlowLayout {
 //  func collectionView(
 //    _ collectionView: UICollectionView,
 //    layout collectionViewLayout: UICollectionViewLayout,
@@ -78,4 +90,4 @@ extension SoundWavesViewController: UICollectionViewDelegateFlowLayout {
 //      return CGSize(width: 75, height: 75)
 //    }
 //  }
-}
+//}

@@ -10,7 +10,7 @@ final class ConversationCell: UICollectionViewCell {
   override init(frame: CGRect) {
     super.init(frame: frame)
     nameLabel.textColor = .white
-    backgroundColor = .darkGray // TODO choose color based on the username / user id hash
+    backgroundColor = #colorLiteral(red: 0.158314443, green: 0.158314443, blue: 0.158314443, alpha: 1) // TODO choose color based on the username / user id hash
     let minSideLength = min(frame.width, frame.height)
     layer.cornerRadius = minSideLength / 2
     mask?.clipsToBounds = true
