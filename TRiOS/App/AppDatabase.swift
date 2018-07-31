@@ -1,5 +1,9 @@
 import GRDB
 
+enum AppDatabaseError: Error {
+  case migration(error: Error)
+}
+
 final class AppDatabase {
   enum Kind {
     case inMemory
@@ -17,7 +21,12 @@ final class AppDatabase {
     case let .onDisk(path: path): dbQueue = try DatabaseQueue(path: path)
     }
 
-    try migrator.migrate(dbQueue)
+    do {
+      try migrator.migrate(dbQueue)
+    } catch {
+      throw AppDatabaseError.migration(error: error)
+    }
+
     return dbQueue
   }
 

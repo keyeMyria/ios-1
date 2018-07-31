@@ -2,10 +2,7 @@ import UIKit
 import class GRDB.DatabaseQueue
 
 private func setupDatabase() throws -> DatabaseQueue {
-  let databaseURL = try FileManager.default
-    .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-    .appendingPathComponent("db.sqlite")
-
+  let databaseURL = try AppFS.mainDatabaseURL()
   let dbQueue = try AppDatabase.openDatabase(.onDisk(path: databaseURL.path))
 
   // Be a nice iOS citizen, and don't consume too much memory
@@ -20,21 +17,26 @@ fileprivate var isAuthenticated = false
 final class AppCoordinator: Coordinating {
   var childCoordinators: [Coordinating] = []
   private let router: RouterType
-  private let dbQueue: DatabaseQueue
 
   // TODO pass Services struct?
 
   init(router: RouterType) {
     self.router = router
-    // TODO is there a better way?
-    // swiftlint:disable:next force_try
-    dbQueue = try! setupDatabase()
   }
 
   func start() {
     if AppAccount.hasSeenOnboarding {
       if isAuthenticated {
-        runMainFlow()
+        do {
+          let dbQueue = try setupDatabase()
+          runMainFlow(dbQueue: dbQueue)
+        } catch let AppFSError.database(error: error) {
+          // TODO show ErrorCoordinator explaining the error
+        } catch let AppDatabaseError.migration(error: error) {
+          // TODO show ErrorCoordinator explaining the error
+        } catch {
+          // TODO
+        }
       } else {
         runAuthenticationFlow()
       }
@@ -71,7 +73,7 @@ final class AppCoordinator: Coordinating {
     coordinator.start()
   }
 
-  private func runMainFlow() {
+  private func runMainFlow(dbQueue: DatabaseQueue) {
     let coordinator = HomeCoordinator(router: router, dbQueue: dbQueue)
     add(childCoordinator: coordinator)
     coordinator.start()
