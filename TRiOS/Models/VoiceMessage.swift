@@ -8,11 +8,20 @@ struct VoiceMessage {
   let authorID: Int64
   let conversationID: Int64
   var insertedAt: Date?
-//  let meterLevelsUnscaled: [UInt8]
+  let meterLevelsUnscaled: [UInt8]
 
-//  var meterLevelsScaled: [Float] {
-//    return meterLevelsUnscaled.map { Float($0) / Float(UInt8.max) }
-//  }
+  var meterLevelsScaled: [Float] {
+    return meterLevelsUnscaled.map { Float($0) / Float(UInt8.max) }
+  }
+}
+
+extension VoiceMessage {
+  init(id: Int64, authorID: Int64, conversationID: Int64, meterLevelsUnscaled: [UInt8] = []) {
+    self.id = id
+    self.authorID = authorID
+    self.conversationID = conversationID
+    self.meterLevelsUnscaled = meterLevelsUnscaled
+  }
 }
 
 extension VoiceMessage: Equatable {
@@ -54,6 +63,7 @@ extension VoiceMessage: FetchableRecord {
     insertedAt = row[Columns.insertedAt]
     conversationID = row[Columns.conversationID]
     authorID = row[Columns.authorID]
+    meterLevelsUnscaled = []
   }
 }
 

@@ -15,11 +15,19 @@ final class HomeCoordinator: Coordinating {
   }
 
   private func showMessaging() {
-    let messagingViewController = MessagingViewController(
-      onSettingsTapped: { [unowned self] in self.runSettingsFlow() },
-      onUserSearchTapped: { [unowned self] in self.runUserSearchFlow() }
-    )
-    router.setRoot(to: messagingViewController, hideBar: true)
+    let conversationService = LocalConversationService(dbQueue: dbQueue)
+    // TODO
+    conversationService.listConversations { result in
+      if case let .success(conversations) = result {
+        let messagingViewController = MessagingViewController(
+          conversations: conversations,
+          conversationService: conversationService,
+          onSettingsTapped: { [unowned self] in self.runSettingsFlow() },
+          onUserSearchTapped: { [unowned self] in self.runUserSearchFlow() }
+        )
+        self.router.setRoot(to: messagingViewController, hideBar: true)
+      }
+    }
   }
 
   private func runSettingsFlow() {

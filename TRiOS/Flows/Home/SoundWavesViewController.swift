@@ -5,12 +5,14 @@ final class SoundWavesViewController: UICollectionViewController {
 //  var viewModel: VoiceMessagesViewModelType!
   private let reuseIdentifier = "SoundWaveCell"
   private let onVoiceMessageSelected: (VoiceMessage) -> Void
-  private var voiceMessages: [VoiceMessage]
   // TODO a bar which separates sent and recorded messages
   private var currentWidths: [Int: CGFloat] = [:]
 
-  init(voiceMessages: [VoiceMessage], onVoiceMessageSelected: @escaping (VoiceMessage) -> Void) {
-    self.voiceMessages = voiceMessages
+  var voiceMessages: [VoiceMessage] = [] {
+    didSet { collectionView?.reloadData() }
+  }
+
+  init(onVoiceMessageSelected: @escaping (VoiceMessage) -> Void) {
     self.onVoiceMessageSelected = onVoiceMessageSelected
     let layout = UICollectionViewFlowLayout()
     layout.scrollDirection = .horizontal
