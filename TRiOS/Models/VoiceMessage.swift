@@ -8,19 +8,20 @@ struct VoiceMessage {
   let authorID: Int64
   let conversationID: Int64
   var insertedAt: Date?
-  let meterLevelsUnscaled: [UInt8]
+  let meterLevels: [UInt8]
 
+  // TODO remove
   var meterLevelsScaled: [Float] {
-    return meterLevelsUnscaled.map { Float($0) / Float(UInt8.max) }
+    return meterLevels.map { Float($0) / Float(UInt8.max) }
   }
 }
 
 extension VoiceMessage {
-  init(id: Int64, authorID: Int64, conversationID: Int64, meterLevelsUnscaled: [UInt8] = []) {
+  init(id: Int64, authorID: Int64, conversationID: Int64, meterLevels: [UInt8]) {
     self.id = id
     self.authorID = authorID
     self.conversationID = conversationID
-    self.meterLevelsUnscaled = meterLevelsUnscaled
+    self.meterLevels = meterLevels
   }
 }
 
@@ -37,25 +38,10 @@ extension VoiceMessage {
     case insertedAt = "inserted_at"
     case conversationID = "conversation_id"
     case authorID = "author_id"
+    case meterLevels = "meter_levels"
     case id
   }
 }
-
-//extension VoiceMessage {
-//  init(id: Int64, author: User, conversation: Conversation, meterLevelsUnscaled: [UInt8] = []) {
-//    self.id = id
-//    authorID = author.id
-//    conversationID = conversation.id
-//    self.meterLevelsUnscaled = meterLevelsUnscaled
-//  }
-//
-//  init(id: Int64, authorID: Int64, conversationID: Int64, meterLevelsUnscaled: [UInt8] = []) {
-//    self.id = id
-//    self.authorID = authorID
-//    self.conversationID = conversationID
-//    self.meterLevelsUnscaled = meterLevelsUnscaled
-//  }
-//}
 
 extension VoiceMessage: FetchableRecord {
   init(row: Row) {
@@ -63,7 +49,10 @@ extension VoiceMessage: FetchableRecord {
     insertedAt = row[Columns.insertedAt]
     conversationID = row[Columns.conversationID]
     authorID = row[Columns.authorID]
-    meterLevelsUnscaled = []
+    let meterLevelsBlob: Data = row[Columns.meterLevels]
+    meterLevels = meterLevelsBlob.withUnsafeBytes {
+      [UInt8](UnsafeBufferPointer(start: $0, count: meterLevelsBlob.count))
+    }
   }
 }
 
@@ -82,6 +71,7 @@ extension VoiceMessage: PersistableRecord {
     container[Columns.insertedAt] = insertedAt
     container[Columns.conversationID] = conversationID
     container[Columns.authorID] = authorID
+    container[Columns.meterLevels] = Data(bytes: meterLevels)
   }
 }
 

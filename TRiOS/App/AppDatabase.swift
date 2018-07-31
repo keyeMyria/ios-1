@@ -65,6 +65,7 @@ final class AppDatabase {
       // TODO composite index on voiceMesssages.(conversation_id, author_id)?
       try db.create(table: VoiceMessage.databaseTableName) { t in
         t.column("id", .integer).primaryKey()
+        t.column("inserted_at", .datetime).defaults(sql: "CURRENT_TIMESTAMP").notNull()
 
         t.column("conversation_id", .integer)
           .references(Conversation.databaseTableName, onDelete: .cascade, onUpdate: .restrict)
