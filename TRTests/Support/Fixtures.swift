@@ -15,27 +15,20 @@ protocol Fixturable {
 
 extension User: Fixturable {
   static func fixture(attrs: [String: Any] = [:]) -> User {
-    let userID: Int64
-    let userHandle: String
-
-    if let id = attrs["id"] as? Int64 {
-      userID = id
-    } else {
-      userID = Int64(arc4random_uniform(1000))
-    }
-
-    if let handle = attrs["handle"] as? String {
-      userHandle = handle
-    } else {
-      userHandle = UUID().uuidString
-    }
-
-    return User(id: userID, handle: userHandle)
+    return User(
+      id: attrs["id"] as? Int64 ?? Int64(arc4random_uniform(1000)),
+      handle: attrs["handle"] as? String ?? UUID().uuidString
+    )
   }
 
+//  static func fixture(id: Int64 = Int64(arc4random_uniform(1000)),
+//                      handle: String = UUID().uuidString) -> User {
+//    return User(id: id, handle: handle)
+//  }
+
   static func fixture(dbQueue: DatabaseQueue, attrs: [String: Any] = [:]) throws -> User {
-    var user = fixture(attrs: attrs)
-    return try dbQueue.inDatabase { db -> User in
+    let user = fixture(attrs: attrs)
+    return try dbQueue.write { db -> User in
       try user.insert(db)
       return user
     }
