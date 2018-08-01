@@ -5,20 +5,28 @@ import UIKit
 
 extension UInt8 {
   static func randomArray(maxLength: UInt32 = 50) -> [UInt8] {
-    return (0...arc4random_uniform(maxLength)).map { _ in
+    return (0...arc4random_uniform(maxLength)).map { i in  
       return UInt8(arc4random_uniform(UInt32(UInt8.max)))
     }
+  }
+}
+
+func wave(length: Int, precision: Float) -> [UInt8] {
+  let divisor = Float(length) * precision
+  return (0...length).map { i -> UInt8 in
+    let sinValue = sin(Float(i) / divisor) / 2 + 0.5
+    return UInt8(floor(sinValue * Float(UInt8.max - 1)))
   }
 }
 
 let conversations = (0...3).map { Conversation(id: $0, converseeID: $0) }
 
 let voiceMessages: [[VoiceMessage]] = conversations.map { conversation in
-  (1...50).map {
+  (1...Int64(arc4random_uniform(50) + 1)).map {
     VoiceMessage(id: $0,
                  authorID: $0,
                  conversationID: conversation.id,
-                 meterLevels: UInt8.randomArray())
+                 meterLevels: wave(length: Int(arc4random_uniform(50) + 1), precision: 0.3))
   }
 }
 

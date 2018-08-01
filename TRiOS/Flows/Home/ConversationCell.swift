@@ -2,10 +2,20 @@ import UIKit
 import Anchorage
 
 final class ConversationCell: UICollectionViewCell {
-//  var viewModel: VoiceMessagesViewModelType! // TODO actually, maybe just pass actions to it
-  var conversation: Conversation?
-  let imageView = UIImageView()
-  let nameLabel = UILabel()
+  private var conversation: Conversation?
+  private let imageView = UIImageView()
+  private let nameLabel = UILabel()
+//  private let longPress = UILongPressGestureRecognizer()
+//  private var state: UIGestureRecognizerState? {
+//    didSet {
+//      if let state = state, state != oldValue {
+//        onStateChange?(state)
+//      }
+//    }
+//  }
+
+//  var isCurrent = false { didSet { longPress.isEnabled = isSelected } }
+//  var onStateChange: ((UIGestureRecognizerState) -> Void)?
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -22,8 +32,9 @@ final class ConversationCell: UICollectionViewCell {
     imageView.contentMode = .scaleAspectFill
     nameLabel.centerAnchors == contentView.centerAnchors
 
-    let longPress = UILongPressGestureRecognizer()
-    addGestureRecognizer(longPress)
+//    addGestureRecognizer(longPress)
+//    longPress.isEnabled = false
+//    longPress.addTarget(self, action: #selector(handleLongPress))
 
 //    longPress.rx.event
 //      .filter { _ in
@@ -55,12 +66,17 @@ final class ConversationCell: UICollectionViewCell {
 //      .disposed(by: bag) // TODO use some dispose tricks from the book
   }
 
+//  @objc private func handleLongPress(_ sender: UIGestureRecognizer) {
+//    state = sender.state
+//  }
+
   func configure(with conversation: Conversation) {
     self.conversation = conversation
     nameLabel.text = "\(conversation.converseeID)"
 //    imageView.image = UIImage(imageLiteralResourceName: "idiot.jpg")
   }
 
+  @available (*, unavailable)
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }

@@ -10,6 +10,13 @@ final class ConversationsViewController: UICollectionViewController {
   // TODO datasource?
   private var conversations: [Conversation]
 
+  enum ConversationState {
+    case idle
+    case recording(conversationID: Int64)
+  }
+
+  private var conversationState: ConversationState = .idle
+
   init(conversations: [Conversation], onConversationSelect: @escaping (Conversation) -> Void) {
     self.conversations = conversations
     self.onConversationSelect = onConversationSelect
@@ -25,8 +32,50 @@ final class ConversationsViewController: UICollectionViewController {
 }
 
 extension ConversationsViewController {
+  @objc private func handleLongGesture(_ sender: UIGestureRecognizer) {
+    let pressedPoint = sender.location(in: collectionView)
+    switch sender.state {
+    case .began:
+      if let pressedCellPath = collectionView?.indexPathForItem(at: pressedPoint) {
+        if inCenter(point: pressedPoint) {
+          let selectedConversation = conversations[pressedCellPath.row]
+          conversationState = .recording(conversationID: selectedConversation.id)
+          print("started recording \(selectedConversation.id)")
+        }
+      }
+    case .ended:
+      guard let pressedCellPath = collectionView?.indexPathForItem(at: pressedPoint) else {
+        conversationState = .idle
+        return
+      }
+
+      let selectedConversation = conversations[pressedCellPath.row]
+
+      guard
+        case let .recording(conversationID: conversationID) = conversationState,
+        selectedConversation.id == conversationID else {
+          conversationState = .idle
+          return
+      }
+
+      print("ended recording")
+      conversationState = .idle
+    default: ()
+    }
+  }
+
+  private func inCenter(point: CGPoint) -> Bool {
+    let center = view.convert(view.center, to: collectionView)
+    return abs(center.x - point.x) <= CGFloat(75) / 2
+  }
+}
+
+extension ConversationsViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
+    let longGesture = UILongPressGestureRecognizer(target: self,
+                                                   action: #selector(handleLongGesture))
+    collectionView?.addGestureRecognizer(longGesture)
     collectionView?.backgroundColor = .clear // TODO remove
     collectionView?.showsHorizontalScrollIndicator = false // TODO or show it?
     collectionView?.decelerationRate = UIScrollViewDecelerationRateFast

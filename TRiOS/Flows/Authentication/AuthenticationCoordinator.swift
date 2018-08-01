@@ -60,16 +60,17 @@ final class AuthenticationCoordinator: Coordinating, AuthenticationCoordinatorRe
     if let account = AppAccount(from: UserDefaults.standard) {
       finishFlow?(.success(account))
     } else {
-      accountService.getCloudID { [weak self] result in
-        guard let `self` = self else { return }
-        switch result {
-        case let .success(cloudID):
-          // TODO
-          self.finishFlow?(.success(AppAccount(userID: 123, cloudID: cloudID)))
-        case let .failure(error):
-          self.finishFlow?(.failure(error))
-        }
-      }
+      finishFlow?(.success(AppAccount(userID: 123, cloudID: "cloudID")))
+//      accountService.getCloudID { [weak self] result in
+//        guard let `self` = self else { return }
+//        switch result {
+//        case let .success(cloudID):
+//          // TODO
+//          self.finishFlow?(.success(AppAccount(userID: 123, cloudID: cloudID)))
+//        case let .failure(error):
+//          self.finishFlow?(.failure(error))
+//        }
+//      }
     }
   }
 }

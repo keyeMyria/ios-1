@@ -1,6 +1,8 @@
 import UIKit
 
 // TODO remember position for each conversation
+// TODO more data (long message compressed) -> darker color
+// TODO pinch, zoom
 final class SoundWavesViewController: UICollectionViewController {
 //  var viewModel: SoundWavesViewModelType!
 //  var viewModel: VoiceMessagesViewModelType!
@@ -11,8 +13,9 @@ final class SoundWavesViewController: UICollectionViewController {
 
   var voiceMessages: [VoiceMessage] = [] {
     didSet {
-      guard let collectionView = collectionView else { return }
+      guard let collectionView = collectionView, !voiceMessages.isEmpty else { return }
       collectionView.reloadData()
+      collectionViewLayout.invalidateLayout()
       let indexPath = IndexPath(item: 0, section: 0)
       collectionView.scrollToItem(at: indexPath, at: .right, animated: true)
     }
@@ -38,6 +41,7 @@ final class SoundWavesViewController: UICollectionViewController {
 extension SoundWavesViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
+    collectionView?.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
     collectionView?.transform = CGAffineTransform(scaleX: -1, y: 1)
     collectionView?.showsHorizontalScrollIndicator = false // TODO or show it?
     collectionView?.register(VoiceMessageCell.self,
@@ -60,6 +64,7 @@ extension SoundWavesViewController {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                                   for: indexPath) as! VoiceMessageCell
     cell.configure(with: voiceMessages[indexPath.row])
+    cell.contentView.transform = CGAffineTransform(scaleX: -1, y: 1)
     return cell
   }
 

@@ -344,6 +344,7 @@
 		4E2C1B082091A68200754E57 /* Tarradiddle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tarradiddle.h; sourceTree = "<group>"; };
 		4E2C1B092091A68200754E57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E3ACFD62110EE6C00B595C9 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		4E3F2A7D211195E300DAA13F /* TRiOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TRiOS.entitlements; sourceTree = "<group>"; };
 		4E3FD77620AB34E3005E34A1 /* SupportDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportDatabase.swift; sourceTree = "<group>"; };
 		4E407A3920A2D1F30084BB0A /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		4E407A3C20A4A0B90084BB0A /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
@@ -507,6 +508,7 @@
 		4E2C1AEE2091A62800754E57 /* TRiOS */ = {
 			isa = PBXGroup;
 			children = (
+				4E3F2A7D211195E300DAA13F /* TRiOS.entitlements */,
 				4EDAEC30210F12B8006D8424 /* App */,
 				4E0869422110840B00C755E1 /* Audio */,
 				4E62B6722091EBA600EC4EBD /* Services */,
@@ -906,6 +908,14 @@
 					};
 					4E2C1AEB2091A62800754E57 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					4E2C1B052091A68200754E57 = {
 						CreatedOnToolsVersion = 9.3;

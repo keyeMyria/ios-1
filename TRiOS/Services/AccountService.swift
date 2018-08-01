@@ -47,7 +47,6 @@ final class AccountService: AccountServiceType {
       guard let recordID = recordID else {
         if let error = error {
           DispatchQueue.main.async { callback(.failure(AnyError(error))) }
-
         } else {
           DispatchQueue.main.async { callback(.failure(AnyError(AccountServiceError.invalidCKCallback))) }
         }

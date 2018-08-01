@@ -18,6 +18,7 @@ final class VoiceMessageCell: UICollectionViewCell {
 //    separatorLine.trailingAnchor == contentView.trailingAnchor
 //    backgroundColor = .blue // TODO
     soundWaveView.edgeAnchors == contentView.edgeAnchors
+    soundWaveView.transform = CGAffineTransform(scaleX: -1, y: 1)
 //    soundWaveView.backgroundColor = .red
   }
 
