@@ -77,6 +77,8 @@
 		4EDFD7B521134993009EC74D /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7B321134993009EC74D /* SettingsTableViewController.swift */; };
 		4EDFD7B921134A1E009EC74D /* DetailSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7B821134A1E009EC74D /* DetailSettingsCell.swift */; };
 		4EDFD7BA21134A1E009EC74D /* DetailSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7B821134A1E009EC74D /* DetailSettingsCell.swift */; };
+		4EDFD7BC21135AAA009EC74D /* SwitchSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7BB21135AAA009EC74D /* SwitchSettingsCell.swift */; };
+		4EDFD7BD21135AAA009EC74D /* SwitchSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7BB21135AAA009EC74D /* SwitchSettingsCell.swift */; };
 		4EF208FC2094568D006B0F0D /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF208FB2094568D006B0F0D /* AudioRecorder.swift */; };
 		4EF208FE209466ED006B0F0D /* SoundWavesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF208FD209466ED006B0F0D /* SoundWavesViewController.swift */; };
 		4EF2090020946705006B0F0D /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF208FF20946705006B0F0D /* ConversationsViewController.swift */; };
@@ -416,6 +418,7 @@
 		4EDFD79821132EAA009EC74D /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		4EDFD7B321134993009EC74D /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		4EDFD7B821134A1E009EC74D /* DetailSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSettingsCell.swift; sourceTree = "<group>"; };
+		4EDFD7BB21135AAA009EC74D /* SwitchSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchSettingsCell.swift; sourceTree = "<group>"; };
 		4EF208FB2094568D006B0F0D /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		4EF208FD209466ED006B0F0D /* SoundWavesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWavesViewController.swift; sourceTree = "<group>"; };
 		4EF208FF20946705006B0F0D /* ConversationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
@@ -778,6 +781,7 @@
 				4EF715C9210F67B600149EAE /* SettingsCell.swift */,
 				4EF715CC210F680600149EAE /* TextInputCell.swift */,
 				4EDFD7B821134A1E009EC74D /* DetailSettingsCell.swift */,
+				4EDFD7BB21135AAA009EC74D /* SwitchSettingsCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1368,6 +1372,7 @@
 				4EF71513210F1A2F00149EAE /* LocalConversationService.swift in Sources */,
 				4EF71532210F1B0800149EAE /* AuthenticationCoordinator.swift in Sources */,
 				4EF7150F210F1A1B00149EAE /* AuthService.swift in Sources */,
+				4EDFD7BC21135AAA009EC74D /* SwitchSettingsCell.swift in Sources */,
 				4EF715BC210F4F8F00149EAE /* Then.swift in Sources */,
 				4EF71534210F1B0F00149EAE /* ConversationsViewModel.swift in Sources */,
 				4E9A06092110D29D003D1D61 /* CollectionViewHorizontalInversedLayout.swift in Sources */,
@@ -1446,6 +1451,7 @@
 				4EF715C0210F4FA400149EAE /* Presentable.swift in Sources */,
 				4EF2090420947090006B0F0D /* Friendship.swift in Sources */,
 				4E62B6772091EBC600EC4EBD /* AppAccount.swift in Sources */,
+				4EDFD7BD21135AAA009EC74D /* SwitchSettingsCell.swift in Sources */,
 				4EF715BA210F4F6C00149EAE /* Router.swift in Sources */,
 				4EB70CB6209E577300182833 /* ConversationsViewModel.swift in Sources */,
 				4E9A060A2110D29D003D1D61 /* CollectionViewHorizontalInversedLayout.swift in Sources */,
