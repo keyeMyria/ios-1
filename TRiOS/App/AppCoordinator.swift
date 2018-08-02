@@ -29,10 +29,12 @@ final class AppCoordinator: Coordinating {
       if isAuthenticated {
         do {
           let dbQueue = try setupDatabase()
-          runMainFlow(dbQueue: dbQueue)
-        } catch let AppFSError.database(error: error) {
+          let audioSession = AudioSession(onDeniedRecordPermission: { print("denied record permission") })
+          try audioSession.setup()
+          runMainFlow(dbQueue: dbQueue, audioSession: audioSession)
+        } catch AppFSError.database(error: _) {
           // TODO show ErrorCoordinator explaining the error
-        } catch let AppDatabaseError.migration(error: error) {
+        } catch AppDatabaseError.migration(error: _) {
           // TODO show ErrorCoordinator explaining the error
         } catch {
           // TODO
@@ -73,8 +75,8 @@ final class AppCoordinator: Coordinating {
     coordinator.start()
   }
 
-  private func runMainFlow(dbQueue: DatabaseQueue) {
-    let coordinator = HomeCoordinator(router: router, dbQueue: dbQueue)
+  private func runMainFlow(dbQueue: DatabaseQueue, audioSession: AudioSessionType) {
+    let coordinator = HomeCoordinator(router: router, dbQueue: dbQueue, audioSession: audioSession)
     add(childCoordinator: coordinator)
     coordinator.start()
   }

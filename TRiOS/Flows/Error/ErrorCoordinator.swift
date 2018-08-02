@@ -1,9 +1,18 @@
-//
-//  ErrorCoordinator.swift
-//  Tarradiddle
-//
-//  Created by asd on 7/31/18.
-//  Copyright © 2018 noose&needle. All rights reserved.
-//
+final class ErrorCoordinator: Coordinating {
+  private let router: RouterType
+  private let error: Error
 
-import Foundation
+  var childCoordinators: [Coordinating] = []
+
+  init(router: RouterType, error: Error) {
+    self.router = router
+    self.error = error
+  }
+
+  func start() {
+    showErrorModal()
+  }
+
+  private func showErrorModal() {
+  }
+}

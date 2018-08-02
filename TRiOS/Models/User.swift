@@ -7,6 +7,8 @@ struct User {
   let id: Int64
   let handle: String
   var insertedAt: Date?
+  var imageURL: URL?
+//  var image: Data // Photoshop stores images in sqlite
 }
 
 extension User {
@@ -14,12 +16,18 @@ extension User {
   init(id: Int64, handle: String) {
     self.id = id
     self.handle = handle
-    self.insertedAt = nil
+  }
+}
+
+extension User: Equatable {
+  static func == (lhs: User, rhs: User) -> Bool {
+    return lhs.id == rhs.id
   }
 }
 
 extension User {
   enum Columns: String, ColumnExpression {
+    case imageURL = "image_url"
     case insertedAt = "inserted_at"
     case id, handle
   }
@@ -30,6 +38,7 @@ extension User: FetchableRecord {
     id = row[Columns.id]
     insertedAt = row[Columns.insertedAt]
     handle = row[Columns.handle]
+    imageURL = row[Columns.imageURL]
   }
 }
 
@@ -47,6 +56,7 @@ extension User: PersistableRecord {
     container[Columns.id] = id
     container[Columns.insertedAt] = insertedAt
     container[Columns.handle] = handle
+    container[Columns.imageURL] = imageURL
   }
 }
 

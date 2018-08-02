@@ -5,6 +5,7 @@ final class MessagingViewController: UIViewController {
 //  let viewModel: MessagingViewModelType!
   private let conversations: [Conversation]
   private let conversationService: LocalConversationServiceType
+  private let audioService: AudioServiceType
   private let onSettingsTapped: () -> Void
   private let onUserSearchTapped: () -> Void
 
@@ -16,6 +17,31 @@ final class MessagingViewController: UIViewController {
     conversations: conversations,
     onConversationSelect: { [unowned self] selectedConversation in
       self.currentConversation = selectedConversation
+    },
+    onAddConversationSelect: { print("add new selected") },
+    onConversationRecording: { [unowned self] state in
+      switch state {
+      case let .started(conversation: conversation):
+        do {
+          try self.audioService.startRecording(for: conversation) // result?
+        } catch {
+          print("starting recording error", error)
+        }
+      case .cancelled:
+        do {
+          try self.audioService.cancelRecording()
+        } catch {
+          print("cancelling recording error", error)
+        }
+      case .ended:
+        self.audioService.finishRecording { [weak self] result in
+          switch result {
+          // TODO
+          case let .success((url: url, meters: meters)): ()
+          case let .failure(error): ()
+          }
+        }
+      }
     }
   )
 
@@ -47,11 +73,14 @@ final class MessagingViewController: UIViewController {
   // TODO also pass voice messages datasource and conversations data source
   init(conversations: [Conversation],
        conversationService: LocalConversationServiceType,
+       audioService: AudioServiceType,
        onSettingsTapped: @escaping () -> Void,
        onUserSearchTapped: @escaping () -> Void) {
     self.conversations = conversations
+    // TODO present "add friends screen", or talk to yourself
     currentConversation = conversations.first
     self.conversationService = conversationService
+    self.audioService = audioService
     self.onSettingsTapped = onSettingsTapped
     self.onUserSearchTapped = onUserSearchTapped
     super.init(nibName: nil, bundle: nil)

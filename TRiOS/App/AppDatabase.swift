@@ -38,6 +38,7 @@ final class AppDatabase {
         t.column("id", .integer).primaryKey()
         t.column("handle", .text).collate(.localizedCaseInsensitiveCompare).notNull()
         t.column("inserted_at", .datetime).defaults(sql: "CURRENT_TIMESTAMP").notNull()
+        t.column("image_url", .text)
       }
 
       // TODO can current user id change? if so, these would be invalid, need to store

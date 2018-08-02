@@ -9,10 +9,13 @@ protocol AudioRecorderType {
 }
 
 final class AudioRecorder: AudioRecorderType {
+  typealias MeteringLevel = (averagePower: Float, peakPower: Float)
+
   private let recorderSettings: [String: Any] = [
-    AVFormatIDKey: Int(kAudioFormatMPEG4AAC_HE_V2),
+//    AVFormatIDKey: Int(kAudioFormatMPEG4AAC_HE_V2),
+    AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
     AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue,
-    AVEncoderBitRateKey: 12_000,
+//    AVEncoderBitRateKey: 12_000,
     AVNumberOfChannelsKey: 1,
     AVSampleRateKey: 44_100
   ]
@@ -20,11 +23,11 @@ final class AudioRecorder: AudioRecorderType {
   private let recorder: AVAudioRecorder
   private let audioSession: AudioSessionType
   private var meterTimer: Timer?
-  private let onMetersChange: ((averagePower: Float, peakPower: Float)) -> Void
+  private let onMetersChange: (MeteringLevel) -> Void
 
   init(url: URL,
        audioSession: AudioSessionType,
-       onMetersChange: @escaping ((averagePower: Float, peakPower: Float)) -> Void) throws {
+       onMetersChange: @escaping (MeteringLevel) -> Void) throws {
     self.audioSession = audioSession
     self.onMetersChange = onMetersChange
     recorder = try AVAudioRecorder(url: url, settings: recorderSettings)

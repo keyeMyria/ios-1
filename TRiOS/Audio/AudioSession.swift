@@ -34,6 +34,7 @@ final class AudioSession: AudioSessionType {
     try? deactivate()
   }
 
+  // TODO move to init
   func setup() throws {
     guard session.availableModes.contains(AVAudioSessionModeVoiceChat) else {
       throw AudioSessionError.unavailableMode

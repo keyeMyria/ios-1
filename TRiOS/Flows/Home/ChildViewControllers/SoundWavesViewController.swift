@@ -41,6 +41,9 @@ final class SoundWavesViewController: UICollectionViewController {
 extension SoundWavesViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
+//    if #available(iOS 10.0, *) {
+//      collectionView?.isPrefetchingEnabled = false
+//    }
     collectionView?.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
     collectionView?.transform = CGAffineTransform(scaleX: -1, y: 1)
     collectionView?.showsHorizontalScrollIndicator = false // TODO or show it?

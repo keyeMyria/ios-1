@@ -17,6 +17,10 @@ final class ConversationCell: UICollectionViewCell {
 //  var isCurrent = false { didSet { longPress.isEnabled = isSelected } }
 //  var onStateChange: ((UIGestureRecognizerState) -> Void)?
 
+  enum Kind {
+    case new
+  }
+
   override init(frame: CGRect) {
     super.init(frame: frame)
     nameLabel.textColor = .white
@@ -74,6 +78,14 @@ final class ConversationCell: UICollectionViewCell {
     self.conversation = conversation
     nameLabel.text = "\(conversation.converseeID)"
 //    imageView.image = UIImage(imageLiteralResourceName: "idiot.jpg")
+  }
+
+  func configure(for kind: Kind) {
+    switch kind {
+    case .new:
+      self.conversation = nil
+      nameLabel.text = "+"
+    }
   }
 
   @available (*, unavailable)

@@ -16,7 +16,6 @@ force_try: warning
 opt_in_rules:
   - vertical_parameter_alignment_on_call
   - unavailable_function
-  - trailing_closure
   - redundant_type_annotation
   - quick_discouraged_pending_test
   - quick_discouraged_focused_test

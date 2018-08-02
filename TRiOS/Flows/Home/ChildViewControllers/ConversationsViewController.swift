@@ -7,19 +7,32 @@ final class ConversationsViewController: UICollectionViewController {
 //  var viewModel: ConversationsViewModelType!
   private let reuseIdentifier = "ConversationCell"
   private let onConversationSelect: (Conversation) -> Void
+  private let onConversationRecording: (LongpressState) -> Void
+  private let onAddConversationSelect: () -> Void
   // TODO datasource?
   private var conversations: [Conversation]
 
-  enum ConversationState {
-    case idle
-    case recording(conversationID: Int64)
+  enum LongpressState {
+    case started(conversation: Conversation)
+    case ended
+    case cancelled
   }
 
-  private var conversationState: ConversationState = .idle
+  enum InnerLongpressState {
+    case idle
+    case pressing(conversationID: Int64)
+  }
 
-  init(conversations: [Conversation], onConversationSelect: @escaping (Conversation) -> Void) {
+  private var longpressState: InnerLongpressState = .idle
+
+  init(conversations: [Conversation],
+       onConversationSelect: @escaping (Conversation) -> Void,
+       onAddConversationSelect: @escaping () -> Void,
+       onConversationRecording: @escaping (LongpressState) -> Void) {
     self.conversations = conversations
     self.onConversationSelect = onConversationSelect
+    self.onAddConversationSelect = onAddConversationSelect
+    self.onConversationRecording = onConversationRecording
     let layout = UICollectionViewFlowLayout()
     layout.scrollDirection = .horizontal
     super.init(collectionViewLayout: layout)
@@ -39,27 +52,32 @@ extension ConversationsViewController {
       if let pressedCellPath = collectionView?.indexPathForItem(at: pressedPoint) {
         if inCenter(point: pressedPoint) {
           let selectedConversation = conversations[pressedCellPath.row]
-          conversationState = .recording(conversationID: selectedConversation.id)
-          print("started recording \(selectedConversation.id)")
+          longpressState = .pressing(conversationID: selectedConversation.id)
+          onConversationRecording(.started(conversation: selectedConversation))
         }
       }
     case .ended:
+      guard case let .pressing(conversationID: conversationID) = longpressState else {
+          longpressState = .idle
+          return
+      }
+
       guard let pressedCellPath = collectionView?.indexPathForItem(at: pressedPoint) else {
-        conversationState = .idle
+        longpressState = .idle
+        onConversationRecording(.cancelled)
         return
       }
 
       let selectedConversation = conversations[pressedCellPath.row]
 
-      guard
-        case let .recording(conversationID: conversationID) = conversationState,
-        selectedConversation.id == conversationID else {
-          conversationState = .idle
-          return
+      guard selectedConversation.id == conversationID else {
+        longpressState = .idle
+        onConversationRecording(.cancelled)
+        return
       }
 
-      print("ended recording")
-      conversationState = .idle
+      longpressState = .idle
+      onConversationRecording(.ended)
     default: ()
     }
   }
@@ -84,10 +102,11 @@ extension ConversationsViewController {
   }
 }
 
+// TODO refactor "+" cell
 extension ConversationsViewController {
   override func collectionView(_ collectionView: UICollectionView,
                                numberOfItemsInSection section: Int) -> Int {
-    return conversations.count
+    return conversations.count + 1
   }
 
   override func collectionView(_ collectionView: UICollectionView,
@@ -95,14 +114,23 @@ extension ConversationsViewController {
     // swiftlint:disable force_cast
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                                   for: indexPath) as! ConversationCell
-    cell.configure(with: conversations[indexPath.row])
+    if indexPath.row == conversations.count {
+      cell.configure(for: .new)
+    } else {
+      cell.configure(with: conversations[indexPath.row])
+    }
     return cell
   }
 
   override func collectionView(_ collectionView: UICollectionView,
                                didSelectItemAt indexPath: IndexPath) {
+    // TODO don't let to scroll to "+" cell?
     collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-    onConversationSelect(conversations[indexPath.row])
+    if indexPath.row < conversations.count {
+      onConversationSelect(conversations[indexPath.row])
+    } else if indexPath.row == conversations.count {
+      onAddConversationSelect()
+    }
   }
 }
 
@@ -130,7 +158,11 @@ extension ConversationsViewController {
     }
 
     collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-    onConversationSelect(conversations[indexPath.row])
+    if indexPath.row < conversations.count {
+      onConversationSelect(conversations[indexPath.row])
+    } else if indexPath.row == conversations.count {
+      onAddConversationSelect()
+    }
   }
 }
 
@@ -158,8 +190,6 @@ extension ConversationsViewController {
 
   override func scrollViewDidEndDragging(_ scrollView: UIScrollView,
                                          willDecelerate decelerate: Bool) {
-    if !decelerate {
-      snapToCenter()
-    }
+    if !decelerate { snapToCenter() }
   }
 }

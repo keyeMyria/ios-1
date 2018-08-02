@@ -1,5 +1,5 @@
 import PlaygroundSupport
-// for testing things out
+import UIKit
 
 //import RxSwift
 //import RxCocoa
@@ -11,25 +11,7 @@ import PlaygroundSupport
 //import Apollo
 //import RxApollo
 //@testable import Tarradiddle
-//
-//let url = URL(string: "http://localhost:4000/graphql")!
 
-//let apollo = ApolloClient(url: url)
-//apollo.rx
-//  .perform(mutation: CreateUserMutation(icloudId: UUID().uuidString))
-//  .subscribe(onSuccess: { data in
-//    print(data.createUser)
-//  })
-
-//// for user id 15
-//let token = "SFMyNTY.g3QAAAACZAAEZGF0YWEPZAAGc2lnbmVkbgYA7JpdAWMB.sYIvpEcsBLYtyYeUwyRvd5QirX-RxywKQGJwrEv8zZ8"
-//
-//let config = URLSessionConfiguration.default
-//config.httpAdditionalHeaders = [
-//  "authorization": "Bearer \(token)"
-//]
-//
-//let apollo = ApolloClient(networkTransport: HTTPNetworkTransport(url: url, configuration: config))
 //
 //apollo.rx
 //  .fetch(query: UsersQuery(searchQuery: "idiot"))
@@ -56,24 +38,35 @@ import PlaygroundSupport
 
 //(meteringLevels as NSArray).
 
-import UIKit
-
-@testable import TRApp
-
 //let view = UIView(frame: .init(x: 0, y: 0, width: 100, height: 100))
 //let barbutton = UIBarButtonItem
 //view.addSubview(barbutton)
 
 //FileManager.default.ubiquityIdentityToken
 
-UserDefaults.standard.userID = nil
-UserDefaults.standard.userID
-UserDefaults.standard.userID = 1
-UserDefaults.standard.userID
-
-UserDefaults.standard.iCloudToken = nil
-UserDefaults.standard.iCloudToken
-UserDefaults.standard.iCloudToken = "asdfadsf"
-UserDefaults.standard.iCloudToken
+//UserDefaults.standard.userID = nil
+//UserDefaults.standard.userID
+//UserDefaults.standard.userID = 1
+//UserDefaults.standard.userID
+//
+//UserDefaults.standard.iCloudToken = nil
+//UserDefaults.standard.iCloudToken
+//UserDefaults.standard.iCloudToken = "asdfadsf"
+//UserDefaults.standard.iCloudToken
 
 //PlaygroundPage.current.liveView = view
+
+@testable import TRAppProxy
+
+let nav = UINavigationController()
+nav.navigationBar.barTintColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+nav.navigationBar.tintColor = .white
+//nav.navigationBar.
+let vc = SettingsViewController(account: FakeAccount(), onDismiss: { print("dismissed") })
+vc.title = "Settings"
+nav.pushViewController(vc, animated: true)
+
+PlaygroundPage.current.liveView = playgroundWrapper(
+  child: nav,
+  device: .phone4inch
+)

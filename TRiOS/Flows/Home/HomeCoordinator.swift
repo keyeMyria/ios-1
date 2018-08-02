@@ -38,13 +38,16 @@ final class FakeConversationService: LocalConversationServiceType {
 final class HomeCoordinator: Coordinating {
   private let router: RouterType
   private let dbQueue: DatabaseQueue
+  private let audioSession: AudioSessionType
+  private let apolloMommy = ApolloClientMommy()
   var childCoordinators: [Coordinating] = []
 
   let conversations = (0...3).map { Conversation(id: $0, converseeID: $0) }
 
-  init(router: RouterType, dbQueue: DatabaseQueue) {
+  init(router: RouterType, dbQueue: DatabaseQueue, audioSession: AudioSessionType) {
     self.router = router
     self.dbQueue = dbQueue
+    self.audioSession = audioSession
   }
 
   func start() {
@@ -52,27 +55,20 @@ final class HomeCoordinator: Coordinating {
   }
 
   private func showMessaging() {
-//    let conversationService = LocalConversationService(dbQueue: dbQueue)
-//    // TODO
-//    conversationService.listConversations { result in
-//      if case let .success(conversations) = result {
-//        let messagingViewController = MessagingViewController(
-//          conversations: conversations,
-//          conversationService: conversationService,
-//          onSettingsTapped: { [unowned self] in self.runSettingsFlow() },
-//          onUserSearchTapped: { [unowned self] in self.runUserSearchFlow() }
-//        )
-//        self.router.setRoot(to: messagingViewController, hideBar: true)
-//      }
-//    }
-    let conversationService = FakeConversationService()
-    let messagingViewController = MessagingViewController(
-      conversations: conversationService.conversations,
-      conversationService: conversationService,
-      onSettingsTapped: { print("settings tapped") },
-      onUserSearchTapped: { print("user search tapped") }
-    )
-    self.router.setRoot(to: messagingViewController, hideBar: true)
+    let conversationService = LocalConversationService(dbQueue: dbQueue)
+    conversationService.listConversations { [weak self] result in
+      guard let `self` = self else { return }
+      if case let .success(conversations) = result {
+        let messagingViewController = MessagingViewController(
+          conversations: conversations,
+          conversationService: conversationService,
+          audioService: AudioService(audioSession: self.audioSession),
+          onSettingsTapped: { [unowned self] in self.runSettingsFlow() },
+          onUserSearchTapped: { [unowned self] in self.runUserSearchFlow() }
+        )
+        self.router.setRoot(to: messagingViewController, hideBar: true)
+      }
+    }
   }
 
   private func runSettingsFlow() {
@@ -86,7 +82,9 @@ final class HomeCoordinator: Coordinating {
   }
 
   private func runUserSearchFlow() {
-    let coordinator = UserSearchCoordinator(router: router)
+    let coordinator = UserSearchCoordinator(router: router,
+                                            localUserService: LocalUserService(dbQueue: dbQueue),
+                                            remoteUserService: RemoteUserService(apollo: apolloMommy.authedClient))
     coordinator.finishFlow = { [unowned self, unowned coordinator] in
       self.router.popModule()
       self.remove(childCoordinator: coordinator)
@@ -94,35 +92,4 @@ final class HomeCoordinator: Coordinating {
     add(childCoordinator: coordinator)
     coordinator.start()
   }
-
-  //  private func runNewRunFlow() {
-  //    let coordinator = NewRunCoordinator(
-  //      router: router,
-  //      underlyingMapView: underlyingMapView,
-  //      runService: RunService(dbQueue: dbQueue)
-  //    )
-  //    coordinator.finishFlow = { [weak self, weak coordinator] run in
-  //      self?.router.dismissModule()
-  //      self?.remove(childCoordinator: coordinator)
-  //      if let run = run {
-  //        self?.runDetailsFlow(for: run)
-  //      } else {
-  //        self?.router.present(self?.homeViewController)
-  //      }
-  //    }
-  //    add(childCoordinator: coordinator)
-  //    router.dismissModule()
-  //    coordinator.start()
-  //  }
-
-  //  private func runDetailsFlow(for run: Run) {
-  //    let coordinator = RunDetailsCoordinator(router: router, run: run, underlyingMapView: underlyingMapView)
-  //    coordinator.finishFlow = { [weak self, weak coordinator] in
-  //      self?.router.dismissModule()
-  //      self?.router.present(self?.homeViewController)
-  //      self?.remove(childCoordinator: coordinator)
-  //    }
-  //    add(childCoordinator: coordinator)
-  //    coordinator.start()
-  //  }
 }

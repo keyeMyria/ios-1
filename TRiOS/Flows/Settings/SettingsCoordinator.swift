@@ -12,6 +12,9 @@ final class SettingsCoordinator: Coordinating {
   }
 
   private func showSettings() {
-    // TODO
+    let vc = SettingsViewController(account: FakeAccount(), onDismiss: { [unowned self] in
+      self.router.dismissModule()
+    })
+    router.present(vc)
   }
 }
