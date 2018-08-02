@@ -48,8 +48,9 @@ final class AudioSession: AudioSessionType {
       if #available(iOS 10.0, *) {
         try session.setCategory(.playAndRecord, mode: .voiceChat, options: [.defaultToSpeaker, .duckOthers])
       } else {
-        try session.setCategory(.playAndRecord, with: [.defaultToSpeaker, .duckOthers])
-        try session.setMode(.voiceChat)
+        // TODO
+//        try session.setCategory(.playAndRecord, with: [.defaultToSpeaker, .duckOthers])
+//        try session.setMode(.voiceChat)
       }
       setupNotifications()
     } catch {
