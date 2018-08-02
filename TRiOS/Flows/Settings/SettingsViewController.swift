@@ -20,9 +20,15 @@ struct SettingsDetail {
   let detail: String?
 }
 
+struct SettingsSwitch {
+  let text: String
+  let isOn: Bool
+}
+
 enum SettingsRow {
   case textInput
-  case detail(SettingsDetail)
+  case detail(SettingsDetail, action: (() -> Void)?)
+  case `switch`(SettingsSwitch, action: (() -> Void)?)
 }
 
 struct SettingsSection {
@@ -45,13 +51,13 @@ final class SettingsViewController: UIViewController {
     .init(
       header: "Hello header",
       rows: [
-        .detail(.init(text: "hello", moreInfo: true, detail: "wat")),
+        .detail(.init(text: "hello", moreInfo: true, detail: "wat"), action: nil),
         .textInput
       ]
     ),
     .init(
       rows: [
-        .detail(.init(text: "hello again", moreInfo: true, detail: "wat"))
+        .detail(.init(text: "hello again", moreInfo: true, detail: "wat"), action: nil)
       ]
     ),
     .init(
@@ -90,20 +96,38 @@ extension SettingsViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    view.backgroundColor = .white
+    // TODO can push within a nav controller?
+    // then won't need to do this dance with nav bar ...
+    view.backgroundColor = #colorLiteral(red: 0.977547657, green: 0.9692376636, blue: 0.9566834885, alpha: 1)
 
     let navBar = UINavigationBar()
+    navBar.backgroundColor = #colorLiteral(red: 0.977547657, green: 0.9692376636, blue: 0.9566834885, alpha: 1)
+    navBar.barTintColor = #colorLiteral(red: 0.977547657, green: 0.9692376636, blue: 0.9566834885, alpha: 1)
+    navBar.tintColor = .black
+    navBar.isTranslucent = false
     let doneItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneClicked))
-    navBar.topItem?.rightBarButtonItem = doneItem
+    let item = UINavigationItem()
+    item.title = "Settings"
+    item.rightBarButtonItem = doneItem
+    navBar.setItems([item], animated: false)
     view.addSubview(navBar)
     navBar.topAnchor == view.layoutMarginsGuide.topAnchor
     navBar.leadingAnchor == view.leadingAnchor
     navBar.trailingAnchor == view.trailingAnchor
 
+    let separator = UIView()
+    separator.backgroundColor = .black
+    view.addSubview(separator)
+    separator.topAnchor == navBar.bottomAnchor
+    separator.leadingAnchor == view.leadingAnchor
+    separator.trailingAnchor == view.trailingAnchor
+    separator.heightAnchor == 1
+
     let settingsTableViewController = SettingsTableViewController(settings: settings)
+    settingsTableViewController.view.backgroundColor = #colorLiteral(red: 0.977547657, green: 0.9692376636, blue: 0.9566834885, alpha: 1)
     addChildViewController(settingsTableViewController)
     view.addSubview(settingsTableViewController.view)
-    settingsTableViewController.view.topAnchor == navBar.bottomAnchor
+    settingsTableViewController.view.topAnchor == separator.bottomAnchor
     settingsTableViewController.view.bottomAnchor == view.bottomAnchor
     settingsTableViewController.view.leadingAnchor == view.leadingAnchor
     settingsTableViewController.view.trailingAnchor == view.trailingAnchor

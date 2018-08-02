@@ -18,6 +18,7 @@ extension SettingsTableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.register(cellType: DetailSettingsCell.self)
+    tableView.register(cellType: SwitchSettingsCell.self)
     tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
   }
 
@@ -47,19 +48,29 @@ extension SettingsTableViewController {
     let setting = settings[indexPath.section].rows[indexPath.row]
 
     switch setting {
-    case let .detail(detail):
+    case let .detail(detail, action: _):
       let cell: DetailSettingsCell = tableView.dequeueReusableCell(for: indexPath)
       cell.configure(for: detail)
       return cell
 
+    case let .switch(info, action: _):
+      let cell: SwitchSettingsCell = tableView.dequeueReusableCell(for: indexPath)
+      cell.configure(for: info)
+      return cell
+
     case .textInput:
-      let cell = tableView.dequeueReusableCell(withIdentifier: "cell",
-                                               for: indexPath)
+      let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
       return cell
     }
   }
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let row = settings[indexPath.section].rows[indexPath.row]
+    switch row {
+    case let .detail(_, action: action): action?()
+    case let .switch(_, action: action): action?()
+    default: ()
+    }
     tableView.deselectRow(at: indexPath, animated: true)
   }
 }
