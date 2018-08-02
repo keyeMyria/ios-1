@@ -96,7 +96,7 @@ extension ConversationsViewController {
     collectionView?.addGestureRecognizer(longGesture)
     collectionView?.backgroundColor = .clear // TODO remove
     collectionView?.showsHorizontalScrollIndicator = false // TODO or show it?
-    collectionView?.decelerationRate = UIScrollViewDecelerationRateFast
+    collectionView?.decelerationRate = UIScrollView.DecelerationRate.fast
     collectionView?.register(ConversationCell.self,
                              forCellWithReuseIdentifier: reuseIdentifier)
   }

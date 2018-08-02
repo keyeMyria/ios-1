@@ -48,7 +48,7 @@ public func playgroundWrapper(
 ) -> UIViewController {
 
   let parent = UIViewController()
-  parent.addChildViewController(child)
+  parent.addChild(child)
 
   let traits: UITraitCollection
   let parentSize: CGSize
@@ -130,7 +130,7 @@ public func playgroundWrapper(
     additionalTraits,
     .init(preferredContentSizeCategory: contentSizeCategory)
   ])
-  parent.setOverrideTraitCollection(allTraits, forChildViewController: child)
+  parent.setOverrideTraitCollection(allTraits, forChild: child)
 
   parent.view.addSubview(child.view)
   child.view.translatesAutoresizingMaskIntoConstraints = false

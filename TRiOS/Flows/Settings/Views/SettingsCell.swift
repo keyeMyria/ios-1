@@ -1,7 +1,7 @@
 import UIKit
 
 final class SettingsCell: UITableViewCell {
-  override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+  override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: .value1, reuseIdentifier: reuseIdentifier)
   }
 

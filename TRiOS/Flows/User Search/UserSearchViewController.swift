@@ -60,11 +60,11 @@ extension UserSearchViewController {
     super.viewDidLoad()
     searchBar.delegate = self
 
-    addChildViewController(usersViewController)
+    addChild(usersViewController)
     view.addSubview(usersViewController.view)
     usersViewController.view.topAnchor == view.topAnchor
     // TODO etc
-    usersViewController.didMove(toParentViewController: self)
+    usersViewController.didMove(toParent: self)
 
     view.addSubview(dismissButton)
     // TODO layout

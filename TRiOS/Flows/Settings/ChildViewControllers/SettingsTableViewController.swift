@@ -19,7 +19,7 @@ extension SettingsTableViewController {
     super.viewDidLoad()
     tableView.register(cellType: DetailSettingsCell.self)
     tableView.register(cellType: SwitchSettingsCell.self)
-    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    tableView.register(cellType: LabeledInputCell.self)
   }
 
   override func viewDidAppear(_ animated: Bool) {
@@ -58,8 +58,9 @@ extension SettingsTableViewController {
       cell.configure(for: info)
       return cell
 
-    case .textInput:
-      let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+    case let .input(input):
+      let cell: LabeledInputCell = tableView.dequeueReusableCell(for: indexPath)
+      cell.configure(for: input)
       return cell
     }
   }

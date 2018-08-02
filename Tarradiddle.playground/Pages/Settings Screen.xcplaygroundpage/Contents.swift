@@ -8,23 +8,23 @@ import PlaygroundSupport
 //let settings: [SettingsSection] = [
 //  .init(
 //    rows: [
-//      .detail(.init(text: "hello", moreInfo: true, detail: "wat")),
+//      .detail(.init(text: "hello", moreInfo: true, detail: "wat"), action: nil),
 //      .textInput
 //    ]
 //  ),
 //  .init(
 //    rows: [
-//      .detail(.init(text: "🎵  Notifications and Sounds", moreInfo: true, detail: nil)),
-//      .detail(.init(text: "🔒  Privacy and Security", moreInfo: true, detail: nil)),
-//      .detail(.init(text: "💾  Data and Storage", moreInfo: true, detail: nil)),
-//      .detail(.init(text: "🌍  Language", moreInfo: true, detail: "English")),
+//      .detail(.init(text: "🎵  Notifications and Sounds", moreInfo: true, detail: nil), action: nil),
+//      .detail(.init(text: "🔒  Privacy and Security", moreInfo: true, detail: nil), action: nil),
+//      .detail(.init(text: "💾  Data and Storage", moreInfo: true, detail: nil), action: nil),
+//      .detail(.init(text: "🌍  Language", moreInfo: true, detail: "English"), action: nil),
 //    ]
 //  ),
 //  .init(
 //    rows: [
-//      .detail(.init(text: "🤬  Complain", moreInfo: true, detail: nil)),
-//      .detail(.init(text: "🤔  FAQ", moreInfo: true, detail: nil)),
-//      .detail(.init(text: "🙌  Share", moreInfo: true, detail: nil))
+//      .detail(.init(text: "🤬  Complain", moreInfo: true, detail: nil), action: nil),
+//      .detail(.init(text: "🤔  FAQ", moreInfo: true, detail: nil), action: nil),
+//      .detail(.init(text: "🙌  Share", moreInfo: true, detail: nil), action: nil)
 //    ]
 //  )
 //]
@@ -57,43 +57,54 @@ import PlaygroundSupport
 //  )
 //]
 
+//let settings: [SettingsSection] = [
+//  .init(
+//    header: "Privacy",
+//    rows: [
+//      .detail(.init(text: "Blocked Users", moreInfo: true, detail: nil), action: {
+//        print("tapped blocked users")
+//      }),
+//      .detail(.init(text: "Last Seen", moreInfo: true, detail: "Everybody"), action: {
+//        print("tapped last seen")
+//      }),
+//      .detail(.init(text: "Show Timezone", moreInfo: true, detail: "Everybody"), action: nil)
+//    ],
+//    footer: "Change what other people can see and do about you."
+//  ),
+//  .init(
+//    header: "Security",
+//    rows: [
+//      .detail(.init(text: "Passcode Lock", moreInfo: true, detail: nil), action: nil),
+//      .detail(.init(text: "Active Sessions", moreInfo: true, detail: nil), action: nil)
+//    ]
+//  ),
+//  .init(
+//    header: "Delete my account",
+//    rows: [
+//      .detail(.init(text: "If Away For", moreInfo: true, detail: "3 months"), action: nil)
+//    ],
+//    footer: "If you do not come online at least once within this period, your account will be deleted along with all messages and conversations."
+//  ),
+//  .init(
+//    rows: [
+//      .detail(.init(text: "Data Settings", moreInfo: true, detail: nil), action: nil)
+//    ],
+//    footer: "Control which of your data is stored in the cloud."
+//  )
+//  // TODO need more space here
+//]
+
 let settings: [SettingsSection] = [
   .init(
-    header: "Privacy",
     rows: [
-      .detail(.init(text: "Blocked Users", moreInfo: true, detail: nil), action: {
-        print("tapped blocked users")
-      }),
-      .detail(.init(text: "Last Seen", moreInfo: true, detail: "Everybody"), action: {
-        print("tapped last seen")
-      }),
-      .detail(.init(text: "Show Timezone", moreInfo: true, detail: "Everybody"), action: nil)
+      .input(.init(title: "Handle"))
     ],
-    footer: "Change what other people can see and do about you."
-  ),
-  .init(
-    header: "Security",
-    rows: [
-      .detail(.init(text: "Passcode Lock", moreInfo: true, detail: nil), action: nil),
-      .detail(.init(text: "Active Sessions", moreInfo: true, detail: nil), action: nil)
-    ]
-  ),
-  .init(
-    header: "Delete my account",
-    rows: [
-      .detail(.init(text: "If Away For", moreInfo: true, detail: "3 months"), action: nil)
-    ],
-    footer: "If you do not come online at least once within this period, your account will be deleted along with all messages and conversations."
-  ),
-  .init(
-    rows: [
-      .detail(.init(text: "Data Settings", moreInfo: true, detail: nil), action: nil)
-    ],
-    footer: "Control which of your data is stored in the cloud."
+    footer: "You can choose a handle on Tarradiddle."
   )
-  // TODO need more space here
 ]
 
 let vc = SettingsTableViewController(settings: settings)
 
 PlaygroundPage.current.liveView = playgroundWrapper(child: vc, device: .phone4inch)
+//vc.preferredContentSize = vc.view.frame.size
+//PlaygroundPage.current.liveView = vc

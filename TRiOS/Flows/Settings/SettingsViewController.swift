@@ -14,6 +14,10 @@ final class FakeAccount: FakeAccountType {
   }
 }
 
+struct SettingsInput {
+  let title: String
+}
+
 struct SettingsDetail {
   let text: String
   let moreInfo: Bool
@@ -26,7 +30,7 @@ struct SettingsSwitch {
 }
 
 enum SettingsRow {
-  case textInput
+  case input(SettingsInput)
   case detail(SettingsDetail, action: (() -> Void)?)
   case `switch`(SettingsSwitch, action: (() -> Void)?)
 }
@@ -52,7 +56,7 @@ final class SettingsViewController: UIViewController {
       header: "Hello header",
       rows: [
         .detail(.init(text: "hello", moreInfo: true, detail: "wat"), action: nil),
-        .textInput
+        .input(.init(title: "asdf"))
       ]
     ),
     .init(
@@ -62,14 +66,14 @@ final class SettingsViewController: UIViewController {
     ),
     .init(
       rows: [
-        .textInput,
-        .textInput
+        .input(.init(title: "asdf")),
+        .input(.init(title: "asdf"))
       ],
       footer: "asdf"
     ),
     .init(
       rows: [
-        .textInput
+        .input(.init(title: "asdf"))
       ]
     )
   ]
@@ -125,7 +129,7 @@ extension SettingsViewController {
 
     let settingsTableViewController = SettingsTableViewController(settings: settings)
     settingsTableViewController.view.backgroundColor = #colorLiteral(red: 0.977547657, green: 0.9692376636, blue: 0.9566834885, alpha: 1)
-    addChildViewController(settingsTableViewController)
+    addChild(settingsTableViewController)
     view.addSubview(settingsTableViewController.view)
     settingsTableViewController.view.topAnchor == separator.bottomAnchor
     settingsTableViewController.view.bottomAnchor == view.bottomAnchor
