@@ -6,3 +6,7 @@ help:
 # target: deps - Get deps with carthage.
 deps:
 	@scripts/deps.sh
+
+# target: test - Run tests via fastlane.
+test:
+	@bundle exec fastlane tests
