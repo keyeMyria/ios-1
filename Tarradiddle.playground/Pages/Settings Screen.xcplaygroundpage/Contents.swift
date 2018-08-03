@@ -103,27 +103,27 @@ import PlaygroundSupport
 //  // TODO need more space here
 //]
 
-//let sections: [SettingsViewModel.Section] = [
-//  .init(
-//    rows: [
-//      .textInput(
-//        .init(
-//          label: "Handle",
-//          placeholder: "Your Handle",
-//          initialValue: "idiot",
-//          validation: { string in
-//            print("handle:", string)
-//            return .valid
-//          }
-//        )
-//      )
-//    ],
-//    // TODO attributed string
-//    footer: "You can choose a handle on Tarradiddle. If you do, other people will be able to find you by this username and contact you without knowing your phone number.\n\nYou can use a-z, 0-9 and underscores. Minimum length is 5 characters."
-//  )
-//]
+let sections: [SettingsViewModel.Section] = [
+  .init(
+    rows: [
+      .textInput(
+        .init(
+          label: "Handle",
+          placeholder: "Your Handle",
+          initialValue: "idiot",
+          validation: { string in
+            print("handle:", string)
+            return .valid
+          }
+        )
+      )
+    ],
+    // TODO attributed string
+    footer: "You can choose a handle on Tarradiddle. If you do, other people will be able to find you by this username and contact you without knowing your phone number.\n\nYou can use a-z, 0-9 and underscores. Minimum length is 5 characters."
+  )
+]
 
-let sections: [SettingsViewModel.Section] = []
+//let sections: [SettingsViewModel.Section] = []
 
 let vc = SettingsTableViewController(sections: sections)
 

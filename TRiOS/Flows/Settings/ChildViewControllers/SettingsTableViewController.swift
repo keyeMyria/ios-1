@@ -68,7 +68,8 @@ extension SettingsTableViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let row = sections[indexPath.section].rows[indexPath.row]
     switch row {
-    case let .detail(detail): detail.onClick?() // TODO test
+    case let .detail(detail):
+      detail.onClick?() // TODO test
     default: ()
     }
     tableView.deselectRow(at: indexPath, animated: true)

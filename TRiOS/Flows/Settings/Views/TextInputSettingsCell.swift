@@ -16,6 +16,7 @@ final class TextInputSettingsCell: UITableViewCell, Reusable {
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
 
+    selectionStyle = .none
     textField.addTarget(self, action: #selector(onEditingChanged), for: .editingChanged)
 
     contentView.addSubview(label)
