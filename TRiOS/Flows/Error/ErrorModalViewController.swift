@@ -7,6 +7,7 @@ final class ErrorModalViewController: UIViewController {
   private let onDismiss: (Decision) -> Void
 
   private let titleLabel = UILabel().then {
+    // TODO don't panic
     $0.text = "👋 Something went legit wrong."
   }
 
