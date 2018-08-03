@@ -9,11 +9,11 @@ final class MessagingViewController: UIViewController {
   private let onSettingsTapped: () -> Void
   private let onUserSearchTapped: () -> Void
 
-  private lazy var soundWavesViewController = SoundWavesViewController { [unowned self] selectedVoiceMessage in
+  private lazy var childSoundWavesViewController = SoundWavesViewController { [unowned self] selectedVoiceMessage in
     print("selected voice message", selectedVoiceMessage)
   }
 
-  private lazy var conversationsViewController = ConversationsViewController(
+  private lazy var childConversationsViewController = ConversationsViewController(
     conversations: conversations,
     onConversationSelect: { [unowned self] selectedConversation in
       self.currentConversation = selectedConversation
@@ -51,7 +51,7 @@ final class MessagingViewController: UIViewController {
       if currentConversation != oldValue {
         conversationService.loadVoiceMessages(for: currentConversation) { [weak self] result in
           if case let .success(voiceMessages) = result {
-            self?.soundWavesViewController.voiceMessages = voiceMessages
+            self?.childSoundWavesViewController.voiceMessages = voiceMessages
           }
         }
       }
@@ -107,25 +107,22 @@ extension MessagingViewController {
     userSearchButton.topAnchor == settingsButton.topAnchor
     userSearchButton.heightAnchor == settingsButton.heightAnchor
 
-    // TODO
-    // add a button to manage friendships FriendshipsButton() (last "conversation")
-    // add a button to start recording (tap on one of the conversations)
+    addChildViewController(childConversationsViewController)
+    let childConversationsViewControllerView: UIView = childConversationsViewController.view
+    view.addSubview(childConversationsViewControllerView)
+    childConversationsViewControllerView.leadingAnchor == view.leadingAnchor
+    childConversationsViewControllerView.trailingAnchor == view.trailingAnchor
+    childConversationsViewControllerView.bottomAnchor == view.bottomAnchor - 30
+    childConversationsViewControllerView.heightAnchor == 100
+    childConversationsViewController.didMove(toParentViewController: self)
 
-    addChildViewController(conversationsViewController)
-    view.addSubview(conversationsViewController.view)
-    conversationsViewController.view.leadingAnchor == view.leadingAnchor
-    conversationsViewController.view.trailingAnchor == view.trailingAnchor
-    conversationsViewController.view.bottomAnchor == view.bottomAnchor - 30
-    conversationsViewController.view.heightAnchor == 100
-    conversationsViewController.didMove(toParentViewController: self)
-
-    addChildViewController(soundWavesViewController)
-    view.addSubview(soundWavesViewController.view)
-//    soundWaveCollectionViewController.view.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 75)
-    soundWavesViewController.view.leadingAnchor == view.leadingAnchor
-    soundWavesViewController.view.trailingAnchor == view.trailingAnchor
-    soundWavesViewController.view.centerYAnchor == view.centerYAnchor
-    soundWavesViewController.view.heightAnchor == 175
-    soundWavesViewController.didMove(toParentViewController: self)
+    addChildViewController(childSoundWavesViewController)
+    let childSoundWavesViewControllerView: UIView = childSoundWavesViewController.view
+    view.addSubview(childSoundWavesViewControllerView)
+    childSoundWavesViewControllerView.leadingAnchor == view.leadingAnchor
+    childSoundWavesViewControllerView.trailingAnchor == view.trailingAnchor
+    childSoundWavesViewControllerView.centerYAnchor == view.centerYAnchor
+    childSoundWavesViewControllerView.heightAnchor == 175
+    childSoundWavesViewController.didMove(toParentViewController: self)
   }
 }

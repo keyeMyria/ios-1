@@ -44,6 +44,7 @@ final class ConversationsViewController: UICollectionViewController {
 }
 
 extension ConversationsViewController {
+  // TODO can be a tap? refactor anyway
   @objc private func handleLongGesture(_ sender: UIGestureRecognizer) {
     let pressedPoint = sender.location(in: collectionView)
     switch sender.state {

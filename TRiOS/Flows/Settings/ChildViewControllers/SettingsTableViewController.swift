@@ -1,5 +1,4 @@
 import UIKit
-import Anchorage
 
 final class SettingsTableViewController: UITableViewController {
   private let sections: [SettingsViewModel.Section]
@@ -75,7 +74,7 @@ extension SettingsTableViewController {
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     let row = sections[indexPath.section].rows[indexPath.row]
     switch row {
-    case .profile(_): return 80
+    case .profile: return 80
     default: return 42
     }
   }
