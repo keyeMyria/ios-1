@@ -1,7 +1,7 @@
 import UIKit
 import Anchorage
 
-final class ConversationCell: UICollectionViewCell {
+final class ConversationCell: UICollectionViewCell, Reusable {
   private var conversation: Conversation?
   private let imageView = UIImageView()
   private let nameLabel = UILabel()

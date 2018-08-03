@@ -1,7 +1,7 @@
 import UIKit
 import Anchorage
 
-final class VoiceMessageCell: UICollectionViewCell {
+final class VoiceMessageCell: UICollectionViewCell, Reusable {
   let soundWaveView = SoundWaveView()
   private var meteringLevelsCount: Int = 0
 

@@ -5,7 +5,6 @@ import UIKit
 
 final class ConversationsViewController: UICollectionViewController {
 //  var viewModel: ConversationsViewModelType!
-  private let reuseIdentifier = "ConversationCell"
   private let onConversationSelect: (Conversation) -> Void
   private let onConversationRecording: (LongpressState) -> Void
   private let onAddConversationSelect: () -> Void
@@ -96,9 +95,8 @@ extension ConversationsViewController {
     collectionView?.addGestureRecognizer(longGesture)
     collectionView?.backgroundColor = .clear // TODO remove
     collectionView?.showsHorizontalScrollIndicator = false // TODO or show it?
-    collectionView?.decelerationRate = UIScrollView.DecelerationRate.fast
-    collectionView?.register(ConversationCell.self,
-                             forCellWithReuseIdentifier: reuseIdentifier)
+    collectionView?.decelerationRate = .fast
+    collectionView.register(cellType: ConversationCell.self)
   }
 }
 
@@ -111,9 +109,7 @@ extension ConversationsViewController {
 
   override func collectionView(_ collectionView: UICollectionView,
                                cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    // swiftlint:disable force_cast
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
-                                                  for: indexPath) as! ConversationCell
+    let cell: ConversationCell = collectionView.dequeueReusableCell(for: indexPath)
     if indexPath.row == conversations.count {
       cell.configure(for: .new)
     } else {

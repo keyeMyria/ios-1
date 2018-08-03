@@ -54,7 +54,7 @@ final class OnboardingViewController: UICollectionViewController, OnboardingView
     collectionView?.isPagingEnabled = true
     //    collectionView?.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     //    collectionView?.contentOffset = CGPoint(x: 0, y: 0)
-    collectionView?.register(OnboardingViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+    collectionView?.register(cellType: OnboardingViewCell.self)
 
     view.addSubview(pageControl)
     pageControl.centerXAnchor == view.centerXAnchor
@@ -72,9 +72,7 @@ extension OnboardingViewController {
 
   override func collectionView(_ collectionView: UICollectionView,
                                cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    // swiftlint:disable force_cast
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
-                                                  for: indexPath) as! OnboardingViewCell
+    let cell: OnboardingViewCell = collectionView.dequeueReusableCell(for: indexPath)
     cell.configure(for: pages[indexPath.row])
     return cell
   }

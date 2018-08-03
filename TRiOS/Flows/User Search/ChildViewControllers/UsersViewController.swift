@@ -2,7 +2,6 @@ import UIKit
 
 final class UsersViewController: UITableViewController {
 //  private var viewModel: UserSearchViewModel!
-  private let reuseIdentifier = "UserCell"
   private let onUserSelected: (User) -> Void
   var users: [User] {
     didSet {
@@ -28,7 +27,7 @@ final class UsersViewController: UITableViewController {
 extension UsersViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
-    tableView.register(UserListCell.self, forCellReuseIdentifier: reuseIdentifier)
+    tableView.register(cellType: UserListCell.self)
   }
 }
 
@@ -43,8 +42,7 @@ extension UsersViewController {
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    // swiftlint:disable:next force_cast
-    let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! UserListCell
+    let cell: UserListCell = tableView.dequeueReusableCell(for: indexPath)
     cell.configure(with: users[indexPath.row])
     return cell
   }

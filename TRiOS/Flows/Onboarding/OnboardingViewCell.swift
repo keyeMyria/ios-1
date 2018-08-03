@@ -1,7 +1,7 @@
 import UIKit
 import Anchorage
 
-final class OnboardingViewCell: UICollectionViewCell {
+final class OnboardingViewCell: UICollectionViewCell, Reusable {
   var picture = UIView()
 
   var title = UILabel().then {

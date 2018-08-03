@@ -1,7 +1,7 @@
 import UIKit
 import Anchorage
 
-final class UserListCell: UITableViewCell {
+final class UserListCell: UITableViewCell, Reusable {
   private let stack = UIStackView()
 
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

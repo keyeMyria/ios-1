@@ -6,7 +6,6 @@ import UIKit
 final class SoundWavesViewController: UICollectionViewController {
 //  var viewModel: SoundWavesViewModelType!
 //  var viewModel: VoiceMessagesViewModelType!
-  private let reuseIdentifier = "SoundWaveCell"
   private let onVoiceMessageSelected: (VoiceMessage) -> Void
   // TODO a bar which separates sent and recorded messages
   private var currentWidths: [Int: CGFloat] = [:]
@@ -47,8 +46,7 @@ extension SoundWavesViewController {
     collectionView?.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
     collectionView?.transform = CGAffineTransform(scaleX: -1, y: 1)
     collectionView?.showsHorizontalScrollIndicator = false // TODO or show it?
-    collectionView?.register(VoiceMessageCell.self,
-                             forCellWithReuseIdentifier: reuseIdentifier)
+    collectionView?.register(cellType: VoiceMessageCell.self)
   }
 }
 
@@ -63,9 +61,7 @@ extension SoundWavesViewController {
 // let requiredWidth = SoundWaveView.requiredWidth(meteringLevelsCount: voiceMessage.meterLevelsUnscaled.count)
 // print("[currentWidths] setting \(row) to \(requiredWidth)")
 // currentWidths[row] = requiredWidth
-    // swiftlint:disable force_cast
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
-                                                  for: indexPath) as! VoiceMessageCell
+    let cell: VoiceMessageCell = collectionView.dequeueReusableCell(for: indexPath)
     cell.configure(with: voiceMessages[indexPath.row])
     cell.contentView.transform = CGAffineTransform(scaleX: -1, y: 1)
     return cell
