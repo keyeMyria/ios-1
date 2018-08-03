@@ -103,16 +103,19 @@ import PlaygroundSupport
 //  // TODO need more space here
 //]
 
-//let settings: [Settings.Section] = [
+//let sections: [SettingsViewModel.Section] = [
 //  .init(
 //    rows: [
-//      .input(.init(label: "Handle",
-//                   placeholder: "Your Handle",
-//                   initialValue: "idiot",
-//                   validation: { string in
-//                    print("handle:", string)
-//                    return .valid
-//                   })
+//      .textInput(
+//        .init(
+//          label: "Handle",
+//          placeholder: "Your Handle",
+//          initialValue: "idiot",
+//          validation: { string in
+//            print("handle:", string)
+//            return .valid
+//          }
+//        )
 //      )
 //    ],
 //    // TODO attributed string
@@ -120,9 +123,9 @@ import PlaygroundSupport
 //  )
 //]
 
-let settings: [Settings.Section] = []
+let sections: [SettingsViewModel.Section] = []
 
-let vc = SettingsTableViewController(settings: settings)
+let vc = SettingsTableViewController(sections: sections)
 
 PlaygroundPage.current.liveView = playgroundWrapper(child: vc, device: .phone4inch)
 //vc.preferredContentSize = vc.view.frame.size

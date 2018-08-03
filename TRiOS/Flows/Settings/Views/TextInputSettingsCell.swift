@@ -38,7 +38,13 @@ final class TextInputSettingsCell: UITableViewCell, Reusable {
   }
 
   func configure(for input: SettingsViewModel.TextInput) {
-    label.text = input.label
+    if let inputLabel = input.label {
+      label.isHidden = false
+      label.text = inputLabel
+    } else {
+      label.isHidden = true
+    }
+
     textField.placeholder = input.placeholder
     textField.text = input.initialValue
     self.validation = input.validation
