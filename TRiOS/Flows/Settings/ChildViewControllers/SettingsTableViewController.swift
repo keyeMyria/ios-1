@@ -1,28 +1,9 @@
 import UIKit
 
-enum SettingsRow {
-  case input(SettingsInput)
-  case detail(SettingsDetail, action: (() -> Void)?)
-  case `switch`(SettingsSwitch, action: (() -> Void)?)
-}
-
-struct SettingsSection {
-  let header: String?
-  let rows: [SettingsRow]
-  let footer: String?
-
-  // swiftlint:disable:next function_default_parameter_at_end
-  init(header: String? = nil, rows: [SettingsRow], footer: String? = nil) {
-    self.rows = rows
-    self.header = header
-    self.footer = footer
-  }
-}
-
 final class SettingsTableViewController: UITableViewController {
-  private let settings: [SettingsSection]
+  private let settings: [Settings.Section]
 
-  init(settings: [SettingsSection]) {
+  init(settings: [Settings.Section]) {
     self.settings = settings
     super.init(style: .grouped)
   }
@@ -67,14 +48,14 @@ extension SettingsTableViewController {
     let setting = settings[indexPath.section].rows[indexPath.row]
 
     switch setting {
-    case let .detail(detail, action: _):
+    case let .detail(detail):
       let cell: DetailSettingsCell = tableView.dequeueReusableCell(for: indexPath)
       cell.configure(for: detail)
       return cell
 
-    case let .switch(info, action: _):
+    case let .switch(`switch`):
       let cell: SwitchSettingsCell = tableView.dequeueReusableCell(for: indexPath)
-      cell.configure(for: info)
+      cell.configure(for: `switch`)
       return cell
 
     case let .input(input):
@@ -87,8 +68,7 @@ extension SettingsTableViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let row = settings[indexPath.section].rows[indexPath.row]
     switch row {
-    case let .detail(_, action: action): action?()
-    case let .switch(_, action: action): action?()
+    case let .detail(detail): detail.onClick?()
     default: ()
     }
     tableView.deselectRow(at: indexPath, animated: true)

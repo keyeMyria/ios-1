@@ -1,11 +1,5 @@
 import UIKit
 
-struct SettingsDetail {
-  let text: String
-  let moreInfo: Bool
-  let detail: String?
-}
-
 final class DetailSettingsCell: UITableViewCell, Reusable {
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: .value1, reuseIdentifier: reuseIdentifier)
@@ -21,10 +15,10 @@ final class DetailSettingsCell: UITableViewCell, Reusable {
     accessoryType = .none
   }
 
-  func configure(for detail: SettingsDetail) {
+  func configure(for detail: Settings.Detail) {
     textLabel?.text = detail.text
     detailTextLabel?.text = detail.detail
-    if detail.moreInfo {
+    if detail.onClick != nil {
       accessoryType = .disclosureIndicator
     }
   }

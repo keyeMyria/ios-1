@@ -1,10 +1,5 @@
 import UIKit
 
-struct SettingsSwitch {
-  let text: String
-  let isOn: Bool
-}
-
 final class SwitchSettingsCell: UITableViewCell, Reusable {
   private var onToggle: ((Bool) -> Void)?
   @objc private func didToggleSwitch(_ sender: UISwitch) { onToggle?(sender.isOn) }
@@ -21,9 +16,9 @@ final class SwitchSettingsCell: UITableViewCell, Reusable {
     fatalError("init(coder:) has not been implemented")
   }
 
-  func configure(for `switch`: SettingsSwitch) {
+  func configure(for `switch`: Settings.Switch) {
     textLabel?.text = `switch`.text
     switchControl.isOn = `switch`.isOn
-//    self.onToggle = onToggle
+    self.onToggle = `switch`.onToggle
   }
 }

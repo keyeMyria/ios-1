@@ -1,11 +1,6 @@
 import UIKit
 import Anchorage
 
-struct SettingsInput {
-  let title: String
-  let value: String
-}
-
 final class LabeledInputCell: UITableViewCell, Reusable {
   private let textField = UITextField().then {
     $0.placeholder = "Your Handle"
@@ -36,7 +31,7 @@ final class LabeledInputCell: UITableViewCell, Reusable {
     fatalError("init(coder:) has not been implemented")
   }
 
-  func configure(for input: SettingsInput) {
+  func configure(for input: Settings.Input) {
     label.text = input.title
     textField.text = input.value
   }

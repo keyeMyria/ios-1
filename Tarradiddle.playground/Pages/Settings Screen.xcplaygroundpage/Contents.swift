@@ -5,37 +5,40 @@ import PlaygroundSupport
 //let account = FakeAccount()
 //let vc = SettingsViewController(account: account, onDismiss: { print("dismissed") })
 
-//let settings: [SettingsSection] = [
+//let settings: [Settings.Section] = [
 //  .init(
 //    rows: [
-//      .detail(.init(text: "hello", moreInfo: true, detail: "wat"), action: nil),
-//      .textInput
+//      .detail(.init(text: "hello", detail: "wat", onClick: {}))
 //    ]
 //  ),
 //  .init(
 //    rows: [
-//      .detail(.init(text: "🎵  Notifications and Sounds", moreInfo: true, detail: nil), action: nil),
-//      .detail(.init(text: "🔒  Privacy and Security", moreInfo: true, detail: nil), action: nil),
-//      .detail(.init(text: "💾  Data and Storage", moreInfo: true, detail: nil), action: nil),
-//      .detail(.init(text: "🌍  Language", moreInfo: true, detail: "English"), action: nil),
+//      .detail(.init(text: "🎵  Notifications and Sounds", detail: nil, onClick: {})),
+//      .detail(.init(text: "🔒  Privacy and Security", detail: nil, onClick: {})),
+//      .detail(.init(text: "💾  Data and Storage", detail: nil, onClick: {})),
+//      .detail(.init(text: "🌍  Language", detail: "English", onClick: {}))
 //    ]
 //  ),
 //  .init(
 //    rows: [
-//      .detail(.init(text: "🤬  Complain", moreInfo: true, detail: nil), action: nil),
-//      .detail(.init(text: "🤔  FAQ", moreInfo: true, detail: nil), action: nil),
-//      .detail(.init(text: "🙌  Share", moreInfo: true, detail: nil), action: nil)
+//      .detail(.init(text: "🤬  Complain", detail: nil, onClick: {})),
+//      .detail(.init(text: "🤔  FAQ", detail: nil, onClick: {})),
+//      .detail(.init(text: "🙌  Share", detail: nil, onClick: {}))
 //    ]
 //  )
 //]
 
-//let settings: [SettingsSection] = [
+//let settings: [Settings.Section] = [
 //  .init(
 //    header: "Message notifications",
 //    rows: [
-//      .switch(.init(text: "Alert", isOn: true)),
-//      .switch(.init(text: "Message Preview", isOn: false)),
-//      .detail(.init(text: "Sound", moreInfo: true, detail: "Alert"))
+//      .switch(.init(text: "Alert", isOn: true, onToggle: { isOn in
+//        print("alert?:", isOn)
+//      })),
+//      .switch(.init(text: "Message Preview", isOn: false, onToggle: { isOn in
+//        print("preview?:", isOn)
+//      })),
+//      .detail(.init(text: "Sound", detail: "Alert", onClick: nil))
 //    ],
 //    footer: "You can set custom notifications for specific users on their info page."
 //  ),
@@ -43,58 +46,64 @@ import PlaygroundSupport
 //  .init(
 //    header: "In-App notifications",
 //    rows:[
-//      .switch(.init(text: "In-App Sounds", isOn: true)),
-//      .switch(.init(text: "In-App Vibrate", isOn: false)),
-//      .switch(.init(text: "In-App Preview", isOn: true)),
+//      .switch(.init(text: "In-App Sounds", isOn: true, onToggle: { isOn in
+//        print("sounds?:", isOn)
+//      })),
+//      .switch(.init(text: "In-App Vibrate", isOn: false, onToggle: { isOn in
+//        print("vibrate?:", isOn)
+//      })),
+//      .switch(.init(text: "In-App Preview", isOn: true, onToggle: { isOn in
+//        print("in app preview?:", isOn)
+//      }))
 //    ]
 //  ),
 //  .init(
 //    rows: [
 //      // TODO dangerDetail
-//      .detail(.init(text: "Reset All Notifications", moreInfo: false, detail: nil))
+//      .detail(.init(text: "Reset All Notifications", detail: nil, onClick: nil))
 //    ],
 //    footer: "Undo all custom notification settings for all your conversations."
 //  )
 //]
 
-//let settings: [SettingsSection] = [
+//let settings: [Settings.Section] = [
 //  .init(
 //    header: "Privacy",
 //    rows: [
-//      .detail(.init(text: "Blocked Users", moreInfo: true, detail: nil), action: {
+//      .detail(.init(text: "Blocked Users", detail: nil, onClick: {
 //        print("tapped blocked users")
-//      }),
-//      .detail(.init(text: "Last Seen", moreInfo: true, detail: "Everybody"), action: {
+//      })),
+//      .detail(.init(text: "Last Seen", detail: "Everybody", onClick: {
 //        print("tapped last seen")
-//      }),
-//      .detail(.init(text: "Show Timezone", moreInfo: true, detail: "Everybody"), action: nil)
+//      })),
+//      .detail(.init(text: "Show Timezone", detail: "Everybody", onClick: nil))
 //    ],
 //    footer: "Change what other people can see and do about you."
 //  ),
 //  .init(
 //    header: "Security",
 //    rows: [
-//      .detail(.init(text: "Passcode Lock", moreInfo: true, detail: nil), action: nil),
-//      .detail(.init(text: "Active Sessions", moreInfo: true, detail: nil), action: nil)
+//      .detail(.init(text: "Passcode Lock", detail: nil, onClick: nil)),
+//      .detail(.init(text: "Active Sessions", detail: nil, onClick: nil))
 //    ]
 //  ),
 //  .init(
 //    header: "Delete my account",
 //    rows: [
-//      .detail(.init(text: "If Away For", moreInfo: true, detail: "3 months"), action: nil)
+//      .detail(.init(text: "If Away For", detail: "3 months", onClick: nil))
 //    ],
 //    footer: "If you do not come online at least once within this period, your account will be deleted along with all messages and conversations."
 //  ),
 //  .init(
 //    rows: [
-//      .detail(.init(text: "Data Settings", moreInfo: true, detail: nil), action: nil)
+//      .detail(.init(text: "Data Settings", detail: nil, onClick: nil))
 //    ],
 //    footer: "Control which of your data is stored in the cloud."
 //  )
 //  // TODO need more space here
 //]
 
-//let settings: [SettingsSection] = [
+//let settings: [Settings.Section] = [
 //  .init(
 //    rows: [
 //      // TODO input validation
@@ -105,7 +114,7 @@ import PlaygroundSupport
 //  )
 //]
 
-let settings: [SettingsSection] = []
+let settings: [Settings.Section] = []
 
 let vc = SettingsTableViewController(settings: settings)
 

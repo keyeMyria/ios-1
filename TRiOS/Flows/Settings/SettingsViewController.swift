@@ -17,17 +17,18 @@ final class FakeAccount: FakeAccountType {
 final class SettingsViewController: UIViewController {
   private let account: FakeAccountType
   private let onDismiss: () -> Void
-  private let settings: [SettingsSection] = [
+  private let settings: [Settings.Section] = [
     .init(
       header: "Hello header",
       rows: [
-        .detail(.init(text: "hello", moreInfo: true, detail: "wat"), action: nil),
+        // TODO .style (danger)
+        .detail(.init(text: "hello", detail: "wat", onClick: nil)),
         .input(.init(title: "asdf", value: "asdf"))
       ]
     ),
     .init(
       rows: [
-        .detail(.init(text: "hello again", moreInfo: true, detail: "wat"), action: nil)
+        .detail(.init(text: "hello again", detail: "wat", onClick: nil))
       ]
     ),
     .init(
