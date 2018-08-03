@@ -1,4 +1,5 @@
 import UIKit
+import Anchorage
 
 final class SettingsTableViewController: UITableViewController {
   private let sections: [SettingsViewModel.Section]
@@ -20,6 +21,7 @@ extension SettingsTableViewController {
     tableView.register(cellType: DetailSettingsCell.self)
     tableView.register(cellType: SwitchSettingsCell.self)
     tableView.register(cellType: TextInputSettingsCell.self)
+    tableView.register(cellType: ProfileCell.self)
   }
 
   override func viewDidAppear(_ animated: Bool) {
@@ -45,12 +47,17 @@ extension SettingsTableViewController {
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let setting = sections[indexPath.section].rows[indexPath.row]
+    let row = sections[indexPath.section].rows[indexPath.row]
 
-    switch setting {
+    switch row {
     case let .detail(detail):
       let cell: DetailSettingsCell = tableView.dequeueReusableCell(for: indexPath)
       cell.configure(for: detail)
+      return cell
+
+    case let .profile(profile):
+      let cell: ProfileCell = tableView.dequeueReusableCell(for: indexPath)
+      cell.configure(for: profile)
       return cell
 
     case let .switch(`switch`):
@@ -65,6 +72,14 @@ extension SettingsTableViewController {
     }
   }
 
+  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    let row = sections[indexPath.section].rows[indexPath.row]
+    switch row {
+    case .profile(_): return 80
+    default: return 42
+    }
+  }
+
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let row = sections[indexPath.section].rows[indexPath.row]
     switch row {
@@ -74,8 +89,8 @@ extension SettingsTableViewController {
     }
     tableView.deselectRow(at: indexPath, animated: true)
   }
-//
-//  override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//    <#code#>
+
+//  override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//    return sections[section].headerView?.frame.size.height ?? 20
 //  }
 }

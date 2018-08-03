@@ -14,21 +14,29 @@ final class FakeAccount: FakeAccountType {
   }
 }
 
-final class SettingsViewController: UIViewController {
+final class TopSettingsViewController: UIViewController {
   private let account: FakeAccountType
   private let onDismiss: () -> Void
   private let sections: [SettingsViewModel.Section] = [
     .init(
-      header: "Hello header",
       rows: [
-        // TODO .style (danger)
-        .detail(.init(text: "hello", detail: "wat", onClick: {})),
-        .textInput(.init(label: "asdf", placeholder: "type something", initialValue: "asdf", validation: nil))
+        .profile(.init(avatar: nil, name: "John Doe", handle: nil)),
+        .detail(.init(text: "Set Profile Photo", detail: nil, onClick: nil))
       ]
     ),
     .init(
       rows: [
-        .detail(.init(text: "hello again", detail: "wat", onClick: nil))
+        .detail(.init(text: "🎵  Notifications and Sounds", detail: nil, onClick: {})),
+        .detail(.init(text: "🔒  Privacy and Security", detail: nil, onClick: {})),
+        .detail(.init(text: "💾  Data and Storage", detail: nil, onClick: {})),
+        .detail(.init(text: "🌍  Language", detail: "English", onClick: {}))
+      ]
+    ),
+    .init(
+      rows: [
+        .detail(.init(text: "🤬  Complain", detail: nil, onClick: {})),
+        .detail(.init(text: "🤔  FAQ", detail: nil, onClick: {})),
+        .detail(.init(text: "🙌  Share", detail: nil, onClick: {}))
       ]
     )
   ]
@@ -45,13 +53,13 @@ final class SettingsViewController: UIViewController {
   }
 }
 
-extension SettingsViewController {
+extension TopSettingsViewController {
   @objc private func doneClicked() {
     onDismiss()
   }
 }
 
-extension SettingsViewController {
+extension TopSettingsViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 

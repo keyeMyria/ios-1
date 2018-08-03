@@ -27,8 +27,8 @@
 		4E3ACFD82110EE6C00B595C9 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACFD62110EE6C00B595C9 /* Array.swift */; };
 		4E3F2A982111EA2000DAA13F /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F2A972111EA2000DAA13F /* AudioService.swift */; };
 		4E3F2A992111EA2000DAA13F /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F2A972111EA2000DAA13F /* AudioService.swift */; };
-		4E3F2A9B2111FFBA00DAA13F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F2A9A2111FFBA00DAA13F /* SettingsViewController.swift */; };
-		4E3F2A9C2111FFBA00DAA13F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F2A9A2111FFBA00DAA13F /* SettingsViewController.swift */; };
+		4E3F2A9B2111FFBA00DAA13F /* TopSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F2A9A2111FFBA00DAA13F /* TopSettingsViewController.swift */; };
+		4E3F2A9C2111FFBA00DAA13F /* TopSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F2A9A2111FFBA00DAA13F /* TopSettingsViewController.swift */; };
 		4E3F2A9E2111FFD900DAA13F /* UserSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F2A9D2111FFD900DAA13F /* UserSearchViewController.swift */; };
 		4E3F2A9F2111FFD900DAA13F /* UserSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F2A9D2111FFD900DAA13F /* UserSearchViewController.swift */; };
 		4E3F2AAA211219EA00DAA13F /* AddConversationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F2AA9211219EA00DAA13F /* AddConversationCoordinator.swift */; };
@@ -83,8 +83,8 @@
 		4EDFD7BD21135AAA009EC74D /* SwitchSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7BB21135AAA009EC74D /* SwitchSettingsCell.swift */; };
 		4EDFD7BF2113790A009EC74D /* TextInputSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7BE2113790A009EC74D /* TextInputSettingsCell.swift */; };
 		4EDFD7C02113790A009EC74D /* TextInputSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7BE2113790A009EC74D /* TextInputSettingsCell.swift */; };
-		4EDFD7C221137C90009EC74D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7C121137C90009EC74D /* ProfileView.swift */; };
-		4EDFD7C321137C90009EC74D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7C121137C90009EC74D /* ProfileView.swift */; };
+		4EDFD7C221137C90009EC74D /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7C121137C90009EC74D /* ProfileCell.swift */; };
+		4EDFD7C321137C90009EC74D /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7C121137C90009EC74D /* ProfileCell.swift */; };
 		4EF208FC2094568D006B0F0D /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF208FB2094568D006B0F0D /* AudioRecorder.swift */; };
 		4EF208FE209466ED006B0F0D /* SoundWavesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF208FD209466ED006B0F0D /* SoundWavesViewController.swift */; };
 		4EF2090020946705006B0F0D /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF208FF20946705006B0F0D /* ConversationsViewController.swift */; };
@@ -375,7 +375,7 @@
 		4E3ACFD62110EE6C00B595C9 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		4E3F2A7D211195E300DAA13F /* TRiOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TRiOS.entitlements; sourceTree = "<group>"; };
 		4E3F2A972111EA2000DAA13F /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
-		4E3F2A9A2111FFBA00DAA13F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4E3F2A9A2111FFBA00DAA13F /* TopSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSettingsViewController.swift; sourceTree = "<group>"; };
 		4E3F2A9D2111FFD900DAA13F /* UserSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchViewController.swift; sourceTree = "<group>"; };
 		4E3F2AA9211219EA00DAA13F /* AddConversationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddConversationCoordinator.swift; sourceTree = "<group>"; };
 		4E3F2AAC2112584900DAA13F /* ErrorModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModalViewController.swift; sourceTree = "<group>"; };
@@ -422,7 +422,7 @@
 		4EDFD7B321134993009EC74D /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		4EDFD7BB21135AAA009EC74D /* SwitchSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchSettingsCell.swift; sourceTree = "<group>"; };
 		4EDFD7BE2113790A009EC74D /* TextInputSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputSettingsCell.swift; sourceTree = "<group>"; };
-		4EDFD7C121137C90009EC74D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		4EDFD7C121137C90009EC74D /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		4EF208FB2094568D006B0F0D /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		4EF208FD209466ED006B0F0D /* SoundWavesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWavesViewController.swift; sourceTree = "<group>"; };
 		4EF208FF20946705006B0F0D /* ConversationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
@@ -784,7 +784,7 @@
 				4EA0322A2114434200C771EA /* DetailSettingsCellSpec.swift */,
 				4EDFD7BB21135AAA009EC74D /* SwitchSettingsCell.swift */,
 				4EDFD7BE2113790A009EC74D /* TextInputSettingsCell.swift */,
-				4EDFD7C121137C90009EC74D /* ProfileView.swift */,
+				4EDFD7C121137C90009EC74D /* ProfileCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -948,7 +948,7 @@
 				4EDFD7B7211349FF009EC74D /* ChildViewControllers */,
 				4EDFD7B6211349FA009EC74D /* Views */,
 				4EF715E7210F9A2800149EAE /* SettingsCoordinator.swift */,
-				4E3F2A9A2111FFBA00DAA13F /* SettingsViewController.swift */,
+				4E3F2A9A2111FFBA00DAA13F /* TopSettingsViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1358,7 +1358,7 @@
 				4EF7150E210F19D800149EAE /* Cloud.swift in Sources */,
 				4EF7152B210F1AC300149EAE /* SoundWaveView.swift in Sources */,
 				4EF715E5210F8EA600149EAE /* HomeCoordinator.swift in Sources */,
-				4E3F2A9B2111FFBA00DAA13F /* SettingsViewController.swift in Sources */,
+				4E3F2A9B2111FFBA00DAA13F /* TopSettingsViewController.swift in Sources */,
 				4EF7151A210F1A6F00149EAE /* Bindable.swift in Sources */,
 				4EF7153A210F1B3100149EAE /* ConversationsViewController.swift in Sources */,
 				4EF71509210F151700149EAE /* AppCoordinator.swift in Sources */,
@@ -1378,7 +1378,7 @@
 				4EF71532210F1B0800149EAE /* AuthenticationCoordinator.swift in Sources */,
 				4EF7150F210F1A1B00149EAE /* AuthService.swift in Sources */,
 				4EDFD7BC21135AAA009EC74D /* SwitchSettingsCell.swift in Sources */,
-				4EDFD7C221137C90009EC74D /* ProfileView.swift in Sources */,
+				4EDFD7C221137C90009EC74D /* ProfileCell.swift in Sources */,
 				4EF715BC210F4F8F00149EAE /* Then.swift in Sources */,
 				4EF71534210F1B0F00149EAE /* ConversationsViewModel.swift in Sources */,
 				4E9A06092110D29D003D1D61 /* CollectionViewHorizontalInversedLayout.swift in Sources */,
@@ -1436,7 +1436,7 @@
 				4E62B66F2091EB3C00EC4EBD /* Coordinating.swift in Sources */,
 				4EF7150D210F19D300149EAE /* SupportDatabase.swift in Sources */,
 				4EF715E6210F8EA600149EAE /* HomeCoordinator.swift in Sources */,
-				4E3F2A9C2111FFBA00DAA13F /* SettingsViewController.swift in Sources */,
+				4E3F2A9C2111FFBA00DAA13F /* TopSettingsViewController.swift in Sources */,
 				4EDD664920A9DAE20010418F /* UserDefaults.swift in Sources */,
 				4EF715C3210F658D00149EAE /* AppDelegate.swift in Sources */,
 				4E62B6A420931ED900EC4EBD /* User.swift in Sources */,
@@ -1457,7 +1457,7 @@
 				4EF2090420947090006B0F0D /* Friendship.swift in Sources */,
 				4E62B6772091EBC600EC4EBD /* AppAccount.swift in Sources */,
 				4EDFD7BD21135AAA009EC74D /* SwitchSettingsCell.swift in Sources */,
-				4EDFD7C321137C90009EC74D /* ProfileView.swift in Sources */,
+				4EDFD7C321137C90009EC74D /* ProfileCell.swift in Sources */,
 				4EF715BA210F4F6C00149EAE /* Router.swift in Sources */,
 				4EB70CB6209E577300182833 /* ConversationsViewModel.swift in Sources */,
 				4E9A060A2110D29D003D1D61 /* CollectionViewHorizontalInversedLayout.swift in Sources */,

@@ -2,13 +2,16 @@ import UIKit
 import PlaygroundSupport
 @testable import TRAppProxy
 
-//let account = FakeAccount()
-//let vc = SettingsViewController(account: account, onDismiss: { print("dismissed") })
+let account = FakeAccount()
+let vc = TopSettingsViewController(account: account, onDismiss: { print("dismissed") })
 
-//let settings: [Settings.Section] = [
+//let avatar = #imageLiteral(resourceName: "idiot.jpg")
+//
+//let sections: [SettingsViewModel.Section] = [
 //  .init(
 //    rows: [
-//      .detail(.init(text: "hello", detail: "wat", onClick: {}))
+//      .profile(.init(avatar: avatar, name: "John Doe", handle: nil)),
+//      .detail(.init(text: "Set Profile Photo", detail: nil, onClick: nil))
 //    ]
 //  ),
 //  .init(
@@ -28,14 +31,14 @@ import PlaygroundSupport
 //  )
 //]
 
-//let settings: [Settings.Section] = [
+//let sections: [SettingsViewModel.Section] = [
 //  .init(
 //    header: "Message notifications",
 //    rows: [
-//      .switch(.init(text: "Alert", isOn: true, onToggle: { isOn in
+//      .switch(.init(text: "Alert", initialValue: true, onToggle: { isOn in
 //        print("alert?:", isOn)
 //      })),
-//      .switch(.init(text: "Message Preview", isOn: false, onToggle: { isOn in
+//      .switch(.init(text: "Message Preview", initialValue: false, onToggle: { isOn in
 //        print("preview?:", isOn)
 //      })),
 //      .detail(.init(text: "Sound", detail: "Alert", onClick: nil))
@@ -46,13 +49,13 @@ import PlaygroundSupport
 //  .init(
 //    header: "In-App notifications",
 //    rows:[
-//      .switch(.init(text: "In-App Sounds", isOn: true, onToggle: { isOn in
+//      .switch(.init(text: "In-App Sounds", initialValue: true, onToggle: { isOn in
 //        print("sounds?:", isOn)
 //      })),
-//      .switch(.init(text: "In-App Vibrate", isOn: false, onToggle: { isOn in
+//      .switch(.init(text: "In-App Vibrate", initialValue: false, onToggle: { isOn in
 //        print("vibrate?:", isOn)
 //      })),
-//      .switch(.init(text: "In-App Preview", isOn: true, onToggle: { isOn in
+//      .switch(.init(text: "In-App Preview", initialValue: true, onToggle: { isOn in
 //        print("in app preview?:", isOn)
 //      }))
 //    ]
@@ -66,7 +69,7 @@ import PlaygroundSupport
 //  )
 //]
 
-//let settings: [Settings.Section] = [
+//let sections: [SettingsViewModel.Section] = [
 //  .init(
 //    header: "Privacy",
 //    rows: [
@@ -103,30 +106,28 @@ import PlaygroundSupport
 //  // TODO need more space here
 //]
 
-let sections: [SettingsViewModel.Section] = [
-  .init(
-    rows: [
-      .textInput(
-        .init(
-          label: "Handle",
-          placeholder: "Your Handle",
-          initialValue: "idiot",
-          validation: { string in
-            print("handle:", string)
-            return .valid
-          }
-        )
-      )
-    ],
-    // TODO attributed string
-    footer: "You can choose a handle on Tarradiddle. If you do, other people will be able to find you by this username and contact you without knowing your phone number.\n\nYou can use a-z, 0-9 and underscores. Minimum length is 5 characters."
-  )
-]
 
-//let sections: [SettingsViewModel.Section] = []
+//let sections: [SettingsViewModel.Section] = [
+//  .init(
+//    rows: [
+//      .textInput(
+//        .init(
+//          label: "Handle",
+//          placeholder: "Your Handle",
+//          initialValue: "idiot",
+//          validation: { string in
+//            print("handle:", string)
+//            return .valid
+//          }
+//        )
+//      )
+//    ],
+//    // TODO attributed string
+//    footer: "You can choose a handle on Tarradiddle. If you do, other people will be able to find you by this username and contact you without knowing your phone number.\n\nYou can use a-z, 0-9 and underscores. Minimum length is 5 characters."
+//  )
+//]
 
-let vc = SettingsTableViewController(sections: sections)
-
+//let vc = SettingsTableViewController(sections: sections)
 PlaygroundPage.current.liveView = playgroundWrapper(child: vc, device: .phone4inch)
 //vc.preferredContentSize = vc.view.frame.size
 //PlaygroundPage.current.liveView = vc

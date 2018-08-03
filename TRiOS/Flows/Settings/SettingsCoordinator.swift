@@ -12,7 +12,7 @@ final class SettingsCoordinator: Coordinating {
   }
 
   private func showSettings() {
-    let vc = SettingsViewController(account: FakeAccount(), onDismiss: { [unowned self] in
+    let vc = TopSettingsViewController(account: FakeAccount(), onDismiss: { [unowned self] in
       self.router.dismissModule()
       self.finishFlow?()
     })
