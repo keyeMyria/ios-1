@@ -68,6 +68,7 @@
 		4EA0322621142D2800C771EA /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0322421142D2800C771EA /* Settings.swift */; };
 		4EA032282114423D00C771EA /* DetailSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA032272114423D00C771EA /* DetailSettingsCell.swift */; };
 		4EA032292114423D00C771EA /* DetailSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA032272114423D00C771EA /* DetailSettingsCell.swift */; };
+		4EA0322B2114434200C771EA /* DetailSettingsCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0322A2114434200C771EA /* DetailSettingsCellSpec.swift */; };
 		4EB70C7A209E56B700182833 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB70C79209E56B700182833 /* ConversationCell.swift */; };
 		4EB70CB6209E577300182833 /* ConversationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB70CB5209E577300182833 /* ConversationsViewModel.swift */; };
 		4EB70CB8209EF4A400182833 /* VoiceMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB70CB7209EF4A400182833 /* VoiceMessageCell.swift */; };
@@ -412,6 +413,7 @@
 		4E9A06082110D29D003D1D61 /* CollectionViewHorizontalInversedLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHorizontalInversedLayout.swift; sourceTree = "<group>"; };
 		4EA0322421142D2800C771EA /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		4EA032272114423D00C771EA /* DetailSettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailSettingsCell.swift; sourceTree = "<group>"; };
+		4EA0322A2114434200C771EA /* DetailSettingsCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSettingsCellSpec.swift; sourceTree = "<group>"; };
 		4EB70C79209E56B700182833 /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
 		4EB70CB5209E577300182833 /* ConversationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewModel.swift; sourceTree = "<group>"; };
 		4EB70CB7209EF4A400182833 /* VoiceMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMessageCell.swift; sourceTree = "<group>"; };
@@ -783,6 +785,7 @@
 			isa = PBXGroup;
 			children = (
 				4EA032272114423D00C771EA /* DetailSettingsCell.swift */,
+				4EA0322A2114434200C771EA /* DetailSettingsCellSpec.swift */,
 				4EDFD7BB21135AAA009EC74D /* SwitchSettingsCell.swift */,
 				4EDFD7BE2113790A009EC74D /* InputSettingsCell.swift */,
 				4EDFD7C121137C90009EC74D /* ProfileView.swift */,
@@ -1325,6 +1328,7 @@
 			files = (
 				4E08692D211027E000C755E1 /* LocalUserServiceSpec.swift in Sources */,
 				4E08692E211027E300C755E1 /* LocalUserServicePerformanceTest.swift in Sources */,
+				4EA0322B2114434200C771EA /* DetailSettingsCellSpec.swift in Sources */,
 				4E08693621102F8600C755E1 /* Fixtures.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
