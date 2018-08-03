@@ -66,6 +66,8 @@
 		4EA0322221141F1A00C771EA /* TRAppProxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E2C1B062091A68200754E57 /* TRAppProxy.framework */; };
 		4EA0322521142D2800C771EA /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0322421142D2800C771EA /* Settings.swift */; };
 		4EA0322621142D2800C771EA /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0322421142D2800C771EA /* Settings.swift */; };
+		4EA032282114423D00C771EA /* DetailSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA032272114423D00C771EA /* DetailSettingsCell.swift */; };
+		4EA032292114423D00C771EA /* DetailSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA032272114423D00C771EA /* DetailSettingsCell.swift */; };
 		4EB70C7A209E56B700182833 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB70C79209E56B700182833 /* ConversationCell.swift */; };
 		4EB70CB6209E577300182833 /* ConversationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB70CB5209E577300182833 /* ConversationsViewModel.swift */; };
 		4EB70CB8209EF4A400182833 /* VoiceMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB70CB7209EF4A400182833 /* VoiceMessageCell.swift */; };
@@ -77,8 +79,6 @@
 		4EDFD79A21132EAA009EC74D /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD79821132EAA009EC74D /* Reusable.swift */; };
 		4EDFD7B421134993009EC74D /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7B321134993009EC74D /* SettingsTableViewController.swift */; };
 		4EDFD7B521134993009EC74D /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7B321134993009EC74D /* SettingsTableViewController.swift */; };
-		4EDFD7B921134A1E009EC74D /* DetailSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7B821134A1E009EC74D /* DetailSettingsCell.swift */; };
-		4EDFD7BA21134A1E009EC74D /* DetailSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7B821134A1E009EC74D /* DetailSettingsCell.swift */; };
 		4EDFD7BC21135AAA009EC74D /* SwitchSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7BB21135AAA009EC74D /* SwitchSettingsCell.swift */; };
 		4EDFD7BD21135AAA009EC74D /* SwitchSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7BB21135AAA009EC74D /* SwitchSettingsCell.swift */; };
 		4EDFD7BF2113790A009EC74D /* InputSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7BE2113790A009EC74D /* InputSettingsCell.swift */; };
@@ -147,8 +147,6 @@
 		4EF715C0210F4FA400149EAE /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715BE210F4FA400149EAE /* Presentable.swift */; };
 		4EF715C2210F658D00149EAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715C1210F658C00149EAE /* AppDelegate.swift */; };
 		4EF715C3210F658D00149EAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715C1210F658C00149EAE /* AppDelegate.swift */; };
-		4EF715CD210F680600149EAE /* TextInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715CC210F680600149EAE /* TextInputCell.swift */; };
-		4EF715CE210F680600149EAE /* TextInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715CC210F680600149EAE /* TextInputCell.swift */; };
 		4EF715D0210F6BE300149EAE /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715CF210F6BE300149EAE /* AudioPlayer.swift */; };
 		4EF715D1210F6BE300149EAE /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715CF210F6BE300149EAE /* AudioPlayer.swift */; };
 		4EF715D6210F8D7E00149EAE /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715D5210F8D7E00149EAE /* AppSettings.swift */; };
@@ -413,6 +411,7 @@
 		4E803D242091DAE100E3B6F2 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		4E9A06082110D29D003D1D61 /* CollectionViewHorizontalInversedLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHorizontalInversedLayout.swift; sourceTree = "<group>"; };
 		4EA0322421142D2800C771EA /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		4EA032272114423D00C771EA /* DetailSettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailSettingsCell.swift; sourceTree = "<group>"; };
 		4EB70C79209E56B700182833 /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
 		4EB70CB5209E577300182833 /* ConversationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewModel.swift; sourceTree = "<group>"; };
 		4EB70CB7209EF4A400182833 /* VoiceMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMessageCell.swift; sourceTree = "<group>"; };
@@ -422,7 +421,6 @@
 		4EDD664A20A9E0A00010418F /* Cloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
 		4EDFD79821132EAA009EC74D /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		4EDFD7B321134993009EC74D /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		4EDFD7B821134A1E009EC74D /* DetailSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSettingsCell.swift; sourceTree = "<group>"; };
 		4EDFD7BB21135AAA009EC74D /* SwitchSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchSettingsCell.swift; sourceTree = "<group>"; };
 		4EDFD7BE2113790A009EC74D /* InputSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSettingsCell.swift; sourceTree = "<group>"; };
 		4EDFD7C121137C90009EC74D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -446,7 +444,6 @@
 		4EF715BB210F4F8F00149EAE /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		4EF715BE210F4FA400149EAE /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
 		4EF715C1210F658C00149EAE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4EF715CC210F680600149EAE /* TextInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputCell.swift; sourceTree = "<group>"; };
 		4EF715CF210F6BE300149EAE /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		4EF715D5210F8D7E00149EAE /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		4EF715D8210F8DDE00149EAE /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
@@ -785,8 +782,7 @@
 		4EDFD7B6211349FA009EC74D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4EF715CC210F680600149EAE /* TextInputCell.swift */,
-				4EDFD7B821134A1E009EC74D /* DetailSettingsCell.swift */,
+				4EA032272114423D00C771EA /* DetailSettingsCell.swift */,
 				4EDFD7BB21135AAA009EC74D /* SwitchSettingsCell.swift */,
 				4EDFD7BE2113790A009EC74D /* InputSettingsCell.swift */,
 				4EDFD7C121137C90009EC74D /* ProfileView.swift */,
@@ -1355,7 +1351,6 @@
 				4EF71518210F1A3C00149EAE /* Conversation.swift in Sources */,
 				4EF7152E210F1ACD00149EAE /* UserDefaults.swift in Sources */,
 				4EF715D9210F8DDE00149EAE /* OnboardingCoordinator.swift in Sources */,
-				4EDFD7B921134A1E009EC74D /* DetailSettingsCell.swift in Sources */,
 				4EF7151B210F1A7400149EAE /* Coordinating.swift in Sources */,
 				4EF7152C210F1AC600149EAE /* VoiceMessageCell.swift in Sources */,
 				4EF7153B210F1B3500149EAE /* MessagingViewController.swift in Sources */,
@@ -1375,6 +1370,7 @@
 				4EF71507210F14CD00149EAE /* AppDatabase.swift in Sources */,
 				4EF71519210F1A3E00149EAE /* VoiceMessage.swift in Sources */,
 				4EF715E2210F8E4400149EAE /* OnboardingViewCell.swift in Sources */,
+				4EA032282114423D00C771EA /* DetailSettingsCell.swift in Sources */,
 				4E3F2AB121125AC900DAA13F /* UserInfoCoordinator.swift in Sources */,
 				4EF71533210F1B0D00149EAE /* SettingsViewModel.swift in Sources */,
 				4EF71515210F1A3600149EAE /* AppAccount.swift in Sources */,
@@ -1388,7 +1384,6 @@
 				4EF71534210F1B0F00149EAE /* ConversationsViewModel.swift in Sources */,
 				4E9A06092110D29D003D1D61 /* CollectionViewHorizontalInversedLayout.swift in Sources */,
 				4EF71530210F1AD100149EAE /* Bundle.swift in Sources */,
-				4EF715CD210F680600149EAE /* TextInputCell.swift in Sources */,
 				4E08694021105CC900C755E1 /* ErrorCoordinator.swift in Sources */,
 				4EF71511210F1A2A00149EAE /* LocalUserService.swift in Sources */,
 				4EA0322521142D2800C771EA /* Settings.swift in Sources */,
@@ -1436,7 +1431,6 @@
 				4EF71595210F28C800149EAE /* Result.swift in Sources */,
 				4EF208FC2094568D006B0F0D /* AudioRecorder.swift in Sources */,
 				4EF715DA210F8DDE00149EAE /* OnboardingCoordinator.swift in Sources */,
-				4EDFD7BA21134A1E009EC74D /* DetailSettingsCell.swift in Sources */,
 				4E62B66A2091E5A000EC4EBD /* ViewModelType.swift in Sources */,
 				4EF2090C20948077006B0F0D /* VoiceMessagesViewModel.swift in Sources */,
 				4EF2090020946705006B0F0D /* ConversationsViewController.swift in Sources */,
@@ -1456,6 +1450,7 @@
 				4E62B67C2091EC4E00EC4EBD /* AuthenticationCoordinator.swift in Sources */,
 				4EF2090A20947362006B0F0D /* LocalConversationService.swift in Sources */,
 				4EF715E3210F8E4400149EAE /* OnboardingViewCell.swift in Sources */,
+				4EA032292114423D00C771EA /* DetailSettingsCell.swift in Sources */,
 				4E3F2AB221125AC900DAA13F /* UserInfoCoordinator.swift in Sources */,
 				4EF71598210F28E900149EAE /* Box.swift in Sources */,
 				4EF71524210F1A8600149EAE /* AnonAPI.swift in Sources */,
@@ -1469,7 +1464,6 @@
 				4EB70CB6209E577300182833 /* ConversationsViewModel.swift in Sources */,
 				4E9A060A2110D29D003D1D61 /* CollectionViewHorizontalInversedLayout.swift in Sources */,
 				4EF208FE209466ED006B0F0D /* SoundWavesViewController.swift in Sources */,
-				4EF715CE210F680600149EAE /* TextInputCell.swift in Sources */,
 				4E08694121105CC900C755E1 /* ErrorCoordinator.swift in Sources */,
 				4EF715BD210F4F8F00149EAE /* Then.swift in Sources */,
 				4EA0322621142D2800C771EA /* Settings.swift in Sources */,

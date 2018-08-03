@@ -9,19 +9,14 @@ final class InputSettingsCell: UITableViewCell, Reusable {
 
   private let label = UILabel()
   // TODO don't need return type?
+  // TEST
   private var validation: ((String) -> Settings.Input.ValidationState)?
   // TODO errorMsgLabel
 
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-    // feels dirty
-    // https://stackoverflow.com/questions/7010547/uitextfield-text-change-event ???
-    NotificationCenter.default.addObserver(forName: .UITextFieldTextDidChange, object: nil, queue: nil) { [unowned self] notification in
-      if let textField = notification.object as? UITextField {
-        _ = self.validation?(textField.text ?? "")
-      }
-    }
+    textField.addTarget(self, action: #selector(onEditingChanged), for: .editingChanged)
 
     contentView.addSubview(label)
     contentView.addSubview(textField)
@@ -47,5 +42,9 @@ final class InputSettingsCell: UITableViewCell, Reusable {
     textField.placeholder = input.placeholder
     textField.text = input.initialValue
     self.validation = input.validation
+  }
+
+  @objc private func onEditingChanged(_ sender: UITextField) {
+    _ = validation?(sender.text ?? "")
   }
 }
