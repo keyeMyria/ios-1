@@ -1,15 +1,27 @@
 import UIKit
 import Anchorage
 
-final class LabeledInputCell: UITableViewCell, Reusable {
+final class InputSettingsCell: UITableViewCell, Reusable {
   private let textField = UITextField().then {
-    $0.placeholder = "Your Handle"
+    $0.autocorrectionType = .no
+    $0.autocapitalizationType = .none
   }
+
   private let label = UILabel()
+  // TODO don't need return type?
+  private var validation: ((String) -> Settings.Input.ValidationState)?
+  // TODO errorMsgLabel
 
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
-    textField.delegate = self // TODO
+
+    // feels dirty
+    // https://stackoverflow.com/questions/7010547/uitextfield-text-change-event ???
+    NotificationCenter.default.addObserver(forName: .UITextFieldTextDidChange, object: nil, queue: nil) { [unowned self] notification in
+      if let textField = notification.object as? UITextField {
+        _ = self.validation?(textField.text ?? "")
+      }
+    }
 
     contentView.addSubview(label)
     contentView.addSubview(textField)
@@ -25,17 +37,15 @@ final class LabeledInputCell: UITableViewCell, Reusable {
     textField.trailingAnchor == contentView.layoutMarginsGuide.trailingAnchor
     textField.centerYAnchor == contentView.centerYAnchor
   }
-
   @available (*, unavailable)
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 
   func configure(for input: Settings.Input) {
-    label.text = input.title
-    textField.text = input.value
+    label.text = input.label
+    textField.placeholder = input.placeholder
+    textField.text = input.initialValue
+    self.validation = input.validation
   }
-}
-
-extension LabeledInputCell: UITextFieldDelegate {
 }

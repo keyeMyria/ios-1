@@ -10,16 +10,18 @@ final class DetailSettingsCell: UITableViewCell, Reusable {
     fatalError("init(coder:) has not been implemented")
   }
 
-  override func prepareForReuse() {
-    super.prepareForReuse()
-    accessoryType = .none
-  }
+//  override func prepareForReuse() {
+//    super.prepareForReuse()
+//    accessoryType = .none
+//  }
 
   func configure(for detail: Settings.Detail) {
     textLabel?.text = detail.text
     detailTextLabel?.text = detail.detail
-    if detail.onClick != nil {
+    if detail.hasMoreInfo {
       accessoryType = .disclosureIndicator
+    } else {
+      accessoryType = .none
     }
   }
 }

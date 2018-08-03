@@ -18,7 +18,7 @@ final class SwitchSettingsCell: UITableViewCell, Reusable {
 
   func configure(for `switch`: Settings.Switch) {
     textLabel?.text = `switch`.text
-    switchControl.isOn = `switch`.isOn
+    switchControl.isOn = `switch`.initialValue
     self.onToggle = `switch`.onToggle
   }
 }

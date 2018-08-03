@@ -1,19 +1,28 @@
 struct Settings {
   struct Input {
-    let title: String
-    let value: String
+    enum ValidationState {
+      case valid
+      case invalid(errorMessage: String)
+    }
+
+    let label: String?
+    let placeholder: String
+    let initialValue: String
+    let validation: ((String) -> ValidationState)?
   }
 
   struct Detail {
     let text: String
     let detail: String?
-    // TODO isSelectable only if has action
     let onClick: (() -> Void)?
+
+    var isSelectable: Bool { return onClick != nil }
+    var hasMoreInfo: Bool { return onClick != nil }
   }
 
   struct Switch {
     let text: String
-    let isOn: Bool
+    let initialValue: Bool
     let onToggle: (Bool) -> Void
   }
 

@@ -81,8 +81,8 @@
 		4EDFD7BA21134A1E009EC74D /* DetailSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7B821134A1E009EC74D /* DetailSettingsCell.swift */; };
 		4EDFD7BC21135AAA009EC74D /* SwitchSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7BB21135AAA009EC74D /* SwitchSettingsCell.swift */; };
 		4EDFD7BD21135AAA009EC74D /* SwitchSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7BB21135AAA009EC74D /* SwitchSettingsCell.swift */; };
-		4EDFD7BF2113790A009EC74D /* LabeledInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7BE2113790A009EC74D /* LabeledInputCell.swift */; };
-		4EDFD7C02113790A009EC74D /* LabeledInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7BE2113790A009EC74D /* LabeledInputCell.swift */; };
+		4EDFD7BF2113790A009EC74D /* InputSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7BE2113790A009EC74D /* InputSettingsCell.swift */; };
+		4EDFD7C02113790A009EC74D /* InputSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7BE2113790A009EC74D /* InputSettingsCell.swift */; };
 		4EDFD7C221137C90009EC74D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7C121137C90009EC74D /* ProfileView.swift */; };
 		4EDFD7C321137C90009EC74D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7C121137C90009EC74D /* ProfileView.swift */; };
 		4EF208FC2094568D006B0F0D /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF208FB2094568D006B0F0D /* AudioRecorder.swift */; };
@@ -424,7 +424,7 @@
 		4EDFD7B321134993009EC74D /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		4EDFD7B821134A1E009EC74D /* DetailSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSettingsCell.swift; sourceTree = "<group>"; };
 		4EDFD7BB21135AAA009EC74D /* SwitchSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchSettingsCell.swift; sourceTree = "<group>"; };
-		4EDFD7BE2113790A009EC74D /* LabeledInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledInputCell.swift; sourceTree = "<group>"; };
+		4EDFD7BE2113790A009EC74D /* InputSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSettingsCell.swift; sourceTree = "<group>"; };
 		4EDFD7C121137C90009EC74D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		4EF208FB2094568D006B0F0D /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		4EF208FD209466ED006B0F0D /* SoundWavesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWavesViewController.swift; sourceTree = "<group>"; };
@@ -788,7 +788,7 @@
 				4EF715CC210F680600149EAE /* TextInputCell.swift */,
 				4EDFD7B821134A1E009EC74D /* DetailSettingsCell.swift */,
 				4EDFD7BB21135AAA009EC74D /* SwitchSettingsCell.swift */,
-				4EDFD7BE2113790A009EC74D /* LabeledInputCell.swift */,
+				4EDFD7BE2113790A009EC74D /* InputSettingsCell.swift */,
 				4EDFD7C121137C90009EC74D /* ProfileView.swift */,
 			);
 			path = Views;
@@ -1406,7 +1406,7 @@
 				4EF71508210F14DB00149EAE /* SupportDatabase.swift in Sources */,
 				4EF71536210F1B1800149EAE /* ViewModelType.swift in Sources */,
 				4EF715D6210F8D7E00149EAE /* AppSettings.swift in Sources */,
-				4EDFD7BF2113790A009EC74D /* LabeledInputCell.swift in Sources */,
+				4EDFD7BF2113790A009EC74D /* InputSettingsCell.swift in Sources */,
 				4EF71523210F1A8600149EAE /* AnonAPI.swift in Sources */,
 				4EF71535210F1B1100149EAE /* VoiceMessagesViewModel.swift in Sources */,
 				4EF715BF210F4FA400149EAE /* Presentable.swift in Sources */,
@@ -1487,7 +1487,7 @@
 				4ECCAF5520AC1E1E001250F7 /* Logger.swift in Sources */,
 				4E407A3D20A4A0B90084BB0A /* CGPoint.swift in Sources */,
 				4EF715D7210F8D7E00149EAE /* AppSettings.swift in Sources */,
-				4EDFD7C02113790A009EC74D /* LabeledInputCell.swift in Sources */,
+				4EDFD7C02113790A009EC74D /* InputSettingsCell.swift in Sources */,
 				4E62B6742091EBB300EC4EBD /* AuthService.swift in Sources */,
 				4EF7151D210F1A7B00149EAE /* API.swift in Sources */,
 				4EB70CB8209EF4A400182833 /* VoiceMessageCell.swift in Sources */,

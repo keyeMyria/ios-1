@@ -22,25 +22,13 @@ final class SettingsViewController: UIViewController {
       header: "Hello header",
       rows: [
         // TODO .style (danger)
-        .detail(.init(text: "hello", detail: "wat", onClick: nil)),
-        .input(.init(title: "asdf", value: "asdf"))
+        .detail(.init(text: "hello", detail: "wat", onClick: {})),
+        .input(.init(label: "asdf", placeholder: "type something", initialValue: "asdf", validation: nil))
       ]
     ),
     .init(
       rows: [
         .detail(.init(text: "hello again", detail: "wat", onClick: nil))
-      ]
-    ),
-    .init(
-      rows: [
-        .input(.init(title: "asdf", value: "asdf")),
-        .input(.init(title: "asdf", value: "asdf"))
-      ],
-      footer: "asdf"
-    ),
-    .init(
-      rows: [
-        .input(.init(title: "asdf", value: "a"))
       ]
     )
   ]
