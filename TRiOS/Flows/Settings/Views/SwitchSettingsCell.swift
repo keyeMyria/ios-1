@@ -2,7 +2,7 @@ import UIKit
 
 final class SwitchSettingsCell: UITableViewCell, Reusable {
   private var onToggle: ((Bool) -> Void)?
-  @objc private func didToggleSwitch(_ sender: UISwitch) { onToggle?(sender.isOn) }
+  @objc private func didToggleSwitch(_ sender: UISwitch) { onToggle?(sender.isOn) } // TEST
   private let switchControl = UISwitch()
 
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -16,7 +16,7 @@ final class SwitchSettingsCell: UITableViewCell, Reusable {
     fatalError("init(coder:) has not been implemented")
   }
 
-  func configure(for `switch`: Settings.Switch) {
+  func configure(for `switch`: SettingsViewModel.Switch) {
     textLabel?.text = `switch`.text
     switchControl.isOn = `switch`.initialValue
     self.onToggle = `switch`.onToggle

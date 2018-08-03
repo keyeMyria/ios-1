@@ -1,7 +1,7 @@
 import UIKit
 import Anchorage
 
-final class InputSettingsCell: UITableViewCell, Reusable {
+final class TextInputSettingsCell: UITableViewCell, Reusable {
   private let textField = UITextField().then {
     $0.autocorrectionType = .no
     $0.autocapitalizationType = .none
@@ -10,7 +10,7 @@ final class InputSettingsCell: UITableViewCell, Reusable {
   private let label = UILabel()
   // TODO don't need return type?
   // TEST
-  private var validation: ((String) -> Settings.Input.ValidationState)?
+  private var validation: ((String) -> SettingsViewModel.TextInput.ValidationState)? // TEST
   // TODO errorMsgLabel
 
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -37,7 +37,7 @@ final class InputSettingsCell: UITableViewCell, Reusable {
     fatalError("init(coder:) has not been implemented")
   }
 
-  func configure(for input: Settings.Input) {
+  func configure(for input: SettingsViewModel.TextInput) {
     label.text = input.label
     textField.placeholder = input.placeholder
     textField.text = input.initialValue

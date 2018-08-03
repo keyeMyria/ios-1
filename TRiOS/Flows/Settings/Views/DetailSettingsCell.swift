@@ -10,7 +10,7 @@ final class DetailSettingsCell: UITableViewCell, Reusable {
     fatalError("init(coder:) has not been implemented")
   }
 
-  func configure(for detail: Settings.Detail) {
+  func configure(for detail: SettingsViewModel.Detail) {
     textLabel?.text = detail.text
     detailTextLabel?.text = detail.detail
     if detail.hasMoreInfo {

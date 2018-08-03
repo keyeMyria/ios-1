@@ -1,5 +1,7 @@
-struct Settings {
-  struct Input {
+import UIKit
+
+struct SettingsViewModel {
+  struct TextInput {
     enum ValidationState {
       case valid
       case invalid(errorMessage: String)
@@ -28,19 +30,24 @@ struct Settings {
 
   struct Section {
     enum Row {
-      case input(Input)
+      case textInput(TextInput)
       case detail(Detail)
       case `switch`(Switch)
     }
 
     let header: String?
+    let headerView: UITableViewHeaderFooterView?
     let rows: [Row]
     let footer: String?
 
     // swiftlint:disable:next function_default_parameter_at_end
-    init(header: String? = nil, rows: [Row], footer: String? = nil) {
+    init(header: String? = nil,
+         headerView: UITableViewHeaderFooterView? = nil,
+         rows: [Row],
+         footer: String? = nil) {
       self.rows = rows
       self.header = header
+      self.headerView = headerView
       self.footer = footer
     }
   }

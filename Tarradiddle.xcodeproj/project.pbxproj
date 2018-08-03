@@ -45,7 +45,6 @@
 		4E3F2ABB2112F0DE00DAA13F /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F2AB92112F0DE00DAA13F /* UserListCell.swift */; };
 		4E3F2ABF2112F37F00DAA13F /* ApolloClientFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F2ABE2112F37F00DAA13F /* ApolloClientFactory.swift */; };
 		4E3F2AC02112F37F00DAA13F /* ApolloClientFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F2ABE2112F37F00DAA13F /* ApolloClientFactory.swift */; };
-		4E407A3A20A2D1F30084BB0A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E407A3920A2D1F30084BB0A /* SettingsViewModel.swift */; };
 		4E407A3D20A4A0B90084BB0A /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E407A3C20A4A0B90084BB0A /* CGPoint.swift */; };
 		4E407A3F20A4AB2D0084BB0A /* SoundWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E407A3E20A4AB2D0084BB0A /* SoundWaveView.swift */; };
 		4E62B6682091E56600EC4EBD /* UserSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E62B6672091E56600EC4EBD /* UserSearchViewModel.swift */; };
@@ -64,8 +63,8 @@
 		4E9A06092110D29D003D1D61 /* CollectionViewHorizontalInversedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9A06082110D29D003D1D61 /* CollectionViewHorizontalInversedLayout.swift */; };
 		4E9A060A2110D29D003D1D61 /* CollectionViewHorizontalInversedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9A06082110D29D003D1D61 /* CollectionViewHorizontalInversedLayout.swift */; };
 		4EA0322221141F1A00C771EA /* TRAppProxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E2C1B062091A68200754E57 /* TRAppProxy.framework */; };
-		4EA0322521142D2800C771EA /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0322421142D2800C771EA /* Settings.swift */; };
-		4EA0322621142D2800C771EA /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0322421142D2800C771EA /* Settings.swift */; };
+		4EA0322521142D2800C771EA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0322421142D2800C771EA /* SettingsViewModel.swift */; };
+		4EA0322621142D2800C771EA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0322421142D2800C771EA /* SettingsViewModel.swift */; };
 		4EA032282114423D00C771EA /* DetailSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA032272114423D00C771EA /* DetailSettingsCell.swift */; };
 		4EA032292114423D00C771EA /* DetailSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA032272114423D00C771EA /* DetailSettingsCell.swift */; };
 		4EA0322B2114434200C771EA /* DetailSettingsCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0322A2114434200C771EA /* DetailSettingsCellSpec.swift */; };
@@ -82,8 +81,8 @@
 		4EDFD7B521134993009EC74D /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7B321134993009EC74D /* SettingsTableViewController.swift */; };
 		4EDFD7BC21135AAA009EC74D /* SwitchSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7BB21135AAA009EC74D /* SwitchSettingsCell.swift */; };
 		4EDFD7BD21135AAA009EC74D /* SwitchSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7BB21135AAA009EC74D /* SwitchSettingsCell.swift */; };
-		4EDFD7BF2113790A009EC74D /* InputSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7BE2113790A009EC74D /* InputSettingsCell.swift */; };
-		4EDFD7C02113790A009EC74D /* InputSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7BE2113790A009EC74D /* InputSettingsCell.swift */; };
+		4EDFD7BF2113790A009EC74D /* TextInputSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7BE2113790A009EC74D /* TextInputSettingsCell.swift */; };
+		4EDFD7C02113790A009EC74D /* TextInputSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7BE2113790A009EC74D /* TextInputSettingsCell.swift */; };
 		4EDFD7C221137C90009EC74D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7C121137C90009EC74D /* ProfileView.swift */; };
 		4EDFD7C321137C90009EC74D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7C121137C90009EC74D /* ProfileView.swift */; };
 		4EF208FC2094568D006B0F0D /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF208FB2094568D006B0F0D /* AudioRecorder.swift */; };
@@ -127,7 +126,6 @@
 		4EF7152F210F1ACF00149EAE /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E407A3C20A4A0B90084BB0A /* CGPoint.swift */; };
 		4EF71530210F1AD100149EAE /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECCAF8B20AC2951001250F7 /* Bundle.swift */; };
 		4EF71532210F1B0800149EAE /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E62B67B2091EC4E00EC4EBD /* AuthenticationCoordinator.swift */; };
-		4EF71533210F1B0D00149EAE /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E407A3920A2D1F30084BB0A /* SettingsViewModel.swift */; };
 		4EF71534210F1B0F00149EAE /* ConversationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB70CB5209E577300182833 /* ConversationsViewModel.swift */; };
 		4EF71535210F1B1100149EAE /* VoiceMessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF2090B20948077006B0F0D /* VoiceMessagesViewModel.swift */; };
 		4EF71536210F1B1800149EAE /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E62B6692091E5A000EC4EBD /* ViewModelType.swift */; };
@@ -387,7 +385,6 @@
 		4E3F2AB92112F0DE00DAA13F /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
 		4E3F2ABE2112F37F00DAA13F /* ApolloClientFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloClientFactory.swift; sourceTree = "<group>"; };
 		4E3FD77620AB34E3005E34A1 /* SupportDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportDatabase.swift; sourceTree = "<group>"; };
-		4E407A3920A2D1F30084BB0A /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		4E407A3C20A4A0B90084BB0A /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
 		4E407A3E20A4AB2D0084BB0A /* SoundWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWaveView.swift; sourceTree = "<group>"; };
 		4E62B6672091E56600EC4EBD /* UserSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchViewModel.swift; sourceTree = "<group>"; };
@@ -411,7 +408,7 @@
 		4E803D212091D95D00E3B6F2 /* SearchUsers.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchUsers.graphql; sourceTree = "<group>"; };
 		4E803D242091DAE100E3B6F2 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		4E9A06082110D29D003D1D61 /* CollectionViewHorizontalInversedLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHorizontalInversedLayout.swift; sourceTree = "<group>"; };
-		4EA0322421142D2800C771EA /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		4EA0322421142D2800C771EA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		4EA032272114423D00C771EA /* DetailSettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailSettingsCell.swift; sourceTree = "<group>"; };
 		4EA0322A2114434200C771EA /* DetailSettingsCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSettingsCellSpec.swift; sourceTree = "<group>"; };
 		4EB70C79209E56B700182833 /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
@@ -424,7 +421,7 @@
 		4EDFD79821132EAA009EC74D /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		4EDFD7B321134993009EC74D /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		4EDFD7BB21135AAA009EC74D /* SwitchSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchSettingsCell.swift; sourceTree = "<group>"; };
-		4EDFD7BE2113790A009EC74D /* InputSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSettingsCell.swift; sourceTree = "<group>"; };
+		4EDFD7BE2113790A009EC74D /* TextInputSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputSettingsCell.swift; sourceTree = "<group>"; };
 		4EDFD7C121137C90009EC74D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		4EF208FB2094568D006B0F0D /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		4EF208FD209466ED006B0F0D /* SoundWavesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWavesViewController.swift; sourceTree = "<group>"; };
@@ -671,7 +668,6 @@
 				4E62B6692091E5A000EC4EBD /* ViewModelType.swift */,
 				4EF2090B20948077006B0F0D /* VoiceMessagesViewModel.swift */,
 				4EB70CB5209E577300182833 /* ConversationsViewModel.swift */,
-				4E407A3920A2D1F30084BB0A /* SettingsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -711,7 +707,6 @@
 				4EF2090320947090006B0F0D /* Friendship.swift */,
 				4EF209052094709B006B0F0D /* Conversation.swift */,
 				4EF20907209470A5006B0F0D /* VoiceMessage.swift */,
-				4EA0322421142D2800C771EA /* Settings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -784,10 +779,11 @@
 		4EDFD7B6211349FA009EC74D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4EA0322421142D2800C771EA /* SettingsViewModel.swift */,
 				4EA032272114423D00C771EA /* DetailSettingsCell.swift */,
 				4EA0322A2114434200C771EA /* DetailSettingsCellSpec.swift */,
 				4EDFD7BB21135AAA009EC74D /* SwitchSettingsCell.swift */,
-				4EDFD7BE2113790A009EC74D /* InputSettingsCell.swift */,
+				4EDFD7BE2113790A009EC74D /* TextInputSettingsCell.swift */,
 				4EDFD7C121137C90009EC74D /* ProfileView.swift */,
 			);
 			path = Views;
@@ -1376,7 +1372,6 @@
 				4EF715E2210F8E4400149EAE /* OnboardingViewCell.swift in Sources */,
 				4EA032282114423D00C771EA /* DetailSettingsCell.swift in Sources */,
 				4E3F2AB121125AC900DAA13F /* UserInfoCoordinator.swift in Sources */,
-				4EF71533210F1B0D00149EAE /* SettingsViewModel.swift in Sources */,
 				4EF71515210F1A3600149EAE /* AppAccount.swift in Sources */,
 				4E3F2AAA211219EA00DAA13F /* AddConversationCoordinator.swift in Sources */,
 				4EF71513210F1A2F00149EAE /* LocalConversationService.swift in Sources */,
@@ -1390,7 +1385,7 @@
 				4EF71530210F1AD100149EAE /* Bundle.swift in Sources */,
 				4E08694021105CC900C755E1 /* ErrorCoordinator.swift in Sources */,
 				4EF71511210F1A2A00149EAE /* LocalUserService.swift in Sources */,
-				4EA0322521142D2800C771EA /* Settings.swift in Sources */,
+				4EA0322521142D2800C771EA /* SettingsViewModel.swift in Sources */,
 				4EF715C2210F658D00149EAE /* AppDelegate.swift in Sources */,
 				4E3F2ABA2112F0DE00DAA13F /* UserListCell.swift in Sources */,
 				4E3F2A982111EA2000DAA13F /* AudioService.swift in Sources */,
@@ -1405,7 +1400,7 @@
 				4EF71508210F14DB00149EAE /* SupportDatabase.swift in Sources */,
 				4EF71536210F1B1800149EAE /* ViewModelType.swift in Sources */,
 				4EF715D6210F8D7E00149EAE /* AppSettings.swift in Sources */,
-				4EDFD7BF2113790A009EC74D /* InputSettingsCell.swift in Sources */,
+				4EDFD7BF2113790A009EC74D /* TextInputSettingsCell.swift in Sources */,
 				4EF71523210F1A8600149EAE /* AnonAPI.swift in Sources */,
 				4EF71535210F1B1100149EAE /* VoiceMessagesViewModel.swift in Sources */,
 				4EF715BF210F4FA400149EAE /* Presentable.swift in Sources */,
@@ -1428,7 +1423,6 @@
 				4EB70C7A209E56B700182833 /* ConversationCell.swift in Sources */,
 				4E62B6682091E56600EC4EBD /* UserSearchViewModel.swift in Sources */,
 				4E407A3F20A4AB2D0084BB0A /* SoundWaveView.swift in Sources */,
-				4E407A3A20A2D1F30084BB0A /* SettingsViewModel.swift in Sources */,
 				4EF715EC210F9A8600149EAE /* UserSearchCoordinator.swift in Sources */,
 				4EF715E9210F9A2800149EAE /* SettingsCoordinator.swift in Sources */,
 				4E3F2AAE2112584900DAA13F /* ErrorModalViewController.swift in Sources */,
@@ -1470,7 +1464,7 @@
 				4EF208FE209466ED006B0F0D /* SoundWavesViewController.swift in Sources */,
 				4E08694121105CC900C755E1 /* ErrorCoordinator.swift in Sources */,
 				4EF715BD210F4F8F00149EAE /* Then.swift in Sources */,
-				4EA0322621142D2800C771EA /* Settings.swift in Sources */,
+				4EA0322621142D2800C771EA /* SettingsViewModel.swift in Sources */,
 				4EF2090220946780006B0F0D /* MessagingViewController.swift in Sources */,
 				4E3F2ABB2112F0DE00DAA13F /* UserListCell.swift in Sources */,
 				4E3F2A992111EA2000DAA13F /* AudioService.swift in Sources */,
@@ -1485,7 +1479,7 @@
 				4ECCAF5520AC1E1E001250F7 /* Logger.swift in Sources */,
 				4E407A3D20A4A0B90084BB0A /* CGPoint.swift in Sources */,
 				4EF715D7210F8D7E00149EAE /* AppSettings.swift in Sources */,
-				4EDFD7C02113790A009EC74D /* InputSettingsCell.swift in Sources */,
+				4EDFD7C02113790A009EC74D /* TextInputSettingsCell.swift in Sources */,
 				4E62B6742091EBB300EC4EBD /* AuthService.swift in Sources */,
 				4EF7151D210F1A7B00149EAE /* API.swift in Sources */,
 				4EB70CB8209EF4A400182833 /* VoiceMessageCell.swift in Sources */,

@@ -6,6 +6,7 @@ import Nimble
 class DetailSettingsCellSpec: QuickSpec {
   override func spec() {
     var cell: DetailSettingsCell!
+    var detail: SettingsViewModel.Detail!
 
     beforeEach {
       cell = DetailSettingsCell(style: .value1, reuseIdentifier: nil)
@@ -13,7 +14,7 @@ class DetailSettingsCellSpec: QuickSpec {
 
     describe("text") {
       it("is properly configured") {
-        let detail = Settings.Detail(text: "Notifications like", detail: nil, onClick: nil)
+        detail = SettingsViewModel.Detail(text: "Notifications like", detail: nil, onClick: nil)
         expect(detail.text) == "Notifications like" // TODO move to its own test
 
         cell.configure(for: detail)
@@ -23,7 +24,7 @@ class DetailSettingsCellSpec: QuickSpec {
 
     describe("detail") {
       it("is there if it should be") {
-        let detail = Settings.Detail(text: "Privacy and stuff", detail: "yo", onClick: nil)
+        detail = SettingsViewModel.Detail(text: "Privacy and stuff", detail: "yo", onClick: nil)
         expect(detail.detail) == "yo" // TODO
 
         cell.configure(for: detail)
@@ -31,7 +32,7 @@ class DetailSettingsCellSpec: QuickSpec {
       }
 
       it("isn't there if it shouldn't be") {
-        let detail = Settings.Detail(text: "You can't complain", detail: nil, onClick: nil)
+        detail = SettingsViewModel.Detail(text: "You can't complain", detail: nil, onClick: nil)
         expect(detail.detail).to(beNil()) // TODO
 
         cell.configure(for: detail)
@@ -41,7 +42,7 @@ class DetailSettingsCellSpec: QuickSpec {
 
     describe("accessoryType") {
       it("is there if if should be") {
-        let detail = Settings.Detail(text: "Privacy and stuff", detail: "yo", onClick: {})
+        detail = SettingsViewModel.Detail(text: "Privacy and stuff", detail: "yo", onClick: {})
         expect(detail.hasMoreInfo) == true // TODO
 
         cell.configure(for: detail)
@@ -49,7 +50,7 @@ class DetailSettingsCellSpec: QuickSpec {
       }
 
       it("isn't there if it shouldn't be") {
-        let detail = Settings.Detail(text: "Privacy and stuff", detail: "yo", onClick: nil)
+        detail = SettingsViewModel.Detail(text: "Privacy and stuff", detail: "yo", onClick: nil)
         expect(detail.hasMoreInfo) == false
 
         cell.configure(for: detail)

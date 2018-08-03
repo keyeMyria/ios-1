@@ -17,13 +17,13 @@ final class FakeAccount: FakeAccountType {
 final class SettingsViewController: UIViewController {
   private let account: FakeAccountType
   private let onDismiss: () -> Void
-  private let settings: [Settings.Section] = [
+  private let sections: [SettingsViewModel.Section] = [
     .init(
       header: "Hello header",
       rows: [
         // TODO .style (danger)
         .detail(.init(text: "hello", detail: "wat", onClick: {})),
-        .input(.init(label: "asdf", placeholder: "type something", initialValue: "asdf", validation: nil))
+        .textInput(.init(label: "asdf", placeholder: "type something", initialValue: "asdf", validation: nil))
       ]
     ),
     .init(
@@ -82,7 +82,7 @@ extension SettingsViewController {
     separator.trailingAnchor == view.trailingAnchor
     separator.heightAnchor == 1
 
-    let settingsTableViewController = SettingsTableViewController(settings: settings)
+    let settingsTableViewController = SettingsTableViewController(sections: sections)
     settingsTableViewController.view.backgroundColor = #colorLiteral(red: 0.977547657, green: 0.9692376636, blue: 0.9566834885, alpha: 1)
     addChildViewController(settingsTableViewController)
     view.addSubview(settingsTableViewController.view)

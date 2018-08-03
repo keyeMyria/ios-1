@@ -1,10 +1,10 @@
 import UIKit
 
 final class SettingsTableViewController: UITableViewController {
-  private let settings: [Settings.Section]
+  private let sections: [SettingsViewModel.Section]
 
-  init(settings: [Settings.Section]) {
-    self.settings = settings
+  init(sections: [SettingsViewModel.Section]) {
+    self.sections = sections
     super.init(style: .grouped)
   }
 
@@ -19,7 +19,7 @@ extension SettingsTableViewController {
     super.viewDidLoad()
     tableView.register(cellType: DetailSettingsCell.self)
     tableView.register(cellType: SwitchSettingsCell.self)
-    tableView.register(cellType: InputSettingsCell.self)
+    tableView.register(cellType: TextInputSettingsCell.self)
   }
 
   override func viewDidAppear(_ animated: Bool) {
@@ -29,23 +29,23 @@ extension SettingsTableViewController {
 
 extension SettingsTableViewController {
   override func numberOfSections(in tableView: UITableView) -> Int {
-    return settings.count
+    return sections.count
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return settings[section].rows.count
+    return sections[section].rows.count
   }
 
   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return settings[section].header
+    return sections[section].header
   }
 
   override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-    return settings[section].footer
+    return sections[section].footer
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let setting = settings[indexPath.section].rows[indexPath.row]
+    let setting = sections[indexPath.section].rows[indexPath.row]
 
     switch setting {
     case let .detail(detail):
@@ -58,15 +58,15 @@ extension SettingsTableViewController {
       cell.configure(for: `switch`)
       return cell
 
-    case let .input(input):
-      let cell: InputSettingsCell = tableView.dequeueReusableCell(for: indexPath)
+    case let .textInput(input):
+      let cell: TextInputSettingsCell = tableView.dequeueReusableCell(for: indexPath)
       cell.configure(for: input)
       return cell
     }
   }
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let row = settings[indexPath.section].rows[indexPath.row]
+    let row = sections[indexPath.section].rows[indexPath.row]
     switch row {
     case let .detail(detail): detail.onClick?() // TODO test
     default: ()
