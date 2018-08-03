@@ -3,23 +3,13 @@ import Anchorage
 
 // TODO settings bundle
 
-protocol FakeAccountType {
-  var notificationsEnabled: Bool { get set }
-}
-
-final class FakeAccount: FakeAccountType {
-  var notificationsEnabled: Bool {
-    get { return UserDefaults.standard.bool(forKey: "notificationsEnabled") }
-    set { UserDefaults.standard.set(newValue, forKey: "notificationsEnabled") }
-  }
-}
-
 final class TopSettingsViewController: UIViewController {
-  private let account: FakeAccountType
+  private let accountService: AccountServiceType
   private let onDismiss: () -> Void
   private let sections: [SettingsViewModel.Section] = [
     .init(
       rows: [
+        // TODO maybe reduce header height to 0 here
         .profile(.init(avatar: nil, name: "John Doe", handle: nil)),
         .detail(.init(text: "Set Profile Photo", detail: nil, onClick: nil))
       ]
@@ -41,8 +31,8 @@ final class TopSettingsViewController: UIViewController {
     )
   ]
 
-  init(account: FakeAccountType, onDismiss: @escaping () -> Void) {
-    self.account = account
+  init(accountService: AccountServiceType, onDismiss: @escaping () -> Void) {
+    self.accountService = accountService
     self.onDismiss = onDismiss
     super.init(nibName: nil, bundle: nil)
   }

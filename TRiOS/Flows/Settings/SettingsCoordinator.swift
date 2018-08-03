@@ -12,7 +12,8 @@ final class SettingsCoordinator: Coordinating {
   }
 
   private func showSettings() {
-    let vc = TopSettingsViewController(account: FakeAccount(), onDismiss: { [unowned self] in
+    let accountService = AccountService()
+    let vc = TopSettingsViewController(accountService: accountService, onDismiss: { [unowned self] in
       self.router.dismissModule()
       self.finishFlow?()
     })

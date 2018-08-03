@@ -2,8 +2,14 @@ import UIKit
 import PlaygroundSupport
 @testable import TRAppProxy
 
-let account = FakeAccount()
-let vc = TopSettingsViewController(account: account, onDismiss: { print("dismissed") })
+class FakeAccountService: AccountServiceType {
+  func getCloudID(callback: @escaping (Result<String, AnyError>) -> Void) {
+    callback(.success("_iwegfakjsdfhgaksdjhfg"))
+  }
+}
+
+let accountService = FakeAccountService()
+let vc = TopSettingsViewController(accountService: accountService, onDismiss: { print("dismissed") })
 
 //let avatar = #imageLiteral(resourceName: "idiot.jpg")
 //
