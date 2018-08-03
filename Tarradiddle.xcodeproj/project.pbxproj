@@ -14,7 +14,6 @@
 		4E08693321102F5000C755E1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF715F4210FC0CC00149EAE /* Nimble.framework */; };
 		4E08693421102F5000C755E1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF715F0210FC0CC00149EAE /* Quick.framework */; };
 		4E08693621102F8600C755E1 /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E08693521102F8600C755E1 /* Fixtures.swift */; };
-		4E086937211030AE00C755E1 /* TRAppProxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E2C1B062091A68200754E57 /* TRAppProxy.framework */; };
 		4E0869392110561000C755E1 /* AppFS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0869382110561000C755E1 /* AppFS.swift */; };
 		4E08693A2110561000C755E1 /* AppFS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0869382110561000C755E1 /* AppFS.swift */; };
 		4E08694021105CC900C755E1 /* ErrorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E08693F21105CC900C755E1 /* ErrorCoordinator.swift */; };
@@ -64,6 +63,7 @@
 		4E976878209F10BF004122B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E2C1AF82091A62A00754E57 /* LaunchScreen.storyboard */; };
 		4E9A06092110D29D003D1D61 /* CollectionViewHorizontalInversedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9A06082110D29D003D1D61 /* CollectionViewHorizontalInversedLayout.swift */; };
 		4E9A060A2110D29D003D1D61 /* CollectionViewHorizontalInversedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9A06082110D29D003D1D61 /* CollectionViewHorizontalInversedLayout.swift */; };
+		4EA0322221141F1A00C771EA /* TRAppProxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E2C1B062091A68200754E57 /* TRAppProxy.framework */; };
 		4EB70C7A209E56B700182833 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB70C79209E56B700182833 /* ConversationCell.swift */; };
 		4EB70CB6209E577300182833 /* ConversationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB70CB5209E577300182833 /* ConversationsViewModel.swift */; };
 		4EB70CB8209EF4A400182833 /* VoiceMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB70CB7209EF4A400182833 /* VoiceMessageCell.swift */; };
@@ -81,8 +81,8 @@
 		4EDFD7BD21135AAA009EC74D /* SwitchSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7BB21135AAA009EC74D /* SwitchSettingsCell.swift */; };
 		4EDFD7BF2113790A009EC74D /* LabeledInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7BE2113790A009EC74D /* LabeledInputCell.swift */; };
 		4EDFD7C02113790A009EC74D /* LabeledInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7BE2113790A009EC74D /* LabeledInputCell.swift */; };
-		4EDFD7C221137C90009EC74D /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7C121137C90009EC74D /* ProfileCell.swift */; };
-		4EDFD7C321137C90009EC74D /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7C121137C90009EC74D /* ProfileCell.swift */; };
+		4EDFD7C221137C90009EC74D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7C121137C90009EC74D /* ProfileView.swift */; };
+		4EDFD7C321137C90009EC74D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7C121137C90009EC74D /* ProfileView.swift */; };
 		4EF208FC2094568D006B0F0D /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF208FB2094568D006B0F0D /* AudioRecorder.swift */; };
 		4EF208FE209466ED006B0F0D /* SoundWavesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF208FD209466ED006B0F0D /* SoundWavesViewController.swift */; };
 		4EF2090020946705006B0F0D /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF208FF20946705006B0F0D /* ConversationsViewController.swift */; };
@@ -145,8 +145,6 @@
 		4EF715C0210F4FA400149EAE /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715BE210F4FA400149EAE /* Presentable.swift */; };
 		4EF715C2210F658D00149EAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715C1210F658C00149EAE /* AppDelegate.swift */; };
 		4EF715C3210F658D00149EAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715C1210F658C00149EAE /* AppDelegate.swift */; };
-		4EF715CA210F67B600149EAE /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715C9210F67B600149EAE /* SettingsCell.swift */; };
-		4EF715CB210F67B600149EAE /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715C9210F67B600149EAE /* SettingsCell.swift */; };
 		4EF715CD210F680600149EAE /* TextInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715CC210F680600149EAE /* TextInputCell.swift */; };
 		4EF715CE210F680600149EAE /* TextInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715CC210F680600149EAE /* TextInputCell.swift */; };
 		4EF715D0210F6BE300149EAE /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF715CF210F6BE300149EAE /* AudioPlayer.swift */; };
@@ -176,7 +174,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4E08693121102F3C00C755E1 /* PBXContainerItemProxy */ = {
+		4EA0322021141ED400C771EA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4E2C1AE42091A62800754E57 /* Project object */;
 			proxyType = 1;
@@ -424,7 +422,7 @@
 		4EDFD7B821134A1E009EC74D /* DetailSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSettingsCell.swift; sourceTree = "<group>"; };
 		4EDFD7BB21135AAA009EC74D /* SwitchSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchSettingsCell.swift; sourceTree = "<group>"; };
 		4EDFD7BE2113790A009EC74D /* LabeledInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledInputCell.swift; sourceTree = "<group>"; };
-		4EDFD7C121137C90009EC74D /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		4EDFD7C121137C90009EC74D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		4EF208FB2094568D006B0F0D /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		4EF208FD209466ED006B0F0D /* SoundWavesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWavesViewController.swift; sourceTree = "<group>"; };
 		4EF208FF20946705006B0F0D /* ConversationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
@@ -445,7 +443,6 @@
 		4EF715BB210F4F8F00149EAE /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		4EF715BE210F4FA400149EAE /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
 		4EF715C1210F658C00149EAE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4EF715C9210F67B600149EAE /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		4EF715CC210F680600149EAE /* TextInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputCell.swift; sourceTree = "<group>"; };
 		4EF715CF210F6BE300149EAE /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		4EF715D5210F8D7E00149EAE /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
@@ -468,7 +465,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E086937211030AE00C755E1 /* TRAppProxy.framework in Frameworks */,
+				4EA0322221141F1A00C771EA /* TRAppProxy.framework in Frameworks */,
 				4E08693321102F5000C755E1 /* Nimble.framework in Frameworks */,
 				4E08693421102F5000C755E1 /* Quick.framework in Frameworks */,
 			);
@@ -784,12 +781,11 @@
 		4EDFD7B6211349FA009EC74D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4EF715C9210F67B600149EAE /* SettingsCell.swift */,
 				4EF715CC210F680600149EAE /* TextInputCell.swift */,
 				4EDFD7B821134A1E009EC74D /* DetailSettingsCell.swift */,
 				4EDFD7BB21135AAA009EC74D /* SwitchSettingsCell.swift */,
 				4EDFD7BE2113790A009EC74D /* LabeledInputCell.swift */,
-				4EDFD7C121137C90009EC74D /* ProfileCell.swift */,
+				4EDFD7C121137C90009EC74D /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -984,7 +980,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				4E08693221102F3C00C755E1 /* PBXTargetDependency */,
+				4EA0322121141ED400C771EA /* PBXTargetDependency */,
 			);
 			name = TRTests;
 			productName = TRTests;
@@ -1034,7 +1030,8 @@
 		4E2C1AE42091A62800754E57 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				DefaultBuildSystemTypeForWorkspace = Latest;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "noose&needle";
 				TargetAttributes = {
@@ -1345,7 +1342,6 @@
 				4EDFD7B421134993009EC74D /* SettingsTableViewController.swift in Sources */,
 				4EF71539210F1B2F00149EAE /* SoundWavesViewController.swift in Sources */,
 				4EF71512210F1A2D00149EAE /* AudioRecorder.swift in Sources */,
-				4EF715CA210F67B600149EAE /* SettingsCell.swift in Sources */,
 				4EF71597210F28E900149EAE /* Box.swift in Sources */,
 				4EF71514210F1A3100149EAE /* Logger.swift in Sources */,
 				4EF71538210F1B2D00149EAE /* UsersViewController.swift in Sources */,
@@ -1383,7 +1379,7 @@
 				4EF71532210F1B0800149EAE /* AuthenticationCoordinator.swift in Sources */,
 				4EF7150F210F1A1B00149EAE /* AuthService.swift in Sources */,
 				4EDFD7BC21135AAA009EC74D /* SwitchSettingsCell.swift in Sources */,
-				4EDFD7C221137C90009EC74D /* ProfileCell.swift in Sources */,
+				4EDFD7C221137C90009EC74D /* ProfileView.swift in Sources */,
 				4EF715BC210F4F8F00149EAE /* Then.swift in Sources */,
 				4EF71534210F1B0F00149EAE /* ConversationsViewModel.swift in Sources */,
 				4E9A06092110D29D003D1D61 /* CollectionViewHorizontalInversedLayout.swift in Sources */,
@@ -1426,7 +1422,6 @@
 				4EDFD7B521134993009EC74D /* SettingsTableViewController.swift in Sources */,
 				4ECCAF8C20AC2951001250F7 /* Bundle.swift in Sources */,
 				4EB70C7A209E56B700182833 /* ConversationCell.swift in Sources */,
-				4EF715CB210F67B600149EAE /* SettingsCell.swift in Sources */,
 				4E62B6682091E56600EC4EBD /* UserSearchViewModel.swift in Sources */,
 				4E407A3F20A4AB2D0084BB0A /* SoundWaveView.swift in Sources */,
 				4E407A3A20A2D1F30084BB0A /* SettingsViewModel.swift in Sources */,
@@ -1464,7 +1459,7 @@
 				4EF2090420947090006B0F0D /* Friendship.swift in Sources */,
 				4E62B6772091EBC600EC4EBD /* AppAccount.swift in Sources */,
 				4EDFD7BD21135AAA009EC74D /* SwitchSettingsCell.swift in Sources */,
-				4EDFD7C321137C90009EC74D /* ProfileCell.swift in Sources */,
+				4EDFD7C321137C90009EC74D /* ProfileView.swift in Sources */,
 				4EF715BA210F4F6C00149EAE /* Router.swift in Sources */,
 				4EB70CB6209E577300182833 /* ConversationsViewModel.swift in Sources */,
 				4E9A060A2110D29D003D1D61 /* CollectionViewHorizontalInversedLayout.swift in Sources */,
@@ -1497,10 +1492,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4E08693221102F3C00C755E1 /* PBXTargetDependency */ = {
+		4EA0322121141ED400C771EA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4E2C1B052091A68200754E57 /* TRAppProxy */;
-			targetProxy = 4E08693121102F3C00C755E1 /* PBXContainerItemProxy */;
+			targetProxy = 4EA0322021141ED400C771EA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

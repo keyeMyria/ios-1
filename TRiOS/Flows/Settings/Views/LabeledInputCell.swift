@@ -1,13 +1,18 @@
 import UIKit
 import Anchorage
 
+struct SettingsInput {
+  let title: String
+  let value: String
+}
+
 final class LabeledInputCell: UITableViewCell, Reusable {
   private let textField = UITextField().then {
     $0.placeholder = "Your Handle"
   }
   private let label = UILabel()
 
-  override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+  override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
     textField.delegate = self // TODO
 
@@ -33,7 +38,7 @@ final class LabeledInputCell: UITableViewCell, Reusable {
 
   func configure(for input: SettingsInput) {
     label.text = input.title
-    textField.text = ""
+    textField.text = input.value
   }
 }
 

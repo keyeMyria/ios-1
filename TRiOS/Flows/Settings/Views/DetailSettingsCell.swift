@@ -1,7 +1,13 @@
 import UIKit
 
+struct SettingsDetail {
+  let text: String
+  let moreInfo: Bool
+  let detail: String?
+}
+
 final class DetailSettingsCell: UITableViewCell, Reusable {
-  override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+  override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: .value1, reuseIdentifier: reuseIdentifier)
   }
 

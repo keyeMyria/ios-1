@@ -111,21 +111,21 @@ extension MessagingViewController {
     // add a button to manage friendships FriendshipsButton() (last "conversation")
     // add a button to start recording (tap on one of the conversations)
 
-    addChild(conversationsViewController)
+    addChildViewController(conversationsViewController)
     view.addSubview(conversationsViewController.view)
     conversationsViewController.view.leadingAnchor == view.leadingAnchor
     conversationsViewController.view.trailingAnchor == view.trailingAnchor
     conversationsViewController.view.bottomAnchor == view.bottomAnchor - 30
     conversationsViewController.view.heightAnchor == 100
-    conversationsViewController.didMove(toParent: self)
+    conversationsViewController.didMove(toParentViewController: self)
 
-    addChild(soundWavesViewController)
+    addChildViewController(soundWavesViewController)
     view.addSubview(soundWavesViewController.view)
 //    soundWaveCollectionViewController.view.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 75)
     soundWavesViewController.view.leadingAnchor == view.leadingAnchor
     soundWavesViewController.view.trailingAnchor == view.trailingAnchor
     soundWavesViewController.view.centerYAnchor == view.centerYAnchor
     soundWavesViewController.view.heightAnchor == 175
-    soundWavesViewController.didMove(toParent: self)
+    soundWavesViewController.didMove(toParentViewController: self)
   }
 }

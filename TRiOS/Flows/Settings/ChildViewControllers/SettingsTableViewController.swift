@@ -1,5 +1,24 @@
 import UIKit
 
+enum SettingsRow {
+  case input(SettingsInput)
+  case detail(SettingsDetail, action: (() -> Void)?)
+  case `switch`(SettingsSwitch, action: (() -> Void)?)
+}
+
+struct SettingsSection {
+  let header: String?
+  let rows: [SettingsRow]
+  let footer: String?
+
+  // swiftlint:disable:next function_default_parameter_at_end
+  init(header: String? = nil, rows: [SettingsRow], footer: String? = nil) {
+    self.rows = rows
+    self.header = header
+    self.footer = footer
+  }
+}
+
 final class SettingsTableViewController: UITableViewController {
   private let settings: [SettingsSection]
 
@@ -74,4 +93,8 @@ extension SettingsTableViewController {
     }
     tableView.deselectRow(at: indexPath, animated: true)
   }
+//
+//  override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//    <#code#>
+//  }
 }

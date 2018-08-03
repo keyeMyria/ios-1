@@ -1,11 +1,16 @@
 import UIKit
 
+struct SettingsSwitch {
+  let text: String
+  let isOn: Bool
+}
+
 final class SwitchSettingsCell: UITableViewCell, Reusable {
   private var onToggle: ((Bool) -> Void)?
   @objc private func didToggleSwitch(_ sender: UISwitch) { onToggle?(sender.isOn) }
   private let switchControl = UISwitch()
 
-  override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+  override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
     switchControl.addTarget(self, action: #selector(didToggleSwitch), for: .valueChanged)
     accessoryView = switchControl

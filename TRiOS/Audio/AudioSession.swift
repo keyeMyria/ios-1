@@ -5,7 +5,7 @@ protocol AudioSessionType {
   func activate() throws
   func deactivate() throws
 
-  var recordPermission: AVAudioSession.RecordPermission { get }
+  var recordPermission: AVAudioSessionRecordPermission { get }
 }
 
 enum AudioSessionError: Error {
@@ -20,8 +20,8 @@ final class AudioSession: AudioSessionType {
   private let session: AVAudioSession
   private let onDeniedRecordPermission: () -> Void
 
-  var recordPermission: AVAudioSession.RecordPermission {
-    return session.recordPermission
+  var recordPermission: AVAudioSessionRecordPermission {
+    return session.recordPermission()
   }
 
   init(session: AVAudioSession = .sharedInstance(),
@@ -36,21 +36,22 @@ final class AudioSession: AudioSessionType {
 
   // TODO move to init
   func setup() throws {
-    guard session.availableModes.contains(.voiceChat) else {
+    guard session.availableModes.contains(AVAudioSessionModeVoiceChat) else {
       throw AudioSessionError.unavailableMode
     }
 
-    guard session.availableCategories.contains(.playAndRecord) else {
+    guard session.availableCategories.contains(AVAudioSessionCategoryPlayAndRecord) else {
       throw AudioSessionError.unavailableCategory
     }
 
     do {
       if #available(iOS 10.0, *) {
-        try session.setCategory(.playAndRecord, mode: .voiceChat, options: [.defaultToSpeaker, .duckOthers])
+        try session.setCategory(AVAudioSessionCategoryPlayAndRecord,
+                                mode: AVAudioSessionModeVoiceChat,
+                                options: [.defaultToSpeaker, .duckOthers])
       } else {
-        // TODO
-//        try session.setCategory(.playAndRecord, with: [.defaultToSpeaker, .duckOthers])
-//        try session.setMode(.voiceChat)
+        try session.setCategory(AVAudioSessionCategoryPlayAndRecord, with: [.defaultToSpeaker, .duckOthers])
+        try session.setMode(AVAudioSessionModeVoiceChat)
       }
       setupNotifications()
     } catch {
@@ -70,7 +71,7 @@ final class AudioSession: AudioSessionType {
   private func setupNotifications() {
     NotificationCenter.default.addObserver(self,
                                            selector: #selector(handleInterruption),
-                                           name: AVAudioSession.interruptionNotification,
+                                           name: .AVAudioSessionInterruption,
                                            object: nil)
 
     // TODO https://developer.apple.com/documentation/avfoundation/avaudiosession/1616540-mediaserviceswereresetnotificati
@@ -81,14 +82,14 @@ final class AudioSession: AudioSessionType {
     guard
       let userInfo = notification.userInfo,
       let typeValue = userInfo[AVAudioSessionInterruptionTypeKey] as? UInt,
-      let type = AVAudioSession.InterruptionType(rawValue: typeValue) else { return }
+      let type = AVAudioSessionInterruptionType(rawValue: typeValue) else { return }
 
     switch type {
     // Interruption began, take appropriate actions
     case .began: ()
     case .ended:
       if let optionsValue = userInfo[AVAudioSessionInterruptionOptionKey] as? UInt {
-        let options = AVAudioSession.InterruptionOptions(rawValue: optionsValue)
+        let options = AVAudioSessionInterruptionOptions(rawValue: optionsValue)
         if options.contains(.shouldResume) {
           // Interruption Ended - playback should resume
         } else {

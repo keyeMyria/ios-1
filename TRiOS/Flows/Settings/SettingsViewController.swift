@@ -14,40 +14,6 @@ final class FakeAccount: FakeAccountType {
   }
 }
 
-struct SettingsInput {
-  let title: String
-}
-
-struct SettingsDetail {
-  let text: String
-  let moreInfo: Bool
-  let detail: String?
-}
-
-struct SettingsSwitch {
-  let text: String
-  let isOn: Bool
-}
-
-enum SettingsRow {
-  case input(SettingsInput)
-  case detail(SettingsDetail, action: (() -> Void)?)
-  case `switch`(SettingsSwitch, action: (() -> Void)?)
-}
-
-struct SettingsSection {
-  let header: String?
-  let rows: [SettingsRow]
-  let footer: String?
-
-  // swiftlint:disable:next function_default_parameter_at_end
-  init(header: String? = nil, rows: [SettingsRow], footer: String? = nil) {
-    self.rows = rows
-    self.header = header
-    self.footer = footer
-  }
-}
-
 final class SettingsViewController: UIViewController {
   private let account: FakeAccountType
   private let onDismiss: () -> Void
@@ -56,7 +22,7 @@ final class SettingsViewController: UIViewController {
       header: "Hello header",
       rows: [
         .detail(.init(text: "hello", moreInfo: true, detail: "wat"), action: nil),
-        .input(.init(title: "asdf"))
+        .input(.init(title: "asdf", value: "asdf"))
       ]
     ),
     .init(
@@ -66,14 +32,14 @@ final class SettingsViewController: UIViewController {
     ),
     .init(
       rows: [
-        .input(.init(title: "asdf")),
-        .input(.init(title: "asdf"))
+        .input(.init(title: "asdf", value: "asdf")),
+        .input(.init(title: "asdf", value: "asdf"))
       ],
       footer: "asdf"
     ),
     .init(
       rows: [
-        .input(.init(title: "asdf"))
+        .input(.init(title: "asdf", value: "a"))
       ]
     )
   ]
@@ -129,11 +95,12 @@ extension SettingsViewController {
 
     let settingsTableViewController = SettingsTableViewController(settings: settings)
     settingsTableViewController.view.backgroundColor = #colorLiteral(red: 0.977547657, green: 0.9692376636, blue: 0.9566834885, alpha: 1)
-    addChild(settingsTableViewController)
+    addChildViewController(settingsTableViewController)
     view.addSubview(settingsTableViewController.view)
     settingsTableViewController.view.topAnchor == separator.bottomAnchor
     settingsTableViewController.view.bottomAnchor == view.bottomAnchor
     settingsTableViewController.view.leadingAnchor == view.leadingAnchor
     settingsTableViewController.view.trailingAnchor == view.trailingAnchor
+    settingsTableViewController.didMove(toParentViewController: self)
   }
 }
