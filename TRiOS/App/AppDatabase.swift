@@ -4,7 +4,7 @@ enum AppDatabaseError: Error {
   case migration(error: Error)
 }
 
-final class AppDatabase {
+enum AppDatabase {
   enum Kind {
     case inMemory
     case temp
@@ -17,7 +17,6 @@ final class AppDatabase {
     switch kind {
     case .inMemory: dbQueue = DatabaseQueue()
     case .temp: dbQueue = try DatabaseQueue(path: "")
-    // TODO maybe use database pool instead
     case let .onDisk(path: path): dbQueue = try DatabaseQueue(path: path)
     }
 

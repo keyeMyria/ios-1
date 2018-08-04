@@ -2,7 +2,7 @@ import GRDB
 
 /// Unlike `AppDatabase`, this one is not required for the core functionality
 /// of the app.
-final class SupportDatabase {
+enum SupportDatabase {
 
   enum Kind {
     /// Used mostly for testing
@@ -34,6 +34,9 @@ final class SupportDatabase {
     /// supposed to be sent to the backend once the internet
     /// connection is reestablished
     static let complaints = "complaints"
+
+    // retried requests here or in the AppDatabase?
+    // for example for uploading voice messages
   }
 
   static var migrator: DatabaseMigrator {

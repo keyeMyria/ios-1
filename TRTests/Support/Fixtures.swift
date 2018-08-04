@@ -7,7 +7,6 @@ import GRDB
 protocol Fixturable {
   associatedtype Resource
 
-  // TODO maybe allow for structs that are not persisted?
   static func fixture(attrs: [String: Any]) -> Resource
   // TODO or in database instead of dbQueue?
   static func fixture(dbQueue: DatabaseQueue, attrs: [String: Any]) throws -> Resource
@@ -16,7 +15,7 @@ protocol Fixturable {
 extension User: Fixturable {
   static func fixture(attrs: [String: Any] = [:]) -> User {
     return User(
-      id: attrs["id"] as? Int64 ?? Int64(arc4random_uniform(1000)),
+      id: attrs["id"] as? Int64 ?? Int64(arc4random_uniform(1_000)),
       handle: attrs["handle"] as? String ?? UUID().uuidString
     )
   }

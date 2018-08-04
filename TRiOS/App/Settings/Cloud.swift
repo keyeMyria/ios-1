@@ -4,5 +4,3 @@
 //class CloudPreferences {
 //
 //}
-
-// TODO have Account in this folder?

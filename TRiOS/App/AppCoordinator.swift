@@ -12,11 +12,10 @@ private func setupDatabase() throws -> DatabaseQueue {
   return dbQueue
 }
 
-fileprivate var isAuthenticated = false
-
 final class AppCoordinator: Coordinating {
   var childCoordinators: [Coordinating] = []
   private let router: RouterType
+  private var isAuthenticated = false
 
   // TODO pass Services struct?
 
@@ -32,12 +31,8 @@ final class AppCoordinator: Coordinating {
           let audioSession = AudioSession(onDeniedRecordPermission: { print("denied record permission") })
           try audioSession.setup()
           runMainFlow(dbQueue: dbQueue, audioSession: audioSession)
-        } catch AppFSError.database(error: _) {
-          // TODO show ErrorCoordinator explaining the error
-        } catch AppDatabaseError.migration(error: _) {
-          // TODO show ErrorCoordinator explaining the error
         } catch {
-          // TODO
+          runErrorFlow(for: error)
         }
       } else {
         runAuthenticationFlow()
@@ -48,7 +43,6 @@ final class AppCoordinator: Coordinating {
     }
   }
 
-  // TODO or coordinate(to: )?
   private func runOnboardingFlow() {
     let coordinator = OnboardingCoordinator(router: router)
     coordinator.finishFlow = { [weak self, weak coordinator] in
@@ -67,7 +61,7 @@ final class AppCoordinator: Coordinating {
     let coordinator = AuthenticationCoordinator(accountService: AccountService())
     coordinator.finishFlow = { [weak self, weak coordinator] result in
       guard let `self` = self, let coordinator = coordinator else { return }
-      isAuthenticated = true
+      self.isAuthenticated = true
       self.start()
       self.remove(childCoordinator: coordinator)
     }
@@ -77,6 +71,17 @@ final class AppCoordinator: Coordinating {
 
   private func runMainFlow(dbQueue: DatabaseQueue, audioSession: AudioSessionType) {
     let coordinator = HomeCoordinator(router: router, dbQueue: dbQueue, audioSession: audioSession)
+    add(childCoordinator: coordinator)
+    coordinator.start()
+  }
+
+  private func runErrorFlow(for error: Error) {
+//  } catch AppFSError.database(error: _) {
+//  // TODO show ErrorCoordinator explaining the error
+//  } catch AppDatabaseError.migration(error: _) {
+//  // TODO show ErrorCoordinator explaining the error
+    let coordinator = ErrorCoordinator(router: router, error: error)
+    // onFInish
     add(childCoordinator: coordinator)
     coordinator.start()
   }
