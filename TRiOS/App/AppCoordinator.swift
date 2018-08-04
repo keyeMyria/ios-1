@@ -29,8 +29,7 @@ final class AppCoordinator: Coordinating {
       if account.isAuthenticated {
         do {
           let dbQueue = try setupDatabase()
-          let audioSession = AudioSession()
-          try audioSession.setup()
+          let audioSession = try AudioSession()
           runMainFlow(dbQueue: dbQueue, audioSession: audioSession)
         } catch {
           runErrorFlow(for: error)

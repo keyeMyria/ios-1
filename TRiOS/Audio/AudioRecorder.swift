@@ -1,7 +1,6 @@
 import AVFoundation
 
 protocol AudioRecorderType {
-  func setup()
   func start() throws
   func pause()
   func cancel() throws
@@ -47,6 +46,11 @@ final class AudioRecorder: AudioRecorderType {
       recorder = try AVAudioRecorder(url: url, settings: recorderSettings)
       recorder.isMeteringEnabled = true
       recorder.prepareToRecord()
+      //    recorder.delegate = self // TODO can be put into a convinience init?
+//      switch audioSession.recordPermission {
+//      case .denied: ()
+//      default: ()
+//      }
     } catch {
       throw AudioRecorderError.initialization(error: error)
     }
@@ -54,14 +58,6 @@ final class AudioRecorder: AudioRecorderType {
 
   deinit {
     try? finish()
-  }
-
-  func setup() {
-//    recorder.delegate = self // TODO can be put into a convinience init?
-    switch audioSession.recordPermission {
-    case .denied: ()
-    default: ()
-    }
   }
 
   func start() throws {

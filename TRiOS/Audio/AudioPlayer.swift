@@ -41,13 +41,11 @@ final class AudioPlayer: NSObject, AudioPlayerType {
     self.audioSession = audioSession
     do {
       player = try AVAudioPlayer(contentsOf: url)
+      super.init()
+      player.delegate = self
     } catch {
       throw AudioRecorderError.initialization(error: error)
     }
-  }
-
-  func setup() {
-    player.delegate = self
   }
 
   func play() throws {

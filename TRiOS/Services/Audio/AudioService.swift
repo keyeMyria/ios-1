@@ -31,7 +31,6 @@ final class AudioService: AudioServiceType {
           self?.currentMeters.append(UInt8(scaled))
         }
       )
-      currentAudioRecorder?.setup()
       try currentAudioRecorder?.start()
     }
   }

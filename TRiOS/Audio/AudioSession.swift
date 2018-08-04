@@ -1,7 +1,6 @@
 import AVFoundation
 
 protocol AudioSessionType {
-  func setup() throws
   func activate() throws
   func deactivate() throws
 
@@ -31,16 +30,9 @@ final class AudioSession: AudioSessionType {
     return session.recordPermission()
   }
 
-  init(session: AVAudioSession = .sharedInstance()) {
+  init(session: AVAudioSession = .sharedInstance()) throws {
     self.session = session
-  }
 
-  deinit {
-    try? deactivate() // ?
-  }
-
-  // TODO move to init
-  func setup() throws {
     guard session.availableModes.contains(AVAudioSessionModeVoiceChat) else {
       throw AudioSessionError.unavailableMode
     }
@@ -62,6 +54,10 @@ final class AudioSession: AudioSessionType {
     } catch {
       throw AudioSessionError.setCategory(error: error)
     }
+  }
+
+  deinit {
+    try? deactivate() // ?
   }
 
   // TODO is it noop? use state: .active | .inactive?
