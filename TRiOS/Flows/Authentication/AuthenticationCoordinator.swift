@@ -51,16 +51,20 @@ final class AuthenticationCoordinator: Coordinating, AuthenticationCoordinatorRe
   var childCoordinators: [Coordinating] = []
 
   private let accountService: AccountServiceType
+  private let account: AppAccountType
 
-  init(accountService: AccountServiceType) {
+  init(account: AppAccountType, accountService: AccountServiceType) {
     self.accountService = accountService
+    self.account = account
   }
 
   func start() {
-    if let account = AppAccount(from: UserDefaults.standard) {
+    if account.isAuthenticated {
       finishFlow?(.success(account))
     } else {
-      finishFlow?(.success(AppAccount(userID: 123, cloudID: "cloudID")))
+      account.cloudID = "asdfasdf"
+      account.userID = 123
+      finishFlow?(.success(account))
 //      accountService.getCloudID { [weak self] result in
 //        guard let `self` = self else { return }
 //        switch result {

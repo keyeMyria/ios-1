@@ -8,6 +8,19 @@ protocol AudioRecorderType {
   func finish() throws
 }
 
+enum AudioRecorderError: RankedError {
+  var severity: RankedErrorSeverity {
+    switch self {
+    case .initialization, .micUnauthorized:
+      return .init(level: .medium, duration: .permanent)
+    }
+  }
+
+  case initialization(error: Error)
+  // handle mic unauth permission through error coordinator (need approppriate ranked error)
+  case micUnauthorized
+}
+
 final class AudioRecorder: AudioRecorderType {
   typealias MeteringLevel = (averagePower: Float, peakPower: Float)
 
@@ -30,9 +43,13 @@ final class AudioRecorder: AudioRecorderType {
        onMetersChange: @escaping (MeteringLevel) -> Void) throws {
     self.audioSession = audioSession
     self.onMetersChange = onMetersChange
-    recorder = try AVAudioRecorder(url: url, settings: recorderSettings)
-    recorder.isMeteringEnabled = true
-    recorder.prepareToRecord()
+    do {
+      recorder = try AVAudioRecorder(url: url, settings: recorderSettings)
+      recorder.isMeteringEnabled = true
+      recorder.prepareToRecord()
+    } catch {
+      throw AudioRecorderError.initialization(error: error)
+    }
   }
 
   deinit {

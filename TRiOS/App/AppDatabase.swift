@@ -1,6 +1,13 @@
 import GRDB
 
-enum AppDatabaseError: Error {
+enum AppDatabaseError: RankedError {
+  var severity: RankedErrorSeverity {
+    switch self {
+    case .migration:
+      return .init(level: .high, duration: .permanent)
+    }
+  }
+
   case migration(error: Error)
 }
 

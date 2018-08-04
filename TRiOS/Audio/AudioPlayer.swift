@@ -1,7 +1,13 @@
 import AVFoundation
 
-protocol AudioPlayerType {
+protocol AudioPlayerType {}
 
+enum AudioPlayerError: RankedError {
+  var severity: RankedErrorSeverity {
+    return .init(level: .medium, duration: .permanent)
+  }
+
+  case initialization(error: Error)
 }
 
 // TODO try playing messages while: answering phone calls, playing audio in other apps
@@ -33,7 +39,11 @@ final class AudioPlayer: NSObject, AudioPlayerType {
        onStateChange: @escaping (State) -> Void) throws {
     self.onStateChange = onStateChange
     self.audioSession = audioSession
-    player = try AVAudioPlayer(contentsOf: url)
+    do {
+      player = try AVAudioPlayer(contentsOf: url)
+    } catch {
+      throw AudioRecorderError.initialization(error: error)
+    }
   }
 
   func setup() {

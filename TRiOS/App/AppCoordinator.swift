@@ -15,27 +15,28 @@ private func setupDatabase() throws -> DatabaseQueue {
 final class AppCoordinator: Coordinating {
   var childCoordinators: [Coordinating] = []
   private let router: RouterType
-  private var isAuthenticated = false
+  private let account: AppAccountType
 
   // TODO pass Services struct?
 
-  init(router: RouterType) {
+  init(router: RouterType, account: AppAccountType = AppAccount(from: UserDefaults.standard)) {
     self.router = router
+    self.account = account
   }
 
   func start() {
-    if AppAccount.hasSeenOnboarding {
-      if isAuthenticated {
+    if account.hasSeenOnboarding {
+      if account.isAuthenticated {
         do {
           let dbQueue = try setupDatabase()
-          let audioSession = AudioSession(onDeniedRecordPermission: { print("denied record permission") })
+          let audioSession = AudioSession()
           try audioSession.setup()
           runMainFlow(dbQueue: dbQueue, audioSession: audioSession)
         } catch {
           runErrorFlow(for: error)
         }
       } else {
-        runAuthenticationFlow()
+        runAuthenticationFlow(for: account)
       }
     } else {
       // TODO and try to authenticate meanwhile
@@ -45,9 +46,8 @@ final class AppCoordinator: Coordinating {
 
   private func runOnboardingFlow() {
     let coordinator = OnboardingCoordinator(router: router)
-    coordinator.finishFlow = { [weak self, weak coordinator] in
-      guard let `self` = self, let coordinator = coordinator else { return }
-      AppAccount.hasSeenOnboarding = true
+    coordinator.finishFlow = { [unowned self, unowned coordinator] in
+      self.account.hasSeenOnboarding = true
       self.start()
       self.remove(childCoordinator: coordinator)
     }
@@ -57,11 +57,9 @@ final class AppCoordinator: Coordinating {
 
   // TODO authentication is not a flow -- no screen are shown to the user
   // other than maybe a popup with an error
-  private func runAuthenticationFlow() {
-    let coordinator = AuthenticationCoordinator(accountService: AccountService())
-    coordinator.finishFlow = { [weak self, weak coordinator] result in
-      guard let `self` = self, let coordinator = coordinator else { return }
-      self.isAuthenticated = true
+  private func runAuthenticationFlow(for account: AppAccountType) {
+    let coordinator = AuthenticationCoordinator(account: account, accountService: AccountService())
+    coordinator.finishFlow = { [unowned self, unowned coordinator] result in
       self.start()
       self.remove(childCoordinator: coordinator)
     }

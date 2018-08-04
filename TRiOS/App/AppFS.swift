@@ -7,7 +7,11 @@ protocol AppFSType {
   static func audioURL(for filename: String) throws -> URL
 }
 
-enum AppFSError: Error {
+enum AppFSError: RankedError {
+  var severity: RankedErrorSeverity {
+    return .init(level: .high, duration: .permanent)
+  }
+
   case database(error: Error)
   case audio(error: Error)
 }

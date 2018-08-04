@@ -74,12 +74,13 @@
 		4EA0324E21159CE300C771EA /* ComplaintCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0324C21159CE300C771EA /* ComplaintCoordinator.swift */; };
 		4EA0325121159D3800C771EA /* FAQCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0325021159D3800C771EA /* FAQCoordinator.swift */; };
 		4EA0325221159D3800C771EA /* FAQCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0325021159D3800C771EA /* FAQCoordinator.swift */; };
+		4EA032542115EACF00C771EA /* RankedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA032532115EACF00C771EA /* RankedError.swift */; };
+		4EA032552115EACF00C771EA /* RankedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA032532115EACF00C771EA /* RankedError.swift */; };
 		4EB70C7A209E56B700182833 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB70C79209E56B700182833 /* ConversationCell.swift */; };
 		4EB70CB6209E577300182833 /* ConversationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB70CB5209E577300182833 /* ConversationsViewModel.swift */; };
 		4EB70CB8209EF4A400182833 /* VoiceMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB70CB7209EF4A400182833 /* VoiceMessageCell.swift */; };
 		4ECCAF5520AC1E1E001250F7 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECCAF5420AC1E1E001250F7 /* Logger.swift */; };
 		4ECCAF8C20AC2951001250F7 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECCAF8B20AC2951001250F7 /* Bundle.swift */; };
-		4EDD664920A9DAE20010418F /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD664820A9DAE20010418F /* UserDefaults.swift */; };
 		4EDD664B20A9E0A00010418F /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD664A20A9E0A00010418F /* Cloud.swift */; };
 		4EDFD79921132EAA009EC74D /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD79821132EAA009EC74D /* Reusable.swift */; };
 		4EDFD79A21132EAA009EC74D /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD79821132EAA009EC74D /* Reusable.swift */; };
@@ -128,7 +129,6 @@
 		4EF7152B210F1AC300149EAE /* SoundWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E407A3E20A4AB2D0084BB0A /* SoundWaveView.swift */; };
 		4EF7152C210F1AC600149EAE /* VoiceMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB70CB7209EF4A400182833 /* VoiceMessageCell.swift */; };
 		4EF7152D210F1AC800149EAE /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB70C79209E56B700182833 /* ConversationCell.swift */; };
-		4EF7152E210F1ACD00149EAE /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD664820A9DAE20010418F /* UserDefaults.swift */; };
 		4EF7152F210F1ACF00149EAE /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E407A3C20A4A0B90084BB0A /* CGPoint.swift */; };
 		4EF71530210F1AD100149EAE /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECCAF8B20AC2951001250F7 /* Bundle.swift */; };
 		4EF71532210F1B0800149EAE /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E62B67B2091EC4E00EC4EBD /* AuthenticationCoordinator.swift */; };
@@ -420,12 +420,12 @@
 		4EA032302114C50800C771EA /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
 		4EA0324C21159CE300C771EA /* ComplaintCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintCoordinator.swift; sourceTree = "<group>"; };
 		4EA0325021159D3800C771EA /* FAQCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQCoordinator.swift; sourceTree = "<group>"; };
+		4EA032532115EACF00C771EA /* RankedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankedError.swift; sourceTree = "<group>"; };
 		4EB70C79209E56B700182833 /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
 		4EB70CB5209E577300182833 /* ConversationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewModel.swift; sourceTree = "<group>"; };
 		4EB70CB7209EF4A400182833 /* VoiceMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMessageCell.swift; sourceTree = "<group>"; };
 		4ECCAF5420AC1E1E001250F7 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		4ECCAF8B20AC2951001250F7 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
-		4EDD664820A9DAE20010418F /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		4EDD664A20A9E0A00010418F /* Cloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
 		4EDFD79821132EAA009EC74D /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		4EDFD7B321134993009EC74D /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -665,7 +665,6 @@
 		4E407A3B20A4A0AB0084BB0A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4EDD664820A9DAE20010418F /* UserDefaults.swift */,
 				4E407A3C20A4A0B90084BB0A /* CGPoint.swift */,
 				4ECCAF8B20AC2951001250F7 /* Bundle.swift */,
 				4E3ACFD62110EE6C00B595C9 /* Array.swift */,
@@ -721,6 +720,7 @@
 				4EF715BB210F4F8F00149EAE /* Then.swift */,
 				4EF715BE210F4FA400149EAE /* Presentable.swift */,
 				4EDFD79821132EAA009EC74D /* Reusable.swift */,
+				4EA032532115EACF00C771EA /* RankedError.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1370,7 +1370,6 @@
 				4EF715E8210F9A2800149EAE /* SettingsCoordinator.swift in Sources */,
 				4E3F2AAD2112584900DAA13F /* ErrorModalViewController.swift in Sources */,
 				4EF71518210F1A3C00149EAE /* Conversation.swift in Sources */,
-				4EF7152E210F1ACD00149EAE /* UserDefaults.swift in Sources */,
 				4EF715D9210F8DDE00149EAE /* OnboardingCoordinator.swift in Sources */,
 				4EF7151B210F1A7400149EAE /* Coordinating.swift in Sources */,
 				4EF7152C210F1AC600149EAE /* VoiceMessageCell.swift in Sources */,
@@ -1385,6 +1384,7 @@
 				4EF71509210F151700149EAE /* AppCoordinator.swift in Sources */,
 				4E0869392110561000C755E1 /* AppFS.swift in Sources */,
 				4E3ACFD72110EE6C00B595C9 /* Array.swift in Sources */,
+				4EA032542115EACF00C771EA /* RankedError.swift in Sources */,
 				4E0869442110842900C755E1 /* AudioSession.swift in Sources */,
 				4E3F2AB72112EEE200DAA13F /* RemoteUserService.swift in Sources */,
 				4E3F2AB421125BCA00DAA13F /* UserInfoViewController.swift in Sources */,
@@ -1461,12 +1461,12 @@
 				4EF7150D210F19D300149EAE /* SupportDatabase.swift in Sources */,
 				4EF715E6210F8EA600149EAE /* HomeCoordinator.swift in Sources */,
 				4E3F2A9C2111FFBA00DAA13F /* TopSettingsViewController.swift in Sources */,
-				4EDD664920A9DAE20010418F /* UserDefaults.swift in Sources */,
 				4EF715C3210F658D00149EAE /* AppDelegate.swift in Sources */,
 				4E62B6A420931ED900EC4EBD /* User.swift in Sources */,
 				4E08693A2110561000C755E1 /* AppFS.swift in Sources */,
 				4E3ACFD82110EE6C00B595C9 /* Array.swift in Sources */,
 				4E0869452110842900C755E1 /* AudioSession.swift in Sources */,
+				4EA032552115EACF00C771EA /* RankedError.swift in Sources */,
 				4E3F2AB82112EEE200DAA13F /* RemoteUserService.swift in Sources */,
 				4E3F2AB521125BCA00DAA13F /* UserInfoViewController.swift in Sources */,
 				4E62B67C2091EC4E00EC4EBD /* AuthenticationCoordinator.swift in Sources */,

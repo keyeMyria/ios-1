@@ -37,7 +37,9 @@ final class UserSearchCoordinator: Coordinating {
 
   private func runUserInfoFlow(for user: User) {
     let coordinator = UserInfoCoordinator(router: router, user: user)
-    coordinator.onFinish = { [unowned self] in self.remove(childCoordinator: coordinator) }
+    coordinator.onFinish = { [unowned self, unowned coordinator] in
+      self.remove(childCoordinator: coordinator)
+    }
     add(childCoordinator: coordinator)
     coordinator.start()
   }

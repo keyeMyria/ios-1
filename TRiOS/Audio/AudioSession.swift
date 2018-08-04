@@ -8,30 +8,35 @@ protocol AudioSessionType {
   var recordPermission: AVAudioSessionRecordPermission { get }
 }
 
-enum AudioSessionError: Error {
-  case microphoneUnauthorized
-  case category(error: Error)
+enum AudioSessionError: RankedError {
+  var severity: RankedErrorSeverity {
+    switch self {
+    case .setCategory, .unavailableMode, .unavailableCategory:
+      return .init(level: .medium, duration: .permanent)
+    case .setActive:
+      return .init(level: .medium, duration: .temporary)
+    }
+  }
+
+  case setCategory(error: Error)
   case unavailableMode
   case unavailableCategory
-  case noPermission
+  case setActive(error: Error)
 }
 
 final class AudioSession: AudioSessionType {
   private let session: AVAudioSession
-  private let onDeniedRecordPermission: () -> Void
 
   var recordPermission: AVAudioSessionRecordPermission {
     return session.recordPermission()
   }
 
-  init(session: AVAudioSession = .sharedInstance(),
-       onDeniedRecordPermission: @escaping () -> Void) {
+  init(session: AVAudioSession = .sharedInstance()) {
     self.session = session
-    self.onDeniedRecordPermission = onDeniedRecordPermission
   }
 
   deinit {
-    try? deactivate()
+    try? deactivate() // ?
   }
 
   // TODO move to init
@@ -55,17 +60,25 @@ final class AudioSession: AudioSessionType {
       }
       setupNotifications()
     } catch {
-      throw AudioSessionError.category(error: error)
+      throw AudioSessionError.setCategory(error: error)
     }
   }
 
   // TODO is it noop? use state: .active | .inactive?
   func activate() throws {
-    try session.setActive(true)
+    do {
+      try session.setActive(true)
+    } catch {
+      throw AudioSessionError.setActive(error: error)
+    }
   }
 
   func deactivate() throws {
-    try session.setActive(false)
+    do {
+      try session.setActive(false)
+    } catch {
+      throw AudioSessionError.setActive(error: error)
+    }
   }
 
   private func setupNotifications() {

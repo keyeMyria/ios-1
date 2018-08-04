@@ -1,17 +1,37 @@
 import Foundation
 
+// TODO
+// listen for NSUbiquityIdentityDidChangeNotification and out-of-storage?
+// if get different token, save it (into the server database as well)
+// if change was whe the app was offline, fetch the token every time still in
+// "app did finish launching with options", compare it, and if it's different,
+// save, and send to the backend as well
+
+// or in account service?
+enum AppAccountError: RankedError {
+  var severity: RankedErrorSeverity {
+    return .init(level: .medium, duration: .permanent)
+  }
+
+  case unavailableCloudID
+//  case staleToken
+}
+
 protocol AppAccountType: class {
-  static var hasSeenOnboarding: Bool { get set }
-  var userID: Int { get }
-  var cloudID: String { get }
+  var hasSeenOnboarding: Bool { get set }
+  var isAuthenticated: Bool { get }
+  var userID: Int? { get set }
+  var cloudID: String? { get set }
+  // token
 }
 
-protocol AppAccountStorage {
-  var currentUserID: Int? { get }
-  var currentCloudID: String? { get }
+protocol AppAccountStorage: class {
+  var userID: Int? { get set }
+  var cloudID: String? { get set }
+  var hasSeenOnboarding: Bool { get set }
 }
 
-enum AppUserDefaultsKeys {
+private enum AppUserDefaultsKeys {
   static let hasSeenOnboarding = "hasSeenOnboarding"
   static let currentUserID = "currentUserID"
   static let currentCloudID = "currentCloudID"
@@ -19,12 +39,19 @@ enum AppUserDefaultsKeys {
 }
 
 extension UserDefaults: AppAccountStorage {
-  var currentUserID: Int? {
-    return UserDefaults.standard.object(forKey: AppUserDefaultsKeys.currentUserID) as? Int
+  var userID: Int? {
+    get { return UserDefaults.standard.object(forKey: AppUserDefaultsKeys.currentUserID) as? Int }
+    set { UserDefaults.standard.set(newValue, forKey: AppUserDefaultsKeys.currentUserID) }
   }
 
-  var currentCloudID: String? {
-    return UserDefaults.standard.string(forKey: AppUserDefaultsKeys.currentCloudID)
+  var cloudID: String? {
+    get { return UserDefaults.standard.string(forKey: AppUserDefaultsKeys.currentCloudID) }
+    set { UserDefaults.standard.set(newValue, forKey: AppUserDefaultsKeys.currentCloudID) }
+  }
+
+  var hasSeenOnboarding: Bool {
+    get { return UserDefaults.standard.bool(forKey: AppUserDefaultsKeys.hasSeenOnboarding) }
+    set { UserDefaults.standard.set(newValue, forKey: AppUserDefaultsKeys.hasSeenOnboarding) }
   }
 }
 
@@ -34,9 +61,10 @@ final class AppAccount: AppAccountType {
 //    case unauthenticated
 //  }
 
-  static var hasSeenOnboarding: Bool {
-    get { return UserDefaults.standard.bool(forKey: AppUserDefaultsKeys.hasSeenOnboarding) }
-    set { UserDefaults.standard.set(newValue, forKey: AppUserDefaultsKeys.hasSeenOnboarding) }
+  private let storage: AppAccountStorage
+
+  var isAuthenticated: Bool {
+    return userID != nil && cloudID != nil
   }
 
   // Make into computed variable and use .authenticated(userID, apiToken, iCloudID)?
@@ -44,8 +72,15 @@ final class AppAccount: AppAccountType {
 //    return .authenticated
 //  }
 
+  /// can it be computable?
   /// has one user id (user data can be looked up from the saved_users table)
-  let userID: Int
+  var userID: Int? {
+    didSet {
+      if userID != oldValue {
+        storage.userID = userID
+      }
+    }
+  }
 
   /// api token of the current account (stored in keychain)
 //  var apiToken: String
@@ -53,23 +88,24 @@ final class AppAccount: AppAccountType {
   /// iCloudID of the user which helps to forgo typical registration flow
   ///
   /// See https://medium.com/@skreutzb/ios-onboarding-without-signup-screens-cb7a76d01d6e
-  let cloudID: String
-
-  init(userID: Int, cloudID: String) {
-    self.userID = userID
-//    self.apiToken = apiToken
-    self.cloudID = cloudID
-//    authStatus = .authenticated
+  var cloudID: String? {
+    didSet {
+      if cloudID != oldValue {
+        storage.cloudID = cloudID
+      }
+    }
   }
 
-  init?(from storage: AppAccountStorage) {
-    guard
-      let userID = storage.currentUserID,
-      let cloudID = storage.currentCloudID else {
-        return nil
+  var hasSeenOnboarding: Bool {
+    didSet {
+      storage.hasSeenOnboarding = hasSeenOnboarding
     }
+  }
 
-    self.userID = userID
-    self.cloudID = cloudID
+  init(from storage: AppAccountStorage) {
+    self.storage = storage
+    userID = storage.userID
+    cloudID = storage.cloudID
+    hasSeenOnboarding = storage.hasSeenOnboarding
   }
 }

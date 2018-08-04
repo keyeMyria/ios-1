@@ -4,20 +4,25 @@ final class ApolloClientMommy {
   #if DEBUG
   private let url = URL(string: "http://localhost:4000/api/graphql")!
   #else
-  private let url = URL(string: "https://lol.from.network/api/graphql")!
+  private let url = URL(string: "https://trapp.yolocast.wtf/api/graphql")!
   #endif
+
+  private let token: String
+
+  init(token: String) {
+    self.token = token
+  }
 
   lazy var anonClient: ApolloClient = {
     let configuration = URLSessionConfiguration.default
     configuration.httpAdditionalHeaders = [
-      "x-request-id": "\(UUID().uuidString)" // TODO log somehow?
+      "x-request-id": "\(UUID().uuidString)"
     ]
     let transport = HTTPNetworkTransport(url: url, configuration: configuration)
     return ApolloClient(networkTransport: transport)
   }()
 
   lazy var authedClient: ApolloClient = {
-    let token = "SFMyNTY.g3QAAAACZAAEZGF0YWEPZAAGc2lnbmVkbgYA7JpdAWMB.sYIvpEcsBLYtyYeUwyRvd5QirX-RxywKQGJwrEv8zZ8"
     let configuration = URLSessionConfiguration.default
     configuration.httpAdditionalHeaders = [
       "x-request-id": "\(UUID().uuidString)",

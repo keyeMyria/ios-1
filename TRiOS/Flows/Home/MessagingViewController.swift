@@ -6,8 +6,12 @@ final class MessagingViewController: UIViewController {
   private let conversations: [Conversation]
   private let conversationService: LocalConversationServiceType
   private let audioService: AudioServiceType
-  private let onSettingsTapped: () -> Void
-  private let onUserSearchTapped: () -> Void
+  private let onAction: (Action) -> Void
+
+  enum Action {
+    case settingsTapped
+    case userSearchTapped
+  }
 
   private lazy var childSoundWavesViewController = SoundWavesViewController { [unowned self] selectedVoiceMessage in
     print("selected voice message", selectedVoiceMessage)
@@ -58,13 +62,13 @@ final class MessagingViewController: UIViewController {
     }
   }
 
-  @objc private func settingsButtonTapped() { onSettingsTapped() }
+  @objc private func settingsButtonTapped() { onAction(.settingsTapped) }
   private let settingsButton = UIButton(type: .system).then {
     $0.setTitle("⚙️", for: .normal)
     $0.addTarget(self, action: #selector(settingsButtonTapped), for: .touchUpInside)
   }
 
-  @objc private func userSearchButtonTapped() { onUserSearchTapped() }
+  @objc private func userSearchButtonTapped() { onAction(.userSearchTapped) }
   private let userSearchButton = UIButton(type: .system).then {
     $0.setTitle("🔍", for: .normal)
     $0.addTarget(self, action: #selector(userSearchButtonTapped), for: .touchUpInside)
@@ -74,15 +78,13 @@ final class MessagingViewController: UIViewController {
   init(conversations: [Conversation],
        conversationService: LocalConversationServiceType,
        audioService: AudioServiceType,
-       onSettingsTapped: @escaping () -> Void,
-       onUserSearchTapped: @escaping () -> Void) {
+       onAction: @escaping (Action) -> Void) {
     self.conversations = conversations
     // TODO present "add friends screen", or talk to yourself
     currentConversation = conversations.first
     self.conversationService = conversationService
     self.audioService = audioService
-    self.onSettingsTapped = onSettingsTapped
-    self.onUserSearchTapped = onUserSearchTapped
+    self.onAction = onAction
     super.init(nibName: nil, bundle: nil)
   }
 
