@@ -1,5 +1,3 @@
-// TODO watch that talk on errors don't remember which one
-
 import UIKit
 
 final class ErrorModalViewController: UIViewController {
