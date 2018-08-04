@@ -25,21 +25,22 @@ final class AppCoordinator: Coordinating {
   }
 
   func start() {
-    if account.hasSeenOnboarding {
-      if account.isAuthenticated {
-        do {
-          let dbQueue = try setupDatabase()
-          let audioSession = try AudioSession()
-          runMainFlow(dbQueue: dbQueue, audioSession: audioSession)
-        } catch {
-          runErrorFlow(for: error)
-        }
-      } else {
-        runAuthenticationFlow(for: account)
-      }
-    } else {
-      // TODO and try to authenticate meanwhile
+    // TODO and try to authenticate meanwhile
+    guard account.hasSeenOnboarding else {
       runOnboardingFlow()
+      return
+    }
+
+    guard account.isAuthenticated else {
+      runAuthenticationFlow(for: account)
+      return
+    }
+
+    do {
+      runMainFlow(dbQueue: try setupDatabase(),
+                  audioSession: try AudioSession())
+    } catch {
+      runErrorFlow(for: error)
     }
   }
 
@@ -78,7 +79,6 @@ final class AppCoordinator: Coordinating {
 //  } catch AppDatabaseError.migration(error: _) {
 //  // TODO show ErrorCoordinator explaining the error
     let coordinator = ErrorCoordinator(router: router, error: error)
-    // onFInish
     add(childCoordinator: coordinator)
     coordinator.start()
   }
