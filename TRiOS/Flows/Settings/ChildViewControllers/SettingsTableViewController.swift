@@ -76,7 +76,7 @@ extension SettingsTableViewController {
     switch row {
     case .profile: return 80
 //    default: return UITableViewAutomaticDimension
-      default: return 42
+    default: return 42
     }
   }
 

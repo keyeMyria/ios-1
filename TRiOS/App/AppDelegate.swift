@@ -17,11 +17,11 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   private lazy var rootController: UINavigationController = {
-    return UINavigationController()
+    UINavigationController()
   }()
 
   private lazy var appCoordinator: AppCoordinator = {
-    return AppCoordinator(router: Router(rootController: rootController))
+    AppCoordinator(router: Router(rootController: rootController))
   }()
 
   func application(_ application: UIApplication,
